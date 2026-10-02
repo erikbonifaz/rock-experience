@@ -11,5 +11,5 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## Convenciones del proyecto
 
 - Mantener la comunicación con el usuario y la documentación del proyecto en español.
-- Usar Conventional Commits en cada commit solicitado por el usuario, con el formato `tipo(ámbito opcional): descripción` y la descripción en español.
+- Todos los mensajes de commit deben estar en inglés. En los commits solicitados por el usuario, usar Conventional Commits (`type(scope): description`, con ámbito opcional).
 - No incluir `PRODUCT.md` en los commits hasta que el usuario solicite incorporarlo.

@@ -50,7 +50,7 @@ pnpm start  # Ejecutar la compilación de producción
 - Utilizar la base existente de Next.js con App Router, TypeScript y Tailwind CSS.
 - Mantener pnpm y su archivo de bloqueo para reproducir la instalación de dependencias.
 - Mantener la documentación y la comunicación en español; la página debe poder utilizarse sin conocimientos de inglés.
-- Usar Conventional Commits con descripciones en español para los commits solicitados.
+- Usar Conventional Commits con mensajes en inglés para los commits solicitados.
 - Comenzar el diseño de nuevas páginas con una composición visual antes de implementarlas, según la preferencia confirmada por el usuario.
 
 ## Trabajo pendiente
