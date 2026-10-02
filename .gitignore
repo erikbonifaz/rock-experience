@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# configuración local y archivos de trabajo de agentes
+/.aider-desk/
+/.impeccable/config.local.json
+/.impeccable/live/*
+!/.impeccable/live/config.json
+
+# contexto del producto: pendiente de incorporar por indicación del usuario
+/PRODUCT.md
