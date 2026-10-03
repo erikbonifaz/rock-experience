@@ -19,7 +19,7 @@ export default function NotFound() {
       <header className="page-container relative z-10 flex w-full items-center justify-between py-5 md:min-h-[var(--header-height)]">
         <Link
           className="wordmark focus-visible:outline-2 focus-visible:outline-[#FF2442] focus-visible:outline-offset-4"
-          href="/"
+          href="/#inicio"
           aria-label="ROCK EXPERIENCE, volver al inicio">
           <span>ROCK</span>
           <span>EXPERIENCE</span>
@@ -50,7 +50,7 @@ export default function NotFound() {
           <div className="mt-8 flex flex-col items-start gap-4 sm:mt-10 sm:flex-row sm:items-center sm:gap-8">
             <Link
               className="button-primary min-h-[52px] gap-3 focus-visible:outline-2 focus-visible:outline-[#F2F0E9] focus-visible:outline-offset-4"
-              href="/">
+              href="/#inicio">
               Volver al inicio
               <svg
                 aria-hidden="true"
