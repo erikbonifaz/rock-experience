@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { navigationLinks } from "./navigation-items";
 
 export function SiteFooter() {
@@ -40,6 +41,14 @@ export function SiteFooter() {
                   </a>
                 </li>
               ))}
+              <li>
+                <Link
+                  className="inline-flex min-h-10 items-center transition-colors duration-200 hover:text-[#FF2442] focus-visible:text-[#FF2442] motion-reduce:transition-none"
+                  href="/arquitectura"
+                >
+                  Cómo funciona
+                </Link>
+              </li>
             </ul>
           </nav>
 

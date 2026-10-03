@@ -1,0 +1,3 @@
+# Conservar los bytes vinculados al recibo de validación de Archify.
+/docs/arquitectura/rock-experience.json -text
+/public/diagrams/rock-experience.html -text -whitespace

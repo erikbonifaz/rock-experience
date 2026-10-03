@@ -6,6 +6,8 @@ Landing para la prueba técnica de desarrollo web de Rock The Agency. La campañ
 
 La página incluye la portada, el encabezado responsive, seis experiencias cargadas desde un endpoint local, Beneficios, el formulario de participación validado y el footer. El formulario está preparado para persistir solicitudes en Supabase PostgreSQL; para activar esa conexión se debe crear el proyecto, ejecutar el SQL y configurar las variables de entorno.
 
+La ruta `/arquitectura`, enlazada desde el footer como **Cómo funciona**, explica los recorridos de Experiencias y del formulario mediante texto y un diagrama interactivo de Archify. El mapa incluye enlaces al código de una revisión fijada. Su fuente y las instrucciones para regenerarlo están en [docs/arquitectura](docs/arquitectura/README.md).
+
 ## Tecnologías
 
 - Next.js 16.3.8 con App Router.
