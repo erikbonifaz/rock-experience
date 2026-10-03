@@ -1,6 +1,7 @@
 import Image from "next/image";
 import heroImage from "@/public/images/hero-experience-full.png";
 import { BenefitsSection } from "@/features/benefits/components/benefits-section";
+import { ParticipationSection } from "@/features/contact/participation-section";
 import { ExperiencesSection } from "@/features/experiences/components/experiences-section";
 import { SiteHeader } from "@/components/layout/site-header";
 
@@ -53,6 +54,7 @@ export default function Home() {
         </section>
         <ExperiencesSection />
         <BenefitsSection />
+        <ParticipationSection />
       </main>
     </>
   );
