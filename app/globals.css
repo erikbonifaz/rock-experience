@@ -46,6 +46,8 @@
   --font-display: var(--font-anton);
 }
 
+@custom-variant experiences-desktop (@media (min-width: 75rem));
+
 html {
   scroll-padding-top: var(--header-height);
   scrollbar-color: var(--text-secondary) var(--background);

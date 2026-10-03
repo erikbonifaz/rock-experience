@@ -4,7 +4,7 @@ Proyecto para la prueba técnica de desarrollo web de Rock The Agency. La campa�
 
 ## Estado actual
 
-El repositorio contiene la base de Next.js y la configuración inicial del proyecto. La página todavía muestra la interfaz de Create Next App; las secciones de campaña, la carga dinámica de experiencias y el formulario de participación están pendientes de implementación.
+La página incluye la portada de campaña, el encabezado con navegación móvil, las seis experiencias cargadas desde un endpoint local —con estados de carga, error, éxito y lista vacía— y la sección de beneficios. El formulario de participación está pendiente de implementación.
 
 ## Tecnologías
 
@@ -38,9 +38,13 @@ pnpm start  # Ejecutar la compilación de producción
 
 ## Estructura
 
-- `app/`: página principal, disposición general y estilos globales.
+- `app/`: rutas de Next.js, composición de la página, layout y estilos globales.
+- `components/layout/`: encabezado y navegación globales.
+- `features/experiences/`: componentes y hook de Experiencias, junto con `config.ts` y `types.ts`.
+- `features/benefits/`: sección de Beneficios; su tipo y contenido estático viven junto al componente porque solo se usan allí.
+- `data/experiences.json`: fuente estática del endpoint local.
 - `public/`: recursos estáticos.
-- `docs/`: documento de la prueba técnica e imagen de referencia.
+- `docs/`: documentación del proyecto, prueba técnica y referencias visuales. Las decisiones de organización se describen en [experiences-refactor.md](docs/experiences-refactor.md).
 - `.agents/` y `skills-lock.json`: guías de rendimiento de React y Next.js utilizadas por los agentes.
 - `.impeccable/`: preferencias compartidas del proceso de diseño y configuración para la edición visual local.
 - `AGENTS.md`: instrucciones de Next.js y convenciones del proyecto.
@@ -55,10 +59,10 @@ pnpm start  # Ejecutar la compilación de producción
 
 ## Trabajo pendiente
 
-Implementar la campaña, las seis experiencias con estados de carga y error, y el formulario con validaciones y confirmación. Verificar accesibilidad, SEO, rendimiento y adaptación a teléfonos, tabletas y computadoras. Completar la documentación de las decisiones finales, las mejoras futuras y la publicación cuando exista la implementación.
+Implementar el formulario con validaciones y confirmación. Completar la revisión de accesibilidad, SEO y rendimiento de la landing, y documentar las mejoras futuras y la publicación.
 
 ## Uso de inteligencia artificial
 
 Se utilizó Codex con la habilidad impeccable para revisar los requisitos de la prueba, registrar el contexto del producto y preparar las preferencias de diseño. Codex también preparó la documentación inicial y la configuración del repositorio mediante Git y GitHub CLI.
 
-En esta etapa no se ha generado la implementación de la campaña. La revisión manual del código de la campaña y los posibles errores detectados y corregidos se documentarán cuando se realice ese trabajo.
+Codex también colaboró en la implementación de la portada y Experiencias, la revisión del código con `vercel-react-best-practices` y la reorganización por funcionalidad. Las decisiones y verificaciones de Experiencias se documentan en `docs/experiences-refactor.md`.
