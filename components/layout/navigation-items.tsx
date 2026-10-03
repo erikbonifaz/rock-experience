@@ -1,15 +1,21 @@
+export const navigationLinks = [
+  { label: "Inicio", href: "#inicio" },
+  { label: "Experiencias", href: "#experiencias" },
+  { label: "Beneficios", href: "#beneficios" },
+  { label: "Contacto", href: "#contacto" },
+] as const;
+
 export function NavigationItems() {
   return (
     <>
       <ul className="navigation-links">
-        <li>
-          <a href="#inicio" aria-current="location">
-            Inicio
-          </a>
-        </li>
-        <li><a href="#experiencias">Experiencias</a></li>
-        <li><a href="#beneficios">Beneficios</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        {navigationLinks.map(({ label, href }, index) => (
+          <li key={href}>
+            <a href={href} aria-current={index === 0 ? "location" : undefined}>
+              {label}
+            </a>
+          </li>
+        ))}
       </ul>
       <a className="button-primary" href="#contacto">
         Participar
