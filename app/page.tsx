@@ -16,7 +16,6 @@ export default function Home() {
           id="inicio"
           className="hero"
           aria-labelledby="hero-title"
-          tabIndex={-1}
         >
           <div className="hero-media">
             <Image
@@ -30,7 +29,11 @@ export default function Home() {
             <div className="hero-overlay" aria-hidden="true" />
           </div>
           <div className="hero-content page-container">
-            <h1 id="hero-title" className="hero-title">
+            <h1
+              id="hero-title"
+              className="hero-title navigation-focus-target"
+              tabIndex={-1}
+            >
               <span className="hero-title-line">Vive algo</span>{" "}
               <span className="hero-title-line hero-title-outline">diferente.</span>
             </h1>

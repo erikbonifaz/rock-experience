@@ -4,7 +4,6 @@ import {
   useRef,
   useState,
   type KeyboardEvent,
-  type MouseEvent,
   type ReactNode,
 } from "react";
 
@@ -18,20 +17,6 @@ export function MobileNavigation({ children }: { children: ReactNode }) {
       setIsOpen(false);
       toggleRef.current?.focus();
     }
-  }
-
-  function handleSelection(event: MouseEvent<HTMLElement>) {
-    if (!(event.target instanceof Element)) return;
-    const link = event.target.closest<HTMLAnchorElement>("a[href]");
-    if (!link) return;
-
-    setIsOpen(false);
-    const targetId = link.hash.slice(1);
-    const destination = targetId ? document.getElementById(targetId) : null;
-
-    window.requestAnimationFrame(() => {
-      (destination ?? toggleRef.current)?.focus({ preventScroll: true });
-    });
   }
 
   return (
@@ -53,7 +38,7 @@ export function MobileNavigation({ children }: { children: ReactNode }) {
         className="mobile-navigation-panel"
         aria-label="Navegación principal móvil"
         hidden={!isOpen}
-        onClick={handleSelection}
+        onClick={() => setIsOpen(false)}
       >
         {children}
       </nav>

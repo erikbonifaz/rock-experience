@@ -49,6 +49,7 @@
 @custom-variant experiences-desktop (@media (min-width: 75rem));
 
 html {
+  scroll-behavior: smooth;
   scroll-padding-top: var(--header-height);
   scrollbar-color: var(--text-secondary) var(--background);
 }
@@ -81,6 +82,15 @@ a {
 :focus-visible {
   outline: 3px solid var(--foreground);
   outline-offset: 3px;
+}
+.navigation-focus-target {
+  width: fit-content;
+  max-width: 100%;
+  outline: none;
+}
+.navigation-focus-target:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
 }
 .page-container {
   width: calc(100% - 2 * var(--page-gutter));
@@ -205,7 +215,6 @@ a {
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: minmax(100svh, auto);
   min-height: 100svh;
-  scroll-margin-top: var(--header-height);
 }
 .hero-media {
   position: absolute;
@@ -523,6 +532,7 @@ a {
   .arrow-line { width: clamp(72px, 22vw, 104px); }
 }
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .site-header, .button-primary, .button-arrow, .arrow-line, .arrow-line::after { transition: none; }
   .hero-actions .button-primary[href]:hover .button-arrow,
   .hero-actions .button-primary[href]:focus-visible .button-arrow { transform: none; }

@@ -4,9 +4,8 @@ export function ParticipationSection() {
   return (
     <section
       id="contacto"
-      className="page-container scroll-mt-24 pb-28 pt-24 md:pb-32 md:pt-32 lg:pb-40 lg:pt-40"
+      className="page-container pb-28 pt-24 md:pb-32 md:pt-32 lg:pb-40 lg:pt-40"
       aria-labelledby="participation-title"
-      tabIndex={-1}
     >
       <div className="grid grid-cols-1 gap-y-12 md:grid-cols-12 md:gap-x-6 md:gap-y-14 lg:gap-x-8">
         <div className="md:col-span-4 lg:col-span-5">
@@ -15,7 +14,8 @@ export function ParticipationSection() {
           </p>
           <h2
             id="participation-title"
-            className="font-display text-[clamp(2.8rem,6vw,4rem)] leading-[0.9] tracking-[-0.01em] text-[#F2F0E9] lg:text-[clamp(4rem,8vw,7.5rem)]"
+            className="navigation-focus-target font-display text-[clamp(2.8rem,6vw,4rem)] leading-[0.9] tracking-[-0.01em] text-[#F2F0E9] lg:text-[clamp(4rem,8vw,7.5rem)]"
+            tabIndex={-1}
           >
             <span className="block">QUIERO</span>
             <span className="block text-[#FF2442]">PARTICIPAR</span>

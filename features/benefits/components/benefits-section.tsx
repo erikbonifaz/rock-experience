@@ -29,14 +29,14 @@ export function BenefitsSection() {
   return (
     <section
       id="beneficios"
-      className="page-container scroll-mt-24 pb-24 pt-16 md:pb-32 md:pt-20 experiences-desktop:pb-40 experiences-desktop:pt-24"
+      className="page-container pb-24 pt-16 md:pb-32 md:pt-20 experiences-desktop:pb-40 experiences-desktop:pt-24"
       aria-labelledby="beneficios-title"
-      tabIndex={-1}
     >
       <header className="mb-10 grid grid-cols-1 gap-y-6 md:mb-12 md:grid-cols-8 md:gap-x-5 experiences-desktop:mb-14 experiences-desktop:grid-cols-12 experiences-desktop:gap-x-6">
         <h2
           id="beneficios-title"
-          className="font-display text-[clamp(3rem,14vw,4.5rem)] leading-[0.9] tracking-[-0.01em] text-[#F2F0E9] md:col-span-5 md:text-[clamp(4rem,6vw,4.5rem)] experiences-desktop:col-span-7 experiences-desktop:text-[clamp(5rem,6vw,6.5rem)]"
+          className="navigation-focus-target font-display text-[clamp(3rem,14vw,4.5rem)] leading-[0.9] tracking-[-0.01em] text-[#F2F0E9] md:col-span-5 md:text-[clamp(4rem,6vw,4.5rem)] experiences-desktop:col-span-7 experiences-desktop:text-[clamp(5rem,6vw,6.5rem)]"
+          tabIndex={-1}
         >
           BENEFICIOS
         </h2>
