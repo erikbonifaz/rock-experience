@@ -2,6 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import {
   participationDefaultValues,
@@ -12,8 +13,24 @@ import {
 const controlClassName =
   "mt-2 min-h-12 w-full border bg-[#101010] px-4 py-3 font-sans text-base text-[#F2F0E9] placeholder:text-[#AAA69F] transition-colors duration-150 hover:border-[#F2F0E9]/40 focus:border-[#FF2442] focus-visible:outline-2 focus-visible:outline-[#FF2442] focus-visible:outline-offset-2";
 
-function sleep(durationMs: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, durationMs));
+type SubmissionConfirmation = {
+  success: true;
+  id: number;
+  registrationCode: string;
+};
+
+function isSubmissionConfirmation(
+  value: unknown,
+): value is SubmissionConfirmation {
+  if (typeof value !== "object" || value === null) return false;
+
+  const result = value as Record<string, unknown>;
+  return (
+    result.success === true &&
+    typeof result.id === "number" &&
+    Number.isSafeInteger(result.id) &&
+    typeof result.registrationCode === "string"
+  );
 }
 
 function FieldError({ id, message }: { id: string; message?: string }) {
@@ -25,7 +42,8 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 }
 
 export function ParticipationForm() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submission, setSubmission] = useState<SubmissionConfirmation | null>(null);
+  const [serverError, setServerError] = useState<string | null>(null);
   const confirmationRef = useRef<HTMLDivElement>(null);
 
   const {
@@ -40,22 +58,45 @@ export function ParticipationForm() {
   });
 
   useEffect(() => {
-    if (isSubmitted) {
+    if (submission) {
       confirmationRef.current?.focus();
     }
-  }, [isSubmitted]);
+  }, [submission]);
 
-  async function handleValidSubmit() {
-    await sleep(2000);
-    setIsSubmitted(true);
+  async function handleValidSubmit(data: ParticipationFormValues) {
+    setServerError(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        setServerError("No pudimos enviar tu solicitud. Inténtalo nuevamente.");
+        return;
+      }
+
+      const result: unknown = await response.json();
+      if (!isSubmissionConfirmation(result)) {
+        setServerError("No pudimos enviar tu solicitud. Inténtalo nuevamente.");
+        return;
+      }
+
+      setSubmission(result);
+    } catch {
+      setServerError("No pudimos enviar tu solicitud. Inténtalo nuevamente.");
+    }
   }
 
   function handleNewMessage() {
     reset(participationDefaultValues);
-    setIsSubmitted(false);
+    setServerError(null);
+    setSubmission(null);
   }
 
-  if (isSubmitted) {
+  if (submission) {
     return (
       <div
         ref={confirmationRef}
@@ -63,18 +104,29 @@ export function ParticipationForm() {
         role="status"
         aria-live="polite"
         tabIndex={-1}>
-        <p className="font-display text-5xl leading-none text-[#F2F0E9] md:text-6xl">
+        <h3 className="font-display text-5xl leading-none text-[#F2F0E9] md:text-6xl">
           GRACIAS.
-        </p>
+        </h3>
         <p className="mt-6 max-w-[38ch] text-base leading-relaxed text-[#AAA69F] md:text-lg">
-          Gracias. recibimos tus datos correctamente.
+          Recibimos tus datos correctamente.
         </p>
-        <button
-          className="mt-10 min-h-12 border border-[#F2F0E9]/35 px-5 py-3 font-sans text-sm font-semibold uppercase tracking-[0.08em] text-[#F2F0E9] transition-colors hover:border-[#F2F0E9]/70 focus-visible:outline-2 focus-visible:outline-[#FF2442] focus-visible:outline-offset-2"
-          type="button"
-          onClick={handleNewMessage}>
-          Enviar otro mensaje
-        </button>
+        <p className="mt-8 font-sans text-xs font-semibold uppercase tracking-[0.14em] text-[#AAA69F]">
+          Registro <span className="ml-2 font-display text-2xl tracking-normal text-[#FF2442]">#{submission.registrationCode}</span>
+        </p>
+        <div className="mt-8 flex flex-col items-start gap-4">
+          <Link
+            className="inline-flex min-h-12 items-center justify-center gap-3 bg-[#FF2442] px-6 py-3 font-sans text-sm font-semibold uppercase tracking-[0.08em] text-[#101010] transition-colors hover:bg-[#F2F0E9] focus-visible:outline-2 focus-visible:outline-[#FF2442] focus-visible:outline-offset-2"
+            href={`/demo/submissions/${submission.id}`}>
+            Ver registro de demostración
+            <span aria-hidden="true">↗</span>
+          </Link>
+          <button
+            className="min-h-11 font-sans text-sm font-semibold uppercase tracking-[0.08em] text-[#AAA69F] underline decoration-[#F2F0E9]/25 underline-offset-4 transition-colors hover:text-[#F2F0E9] focus-visible:outline-2 focus-visible:outline-[#FF2442] focus-visible:outline-offset-2"
+            type="button"
+            onClick={handleNewMessage}>
+            Enviar otro mensaje
+          </button>
+        </div>
       </div>
     );
   }
@@ -85,6 +137,11 @@ export function ParticipationForm() {
       noValidate
       onSubmit={handleSubmit(handleValidSubmit)}
       aria-busy={isSubmitting}>
+      {serverError ? (
+        <p className="md:col-span-2 font-sans text-sm leading-relaxed text-[#FF2442]" role="alert">
+          {serverError}
+        </p>
+      ) : null}
       <div>
         <label
           className="font-sans text-base text-[#F2F0E9]"
