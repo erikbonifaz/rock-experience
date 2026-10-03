@@ -456,8 +456,9 @@ a {
     border-bottom: 0;
   }
   .mobile-navigation-panel {
-    width: 100%;
-    padding-block: var(--space-4) var(--space-6);
+    width: calc(100% + var(--page-gutter) + var(--page-gutter));
+    margin-inline: calc(0px - var(--page-gutter));
+    padding: var(--space-4) var(--page-gutter) var(--space-6);
     border-top: 1px solid var(--divider);
     background: var(--background);
   }
@@ -470,7 +471,10 @@ a {
     font-weight: 500;
     letter-spacing: 0.08em;
   }
-  .mobile-navigation-panel .button-primary { margin-top: var(--space-4); }
+  .mobile-navigation-panel .button-primary {
+    width: 100%;
+    margin-top: var(--space-4);
+  }
   .hero {
     grid-template-rows: auto auto;
     min-height: auto;
