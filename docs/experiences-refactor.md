@@ -6,7 +6,7 @@ La revisión prioriza la legibilidad y la separación de responsabilidades. La �
 
 - La cuadrícula dependía de tres parejas fijas de IDs. Los registros adicionales o con otros identificadores se omitían. Ahora recorre toda la respuesta, conserva su orden y repite el patrón visual de tarjetas anchas y estrechas.
 - La tarjeta exportaba el modelo de datos y toda la configuración visual. Ahora los contratos compartidos pertenecen a `features/experiences/types.ts` y la presentación a `features/experiences/config.ts`.
-- La sección reunía validación, peticiones, reintentos, placeholders y tarjetas. Cada responsabilidad tiene un lugar explícito y el contenido elige sus estados con un `switch`.
+- La sección reunía validación, peticiones, reintentos, placeholders y tarjetas. Cada responsabilidad tiene un lugar explícito y el contenido resuelve carga, error y lista vacía con condiciones y retornos tempranos; el catálogo queda en el retorno final.
 - El reintento incrementaba un contador para activar un efecto. Ahora inicia la petición desde el manejador del evento; el efecto se ocupa de la carga inicial y la limpieza al desmontar.
 - La validación aceptaba IDs no enteros, duplicados y campos de texto vacíos. Ahora rechaza esas respuestas antes de renderizar tarjetas.
 - Los títulos usaban cada palabra como clave de React. Ahora la clave incluye su posición para admitir palabras repetidas.

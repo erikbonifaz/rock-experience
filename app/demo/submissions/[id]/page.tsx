@@ -92,7 +92,8 @@ export default async function SubmissionDemoPage({
 
         <section className="py-12 md:py-16" aria-labelledby="submission-title">
           <p className="font-sans text-xs font-semibold uppercase tracking-[0.14em] text-[#AAA69F]">
-            <span className="text-[#FF2442]">{"//"}</span> Registro de demostración
+            <span className="text-[#FF2442]">{"//"}</span> Registro de
+            demostración
           </p>
           <h1
             className="mt-6 font-display text-[clamp(3.5rem,12vw,7rem)] leading-[0.88] tracking-[-0.02em] text-[#F2F0E9]"
@@ -155,7 +156,8 @@ export default async function SubmissionDemoPage({
           </dl>
 
           <p className="mt-8 max-w-[58ch] font-sans text-sm leading-relaxed text-[#AAA69F]">
-            Este registro fue almacenado correctamente en PostgreSQL mediante Supabase.
+            Este registro fue almacenado correctamente en PostgreSQL mediante
+            Supabase.
           </p>
           <Link
             className="mt-10 inline-flex min-h-12 items-center gap-3 border border-[#FF2442] px-5 py-3 font-sans text-sm font-semibold uppercase tracking-[0.08em] text-[#FF2442] transition-colors hover:bg-[#FF2442] hover:text-[#101010] focus-visible:outline-2 focus-visible:outline-[#FF2442] focus-visible:outline-offset-3"
