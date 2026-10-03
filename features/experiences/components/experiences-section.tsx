@@ -4,10 +4,10 @@ export function ExperiencesSection() {
   return (
     <section
       id="experiencias"
-      className="page-container pb-24 pt-16 md:pb-32 md:pt-16"
+      className="page-container section-space"
       aria-labelledby="experiencias-title"
     >
-      <header className="mb-8 grid grid-cols-1 gap-y-5 md:mb-10 md:grid-cols-8 md:gap-x-5 experiences-desktop:mb-8 experiences-desktop:grid-cols-12 experiences-desktop:gap-x-6">
+      <header className="mb-10 grid grid-cols-1 gap-y-5 md:mb-12 md:grid-cols-8 md:gap-x-5 experiences-desktop:mb-14 experiences-desktop:grid-cols-12 experiences-desktop:gap-x-6">
         <h2
           id="experiencias-title"
           className="navigation-focus-target font-display text-[clamp(3rem,7vw,4.5rem)] leading-[0.9] tracking-[-0.01em] text-[#F2F0E9] md:col-span-5 md:text-[clamp(4rem,8vw,6rem)] experiences-desktop:col-span-8 experiences-desktop:text-[clamp(5rem,7vw,7rem)]"

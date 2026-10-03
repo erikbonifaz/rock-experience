@@ -29,7 +29,7 @@ export function BenefitsSection() {
   return (
     <section
       id="beneficios"
-      className="page-container pb-24 pt-16 md:pb-32 md:pt-20 experiences-desktop:pb-40 experiences-desktop:pt-24"
+      className="page-container section-space"
       aria-labelledby="beneficios-title"
     >
       <header className="mb-10 grid grid-cols-1 gap-y-6 md:mb-12 md:grid-cols-8 md:gap-x-5 experiences-desktop:mb-14 experiences-desktop:grid-cols-12 experiences-desktop:gap-x-6">

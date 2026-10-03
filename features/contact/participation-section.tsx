@@ -4,7 +4,7 @@ export function ParticipationSection() {
   return (
     <section
       id="contacto"
-      className="page-container pb-28 pt-24 md:pb-32 md:pt-32 lg:pb-40 lg:pt-40"
+      className="page-container section-space"
       aria-labelledby="participation-title"
     >
       <div className="grid grid-cols-1 gap-y-12 md:grid-cols-12 md:gap-x-6 md:gap-y-14 lg:gap-x-8">

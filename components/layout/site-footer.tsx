@@ -10,7 +10,7 @@ export function SiteFooter() {
           "radial-gradient(ellipse 80% 55% at 85% 110%, rgb(255 36 66 / 0.16), transparent 72%)",
       }}
     >
-      <div className="page-container relative z-10 flex min-h-[760px] flex-col pb-6 pt-28 md:min-h-[660px] md:pt-32 lg:min-h-[720px] lg:pt-40">
+      <div className="page-container relative z-10 flex min-h-[760px] flex-col pb-6 section-space-top md:min-h-[660px] lg:min-h-[720px]">
         <div className="relative h-px w-full bg-[#F2F0E9]/20" aria-hidden="true">
           <span className="absolute left-0 top-1/2 h-7 w-px -translate-y-1/2 bg-[#F2F0E9]/35" />
           <span className="absolute -left-3 top-1/2 h-px w-6 -translate-y-1/2 bg-[#F2F0E9]/35" />
