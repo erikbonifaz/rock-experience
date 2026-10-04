@@ -1,0 +1,13 @@
+{
+  "prompt": "Generate one production 9-slice website surface asset, using the supplied reference ONLY for the worn black credential material. A single flat square black laminated festival credential card viewed perfectly front-on, almost full bleed with just 1% transparent outside margin. Card has slightly rounded battered corners and a thin irregular pale gray worn edge; fine sparse scratches and cracks concentrated within the outermost 6% perimeter, especially corners. Center 85% is quiet near-black matte material with only faint very fine natural grain, no large cracks or bright marks. NO strap, NO ring, NO cream strip, NO text, NO symbols, NO QR, NO fields or UI, NO perspective, NO cast shadow outside card. Transparent exterior real alpha. The perimeter must stay thin and understated, matching the black panel in the reference, rather than bright white picture framing. This will be stretched using CSS border-image 9-slicing to frame a live HTML form.",
+  "createdAt": "2026-10-04T08:44:54.145Z",
+  "origin": "Asset original generado para la referencia aprobada por el usuario",
+  "tool": "image_gen.imagegen",
+  "date": "2026-10-04",
+  "reference": "C:/Users/ErikB/AppData/Local/Temp/codex-clipboard-09d8a314-fad0-402e-82e9-e4bc6c78c5ae.png",
+  "optimization": {
+    "format": "webp",
+    "bytes": 77016,
+    "trimTransparentMargins": false
+  }
+}

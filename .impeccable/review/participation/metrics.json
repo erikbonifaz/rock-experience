@@ -1,0 +1,93 @@
+{
+  "desktop": {
+    "form": {
+      "bottom": 988.15625,
+      "height": 556.5625,
+      "left": 560.328125,
+      "right": 1178.984375,
+      "top": 431.59375,
+      "width": 618.65625,
+      "x": 560.328125,
+      "y": 431.59375
+    },
+    "heading": {
+      "bottom": 459.984375,
+      "height": 176.25,
+      "left": 56,
+      "right": 406.9375,
+      "top": 283.734375,
+      "width": 350.9375,
+      "x": 56,
+      "y": 283.734375
+    },
+    "height": 1100,
+    "inputBorder": "oklab(0.954743 -0.000550836 0.00954604 / 0.4)",
+    "localOverflow": [],
+    "overflow": false,
+    "stripSource": "url(\"http://127.0.0.1:3101/images/textures/participation-strip-b3489fbd.webp\")",
+    "width": 1440
+  },
+  "tablet": {
+    "columns": "292.5px 292.5px",
+    "headerPadding": "24px",
+    "height": 1100,
+    "overflow": false,
+    "width": 768
+  },
+  "mobile": {
+    "formColumns": "279px",
+    "headerPadding": "80px",
+    "height": 1100,
+    "inputBorder": "oklab(0.954743 -0.000550836 0.00954604 / 0.4)",
+    "overflow": false,
+    "width": 390
+  },
+  "minimumBefore": {
+    "bodyWidth": 305,
+    "clientHeight": 1100,
+    "clientWidth": 305,
+    "formHeight": 867.875,
+    "height": 1100,
+    "overflow": false,
+    "scrollWidth": 305,
+    "width": 320
+  },
+  "minimumAfter": {
+    "clientHeight": 1100,
+    "clientWidth": 305,
+    "formHeight": 967.875,
+    "height": 1100,
+    "overflow": false,
+    "scrollWidth": 305,
+    "width": 320
+  },
+  "overflowCriterion": "scrollWidth > clientWidth; widths include a 15px vertical scrollbar",
+  "captureTransformation": "Native JPEG scaled proportionally: width innerWidth minus 15px (1425,753,375,305)",
+  "functionalFixtures": {
+    "loading": true,
+    "http503": true,
+    "invalidJson": true,
+    "confirmationFocus": true,
+    "reset": true
+  },
+  "globalOverflowFinal": [
+    {
+      "clientWidth": 375,
+      "innerWidth": 390,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "clientWidth": 753,
+      "innerWidth": 768,
+      "overflow": false,
+      "scrollWidth": 753
+    },
+    {
+      "clientWidth": 1425,
+      "innerWidth": 1440,
+      "overflow": false,
+      "scrollWidth": 1425
+    }
+  ]
+}

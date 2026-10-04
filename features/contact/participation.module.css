@@ -1,0 +1,42 @@
+.credentialBody {
+  border: 24px solid transparent;
+  border-image: url("/images/textures/participation-frame-7bc13a3a.webp") 15% fill / 24px stretch;
+  padding: 4px;
+}
+
+.registrationStrip::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border: 12px solid transparent;
+  border-image: url("/images/textures/participation-strip-b3489fbd.webp") 12% fill / 12px stretch;
+  content: "";
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .credentialBody {
+    border-width: 28px;
+    border-image-width: 28px;
+    padding: 12px;
+  }
+}
+
+@media (forced-colors: active) {
+  .credentialBody {
+    border: 1px solid CanvasText;
+    border-image: none;
+    padding: 24px;
+    background: Canvas;
+  }
+
+  .registrationStrip {
+    border: 1px solid CanvasText;
+    background: Canvas;
+    color: CanvasText;
+  }
+
+  .registrationStrip::before {
+    display: none;
+  }
+}

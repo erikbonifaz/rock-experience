@@ -7,7 +7,7 @@ export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative grid grid-cols-1 min-[1100px]:min-h-svh"
+      className="relative grid grid-cols-1 min-[1100px]:min-h-[110svh]"
       aria-labelledby="hero-title"
     >
       <div className="relative aspect-[7/6] overflow-hidden min-[640px]:aspect-auto min-[640px]:h-[min(38vw,42svh,400px)] min-[1100px]:absolute min-[1100px]:inset-0 min-[1100px]:h-full">
@@ -26,7 +26,7 @@ export function HeroSection() {
       </div>
 
       <div
-        className={`${styles.content} page-container relative z-3 pb-12 pt-6 min-[1100px]:grid min-[1100px]:content-center`}
+        className={`${styles.content} page-container relative z-3 pt-10 pb-20 min-[1100px]:grid min-[1100px]:content-center`}
       >
         <h1
           id="hero-title"

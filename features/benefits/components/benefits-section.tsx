@@ -6,7 +6,7 @@ export function BenefitsSection() {
   return (
     <section
       id="beneficios"
-      className="page-container border-b border-foreground/18 pt-12 pb-14 md:pt-16 md:pb-20 lg:pt-10"
+      className="page-container border-b border-foreground/18 py-18 min-[640px]:py-24 min-[1100px]:py-40"
       aria-labelledby="beneficios-title"
     >
       <h2

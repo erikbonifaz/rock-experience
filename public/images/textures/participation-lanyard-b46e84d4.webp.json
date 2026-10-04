@@ -1,0 +1,13 @@
+{
+  "prompt": "Generate one production website asset using the supplied image ONLY as style and subject reference. Isolate the black woven concert credential lanyard at the top of the reference: a short vertical black nylon strap descending from the top edge into two linked, dark polished silver metal split rings, realistic subtle highlights and textile detail. Straight-on photographic product view, centered, vertically elongated composition, rings about 55% of total width. Entire strap and both rings visible except strap naturally continues beyond top. Transparent background with real alpha and tightly bounded subject, NO credential card, NO text, NO floor, NO background scene, NO drop shadow painted outside the object. Black and gunmetal palette, restrained lighting so it belongs on a black rock campaign page.",
+  "createdAt": "2026-10-04T08:44:54.033Z",
+  "origin": "Asset original generado para la referencia aprobada por el usuario",
+  "tool": "image_gen.imagegen",
+  "date": "2026-10-04",
+  "reference": "C:/Users/ErikB/AppData/Local/Temp/codex-clipboard-09d8a314-fad0-402e-82e9-e4bc6c78c5ae.png",
+  "optimization": {
+    "format": "webp",
+    "bytes": 13088,
+    "trimTransparentMargins": false
+  }
+}

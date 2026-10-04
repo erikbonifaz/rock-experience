@@ -1,0 +1,13 @@
+{
+  "prompt": "Generate one production transparent-background physical material asset using the supplied image as a reference for the cream right-hand registration strip ONLY. One isolated tall narrow strip of aged ivory paper, long side vertical, physical aspect ratio about 1:5, straight front-on photograph, centered in a portrait canvas. Make the cream strip occupy the full canvas height with narrow transparent outside margins; if canvas cannot be 1:5 leave transparent side margins, which will be trimmed later. Fine warm cream fibers, faint scattered brown speckles, tiny surface creases, subtly nicked ragged edges, a little corner scuffing. The central 90% is light quiet ivory, consistently readable for black typography and QR code. NO red stains, NO black painted areas, NO text, numbers, UI, holes, barcode, QR, badges, rings or straps. The object should be worn physical paper and have a real irregular alpha outline, not a rectangular vignette, repeating pattern, fuzzy motion blur or exaggerated torn strips. Transparent background with real alpha outside, no shadow baked beyond the outline.",
+  "createdAt": "2026-10-04T08:44:54.318Z",
+  "origin": "Asset original generado para la referencia aprobada por el usuario",
+  "tool": "image_gen.imagegen",
+  "date": "2026-10-04",
+  "reference": "C:/Users/ErikB/AppData/Local/Temp/codex-clipboard-09d8a314-fad0-402e-82e9-e4bc6c78c5ae.png",
+  "optimization": {
+    "format": "webp",
+    "bytes": 70770,
+    "trimTransparentMargins": true
+  }
+}

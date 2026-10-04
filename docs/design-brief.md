@@ -112,6 +112,12 @@ Base de 4 px, con ritmos principales de 8 px. Escala: **4, 8, 12, 16, 20, 24, 32
 
 Usar más espacio antes de un encabezado que entre ese encabezado y su contenido. En teléfono, conservar pausas perceptibles sin trasladar los vacíos laterales de escritorio.
 
+### Ajuste de altura de la página de inicio
+
+El 4 de octubre de 2026 se amplió el espacio vertical por petición del usuario. Experiencias, Beneficios y Contacto utilizan Tailwind con 72 px de padding arriba y abajo en móvil, 96 px desde 640 px y 160 px desde 1100 px. La introducción de la prueba conserva un ritmo más breve con 64, 80 y 112 px, respectivamente. Los puntos de corte de estas utilidades usan la misma unidad para que Tailwind mantenga su orden.
+
+El Hero tiene una altura mínima de `110svh` en escritorio y más espacio alrededor del contenido en móvil y tablet. Las secciones crecen con su contenido, sin alturas fijas ni cambios en los tamaños de tarjetas, campos o tipografía. El ajuste se limita a la página de inicio; las rutas de documentación y el pie conservan sus medidas.
+
 ## 7. Retícula y contenedores
 
 | Ancho de pantalla | Márgenes laterales | Ancho útil | Columnas | Separación de columnas |

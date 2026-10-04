@@ -4,7 +4,7 @@ export function ProjectIntroduction() {
   return (
     <section
       id="prueba-tecnica"
-      className="border-y border-foreground/15 bg-foreground/[0.035] py-10 md:py-12 min-[1100px]:py-16"
+      className="border-y border-foreground/15 bg-foreground/[0.035] py-16 min-[640px]:py-20 min-[1100px]:py-28"
       aria-labelledby="prueba-tecnica-title"
     >
       <div className="page-container grid gap-6 lg:grid-cols-12 lg:gap-x-10">

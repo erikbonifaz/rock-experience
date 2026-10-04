@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="80.60000000000002" height="44.0" preserveAspectRatio="xMinYMin meet" viewBox="0 0 80 44" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="80.60000000000002" height="44.0"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-44)" style="clip-path: url(#clip)">
+		<g transform="">
+			<g transform="">
+				<rect x="0" y="0" width="80.60000000000002" height="44" style="stroke: none; stroke-linecap: butt; stroke-width: 0.0001; fill: none; fill-rule: evenodd;"/>
+				<rect x="0" y="0.0" width="1" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="3.2" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="5.2" y="0.0" width="2.2" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="8.4" y="0.0" width="2.200000000000001" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="11.600000000000001" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="13.600000000000001" y="0.0" width="2.1999999999999993" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="16.8" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="18.8" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="20.8" y="0.0" width="2.1999999999999993" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="25.2" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="27.2" y="0.0" width="2.1999999999999993" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="30.4" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="32.4" y="0.0" width="2.200000000000003" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="35.6" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="38.800000000000004" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="40.800000000000004" y="0.0" width="2.200000000000003" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="44.00000000000001" y="0.0" width="2.200000000000003" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="47.20000000000001" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="50.40000000000001" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="52.40000000000001" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="54.40000000000001" y="0.0" width="2.200000000000003" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="57.600000000000016" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="59.600000000000016" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="61.600000000000016" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="64.80000000000001" y="0.0" width="2.200000000000003" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="68.00000000000001" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="71.20000000000002" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="73.20000000000002" y="0.0" width="2.200000000000003" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="76.40000000000002" y="0.0" width="2.200000000000003" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+				<rect x="79.60000000000002" y="0.0" width="1.0" height="44.0" style="stroke: none; stroke-linecap: butt; stroke-width: 0; fill: rgb(6%,6%,6%); fill-rule: evenodd;"/>
+			</g>
+		</g>
+	</g>
+</svg>

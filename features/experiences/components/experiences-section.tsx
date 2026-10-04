@@ -4,7 +4,7 @@ export function ExperiencesSection() {
   return (
     <section
       id="experiencias"
-      className="page-container section-space"
+      className="page-container py-18 min-[640px]:py-24 min-[1100px]:py-40"
       aria-labelledby="experiencias-title"
     >
       <header className="mb-10 grid grid-cols-1 gap-y-5 md:mb-12 md:grid-cols-8 md:gap-x-5 experiences-desktop:mb-14 experiences-desktop:grid-cols-12 experiences-desktop:gap-x-6">
