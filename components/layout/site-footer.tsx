@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { navigationLinks } from "./navigation-items";
+import { navigationLinks } from "@/data/navigation";
 
 export function SiteFooter() {
   return (

@@ -1,11 +1,16 @@
 import type { StaticImageData } from "next/image";
+import type { z } from "zod";
+import type { experienceSchema } from "./schema";
 
-export interface Experience {
-  id: number;
-  title: string;
-  category: string;
-  description: string;
-  image: string;
+export type Experience = z.infer<typeof experienceSchema>;
+
+export type ExperiencesState =
+  | { status: "loading" }
+  | { status: "error" }
+  | { status: "success"; experiences: Experience[] };
+
+export interface ExperiencesErrorProps {
+  onRetry: () => void;
 }
 
 export interface ExperiencePresentation {

@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { navigationLinks } from "@/data/navigation";
+import type { NavigationHref } from "@/types/navigation";
 import { MobileNavigation } from "./mobile-navigation";
-import { NavigationItems, navigationLinks, type NavigationHref } from "./navigation-items";
+import { NavigationItems } from "./navigation-items";
 
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,9 +28,6 @@ export function SiteHeader() {
     const headerHeight = document
       .querySelector(".site-header")
       ?.getBoundingClientRect().height ?? 80;
-    const hrefById = new Map(
-      sections.map(({ element, href }) => [element.id, href] as const),
-    );
     const observer = new IntersectionObserver(
       (entries) => {
         const activeEntry = entries
@@ -37,8 +36,10 @@ export function SiteHeader() {
 
         if (!activeEntry) return;
 
-        const href = hrefById.get(activeEntry.target.id);
-        if (href) setActiveHref(href);
+        const activeSection = sections.find(
+          ({ element }) => element === activeEntry.target,
+        );
+        if (activeSection) setActiveHref(activeSection.href);
       },
       {
         rootMargin: `-${Math.ceil(headerHeight)}px 0px -70% 0px`,

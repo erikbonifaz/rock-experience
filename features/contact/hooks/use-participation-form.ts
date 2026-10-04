@@ -1,15 +1,14 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import {
   participationDefaultValues,
   participationSchema,
-  type ParticipationFormValues,
+  submissionConfirmationSchema,
 } from "../schema";
-import type { SubmissionConfirmation } from "../types";
-import { isSubmissionConfirmation } from "../utils/is-submission-confirmation";
+import type { ParticipationFormValues, SubmissionConfirmation } from "../types";
 
 const submissionErrorMessage =
   "No pudimos enviar tu solicitud. Inténtalo nuevamente.";
@@ -17,7 +16,6 @@ const submissionErrorMessage =
 export function useParticipationForm() {
   const [submission, setSubmission] = useState<SubmissionConfirmation | null>(null);
   const [serverError, setServerError] = useState<string | null>(null);
-  const confirmationRef = useRef<HTMLDivElement>(null);
   const {
     register,
     handleSubmit,
@@ -28,10 +26,6 @@ export function useParticipationForm() {
     mode: "onBlur",
     defaultValues: participationDefaultValues,
   });
-
-  useEffect(() => {
-    if (submission) confirmationRef.current?.focus();
-  }, [submission]);
 
   async function handleValidSubmit(data: ParticipationFormValues) {
     setServerError(null);
@@ -49,12 +43,8 @@ export function useParticipationForm() {
       }
 
       const result: unknown = await response.json();
-      if (!isSubmissionConfirmation(result)) {
-        setServerError(submissionErrorMessage);
-        return;
-      }
-
-      setSubmission(result);
+      const confirmation = submissionConfirmationSchema.parse(result);
+      setSubmission(confirmation);
     } catch {
       setServerError(submissionErrorMessage);
     }
@@ -73,7 +63,6 @@ export function useParticipationForm() {
     onSubmit: handleSubmit(handleValidSubmit),
     submission,
     serverError,
-    confirmationRef,
     handleNewMessage,
   };
 }

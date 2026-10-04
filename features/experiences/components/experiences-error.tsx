@@ -1,6 +1,4 @@
-interface ExperiencesErrorProps {
-  onRetry: () => void;
-}
+import type { ExperiencesErrorProps } from "../types";
 
 export function ExperiencesError({ onRetry }: ExperiencesErrorProps) {
   return (

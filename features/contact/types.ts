@@ -1,10 +1,9 @@
-import type { RefObject } from "react";
+import type { z } from "zod";
+import type { participationSchema, submissionConfirmationSchema } from "./schema";
 
-export interface SubmissionConfirmation {
-  success: true;
-  id: number;
-  registrationCode: string;
-}
+export type ParticipationFormValues = z.infer<typeof participationSchema>;
+
+export type SubmissionConfirmation = z.infer<typeof submissionConfirmationSchema>;
 
 export interface FieldErrorProps {
   id: string;
@@ -13,6 +12,5 @@ export interface FieldErrorProps {
 
 export interface ParticipationConfirmationProps {
   submission: SubmissionConfirmation;
-  confirmationRef: RefObject<HTMLDivElement | null>;
   onNewMessage: () => void;
 }

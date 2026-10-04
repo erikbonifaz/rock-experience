@@ -45,9 +45,11 @@ Después de un envío correcto, `/demo/submissions/[id]` permite consultar ese r
 ### Comandos de comprobación y producción
 
 ```bash
-pnpm lint   # Analizar el código con ESLint
-pnpm build  # Compilar para producción y comprobar los tipos
-pnpm start  # Ejecutar la compilación de producción
+pnpm lint       # Analizar el código con ESLint
+pnpm typecheck  # Comprobar los tipos sin compilar
+pnpm test       # Probar los contratos de datos y las validaciones
+pnpm build      # Compilar para producción y comprobar los tipos
+pnpm start      # Ejecutar la compilación de producción
 ```
 
 `pnpm start` requiere haber ejecutado `pnpm build`. Las fuentes se cargan mediante `next/font/google`; la compilación puede necesitar internet para descargarlas.
@@ -73,13 +75,17 @@ pnpm start  # Ejecutar la compilación de producción
 | `features/experiences/` | Componentes, hook de carga, contratos compartidos y configuración visual de Experiencias. |
 | `features/contact/` | Schema Zod, sección y formulario de participación. |
 | `features/benefits/` | Contenido y sección de Beneficios. |
-| `features/project/components/` | Documentación para el evaluador y sus bloques de decisiones y uso de IA. |
-| `lib/supabase/server.ts` | Cliente de Supabase protegido con `server-only`. |
-| `data/experiences.json` | Catálogo estático que devuelve la API local. |
+| `features/project/` | Contenido y componentes de documentación para el evaluador. |
+| `lib/supabase/` | Cliente protegido con `server-only` y contratos de la base de datos. |
+| `data/` | Catálogo JSON y enlaces de navegación compartidos. |
+| `types/navigation.ts` | Contratos de la navegación, separados de sus componentes. |
+| `tests/` | Pruebas de validación con el runner de Node.js, sin otra dependencia. |
 | `supabase/contact_submissions.sql` | Tabla de solicitudes, RLS y permisos. |
 | `public/` y `docs/` | Assets, diagrama exportado, su fuente y documentación técnica. |
 
-Los componentes de una funcionalidad viven en su carpeta `components/`; los hooks, en `hooks/`, fuera de la carpeta de componentes. Los tipos compartidos se reúnen en `types.ts`. Las props de un único consumidor permanecen junto al componente, sin un archivo por interfaz.
+Las funcionalidades reúnen su UI y lógica relacionada. Los hooks viven en `hooks/`, fuera de la carpeta de componentes, y los contratos se reúnen en `types.ts`, sin un archivo por interfaz. Contacto conserva sus componentes directamente en la raíz de su funcionalidad. Los schemas contienen las reglas de validación; los tipos del catálogo y del formulario se infieren de ellos para evitar dos contratos que puedan divergir.
+
+La [auditoría de simplicidad y guía de entrevista](docs/auditoria-y-entrevista.md) explica el refactor, qué se conservó y cómo recorrer el proyecto antes de la evaluación.
 
 `AGENTS.md` registra las convenciones del proyecto; `.agents/` y `skills-lock.json` contienen las guías de React y Next.js utilizadas. `.impeccable/` conserva las preferencias y los contratos del proceso de diseño.
 

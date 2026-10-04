@@ -7,7 +7,7 @@ La revisión prioriza la legibilidad y la separación de responsabilidades. La r
 - La cuadrícula dependía de tres parejas fijas de IDs. Los registros adicionales o con otros identificadores se omitían. Ahora recorre toda la respuesta y conserva su orden. La extensión actual sustituye el patrón posterior de tarjetas anchas y estrechas por columnas iguales.
 - La tarjeta exportaba el modelo de datos y toda la configuración visual. Ahora los contratos compartidos pertenecen a `features/experiences/types.ts` y la presentación a `features/experiences/config.ts`.
 - La sección reunía validación, peticiones, reintentos, placeholders y tarjetas. Cada responsabilidad tiene un lugar explícito y el contenido resuelve carga, error y lista vacía con condiciones y retornos tempranos; el catálogo queda en el retorno final.
-- El reintento incrementaba un contador para activar un efecto. Ahora inicia la petición desde el manejador del evento; el efecto se ocupa de la carga inicial y la limpieza al desmontar.
+- El refactor anterior iniciaba el reintento desde un callback y compartía el controlador mediante una referencia. La auditoría de simplicidad volvió a un contador de reintentos: un único efecto concentra la petición y su cleanup, sin `useCallback` ni `useRef`. El evento pone la vista en carga y activa una nueva ejecución del efecto.
 - La validación aceptaba IDs no enteros, duplicados y campos de texto vacíos. Ahora rechaza esas respuestas antes de renderizar tarjetas.
 - Los títulos usaban cada palabra como clave de React. Ahora la clave incluye su posición para admitir palabras repetidas.
 - El fallo de una imagen quedaba asociado a toda la tarjeta. Ahora se mantiene dentro del componente de imagen y cambiar su URL reinicia ese estado mediante una clave.
@@ -18,7 +18,8 @@ La revisión prioriza la legibilidad y la separación de responsabilidades. La r
 | --- | --- |
 | `app/` | Rutas, API, layout, composición y estilos globales de Next.js |
 | `components/layout/` | Encabezado y navegación compartidos por la página |
-| `features/experiences/types.ts` | Datos, presentación y props de tarjeta, imagen, skeleton y vista editorial |
+| `features/experiences/types.ts` | Datos, estado de carga, presentación y props de las vistas |
+| `features/experiences/schema.ts` | Validación Zod de los campos e identificadores únicos del catálogo |
 | `features/experiences/config.ts` | Cuadrícula de inicio, tamaños de imagen, alturas mínimas, inclinaciones y tono |
 | `features/experiences/experiences.module.css` | Papel raster, máscara del sello y colores forzados |
 | `features/experiences/hooks/use-experiences.ts` | Petición, validación, estado, carga inicial, cancelación y reintento |
@@ -36,9 +37,11 @@ La revisión prioriza la legibilidad y la separación de responsabilidades. La r
 
 ## Decisiones
 
-Experiencias se organiza fuera de `app/`, en `features/experiences/`. Actualmente contiene dieciséis archivos, once de ellos componentes; la cifra de diez correspondía al refactor anterior. Los contratos de tarjeta, imagen y skeleton están en `types.ts`, aunque tengan un único consumidor; la afirmación anterior sobre declarar toda prop privada dentro de su componente ya no describe estos contratos. El error conserva su interfaz local anterior y el estado del hook vive junto a él. No se mantiene un archivo por cada interfaz.
+Experiencias se organiza fuera de `app/`, en `features/experiences/`. Contiene once componentes, con contratos y estados en `types.ts`, un schema, configuración, contenido editorial y un hook. Los tipos permanecen fuera de los componentes; no se mantiene un archivo por interfaz. El tipo `Experience` se infiere del schema para que la validación y TypeScript compartan un contrato.
 
-La petición y la validación tienen un único consumidor: `useExperiences`. Se colocan junto al hook y se elimina `services/`. La configuración visual se reúne en `config.ts`, sin una carpeta adicional. No se crea `lib/` porque todavía no hay helpers no visuales realmente compartidos. La API sigue devolviendo directamente el JSON estático desde su ruta de Next.js.
+La petición vive dentro de `useExperiences`, con `async/await` y retornos explícitos. Las reglas se declaran en `schema.ts`, reutilizado por las pruebas. La configuración visual se reúne en `config.ts`, sin una carpeta adicional. No se añaden services ni otra capa de acceso a datos. La API sigue devolviendo directamente el JSON estático desde su ruta de Next.js.
+
+La [auditoría de simplicidad](auditoria-y-entrevista.md) documenta esta actualización y sus comprobaciones. Las verificaciones históricas de los apartados siguientes corresponden a las revisiones anteriores.
 
 Los siete componentes de inicio conservan sus responsabilidades. `ExperienceImage` gestiona el fallo de la imagen, el acento visual y el reinicio del estado al cambiar la URL. `ExperiencesContent` maneja carga, error, vacío y éxito; mantenerlo separado permite conservar el encabezado estático en el servidor. La carga, su placeholder, el error y la tarjeta tienen vistas claras. El mensaje vacío permanece dentro del contenido. El catálogo general utiliza otros cuatro componentes y su propio contenido editorial; no consume las tarjetas rediseñadas.
 

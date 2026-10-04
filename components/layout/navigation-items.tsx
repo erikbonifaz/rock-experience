@@ -1,18 +1,6 @@
 import type { MouseEvent } from "react";
-
-export const navigationLinks = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Experiencias", href: "#experiencias" },
-  { label: "Beneficios", href: "#beneficios" },
-  { label: "Contacto", href: "#contacto" },
-] as const;
-
-export type NavigationHref = (typeof navigationLinks)[number]["href"];
-
-interface NavigationItemsProps {
-  activeHref: NavigationHref;
-  onNavigate: (href: NavigationHref) => void;
-}
+import { navigationLinks } from "@/data/navigation";
+import type { NavigationHref, NavigationItemsProps } from "@/types/navigation";
 
 export function NavigationItems({ activeHref, onNavigate }: NavigationItemsProps) {
   function handleNavigation(

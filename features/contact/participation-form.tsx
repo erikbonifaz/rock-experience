@@ -15,7 +15,6 @@ export function ParticipationForm() {
     onSubmit,
     submission,
     serverError,
-    confirmationRef,
     handleNewMessage,
   } = useParticipationForm();
 
@@ -23,7 +22,6 @@ export function ParticipationForm() {
     return (
       <ParticipationConfirmation
         submission={submission}
-        confirmationRef={confirmationRef}
         onNewMessage={handleNewMessage}
       />
     );

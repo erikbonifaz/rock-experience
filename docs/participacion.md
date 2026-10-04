@@ -16,11 +16,10 @@ El cordón y los aros son ornamentación fotográfica; la credencial permanece r
 | [participation-credential.tsx](../features/contact/participation-credential.tsx) | Marco, cordón, identidad y composición de la acreditación |
 | [registration-strip.tsx](../features/contact/registration-strip.tsx) | Franja de registro y enlace a la arquitectura |
 | [participation-form.tsx](../features/contact/participation-form.tsx) | Controles y presentación de los estados del formulario |
-| [hooks/use-participation-form.ts](../features/contact/hooks/use-participation-form.ts) | Validación, petición, confirmación, foco y reinicio |
-| [schema.ts](../features/contact/schema.ts) | Esquema Zod y valores iniciales, compartidos con la API |
+| [hooks/use-participation-form.ts](../features/contact/hooks/use-participation-form.ts) | Validación del formulario, petición, estado de confirmación y reinicio |
+| [schema.ts](../features/contact/schema.ts) | Reglas Zod del formulario, contrato de confirmación y valores iniciales |
 | [types.ts](../features/contact/types.ts) | Contratos de respuesta y propiedades |
-| [utils/is-submission-confirmation.ts](../features/contact/utils/is-submission-confirmation.ts) | Comprobación de la respuesta antes de mostrarla |
-| [field-error.tsx](../features/contact/field-error.tsx) y [participation-confirmation.tsx](../features/contact/participation-confirmation.tsx) | Mensajes asociados y confirmación accesible |
+| [field-error.tsx](../features/contact/field-error.tsx) y [participation-confirmation.tsx](../features/contact/participation-confirmation.tsx) | Mensajes asociados y confirmación accesible, que gestiona su propio foco |
 | [participation.module.css](../features/contact/participation.module.css) | Materiales y alternativa para colores forzados |
 
 La interacción reutiliza React Hook Form, Zod y su resolver existentes; este rediseño no añade paquetes al frontend. La composición estática permanece fuera del componente cliente del formulario.
@@ -32,6 +31,8 @@ Nombre requiere al menos dos caracteres; correo, formato válido; teléfono, ent
 Cada control tiene etiqueta, tipo y autocompletado apropiados, foco visible y error asociado mediante `aria-describedby`; `aria-invalid` comunica el estado. Un envío inválido enfoca el primer campo con error. Durante el POST a `/api/contact`, el formulario expone `aria-busy` y el botón muestra «Enviando...» y queda deshabilitado.
 
 Una respuesta HTTP fallida, JSON ilegible o una confirmación con estructura incorrecta muestra un mensaje de recuperación y conserva los valores. Una confirmación válida anuncia el resultado, recibe foco y muestra el código devuelto por la API y un enlace a `/demo/submissions/<id>`. «Enviar otro mensaje» limpia los cinco campos, el consentimiento y los errores. La aplicación conserva su API de persistencia existente; la simulación descrita más abajo pertenece exclusivamente a las pruebas locales.
+
+La auditoría de simplicidad sustituyó el validador manual por `submissionConfirmationSchema`: exige `success: true`, un ID entero positivo y seguro, y un código con texto. La vista de confirmación concentra su referencia y efecto de foco; el hook deja de transportar esa referencia entre componentes. Las verificaciones del refactor están en [auditoria-y-entrevista.md](auditoria-y-entrevista.md).
 
 Las imágenes, el `01` y el código de barras son decorativos y no se anuncian como datos del registro. «Cómo funciona» es un enlace real a `/arquitectura`; puede utilizarse sin escanear el QR. El módulo CSS proporciona una alternativa con colores del sistema y sin textura en `forced-colors`. El indicador de envío respeta movimiento reducido; no se añadió animación ornamental.
 

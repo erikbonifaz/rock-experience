@@ -4,10 +4,10 @@ import {
   useRef,
   useState,
   type KeyboardEvent,
-  type ReactNode,
 } from "react";
+import type { MobileNavigationProps } from "@/types/navigation";
 
-export function MobileNavigation({ children }: { children: ReactNode }) {
+export function MobileNavigation({ children }: MobileNavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
 

@@ -1,11 +1,20 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import type { ParticipationConfirmationProps } from "./types";
 
 export function ParticipationConfirmation({
   submission,
-  confirmationRef,
   onNewMessage,
 }: ParticipationConfirmationProps) {
+  const confirmationRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Llevar el foco a la confirmación anuncia el resultado a quien usa teclado.
+    confirmationRef.current?.focus();
+  }, []);
+
   return (
     <div
       ref={confirmationRef}
