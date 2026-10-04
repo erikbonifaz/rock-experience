@@ -195,13 +195,15 @@ export function ProjectDocumentation() {
                 <code>{"pnpm install --frozen-lockfile\npnpm dev"}</code>
               </pre>
               <p className="mt-4 text-base leading-relaxed text-secondary">
-                Abre{" "}
+                La versión desplegada está disponible en{" "}
                 <a
                   className="font-medium text-foreground hover:text-accent"
-                  href="http://localhost:3000/"
+                  href="https://rock-experience-ten.vercel.app/"
                 >
-                  localhost:3000
+                  rock-experience-ten.vercel.app
                 </a>.
+                Para probar la instancia local, abre{" "}
+                <code className="text-sm text-foreground">http://localhost:3000/</code>.
                 La landing, el catálogo y estas páginas de documentación pueden
                 consultarse sin configurar la base de datos.
               </p>

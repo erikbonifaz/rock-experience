@@ -2,7 +2,9 @@
 
 Campaña ficticia desarrollada para la prueba técnica de Rock The Agency. Presenta seis experiencias cargadas desde una API local, Beneficios y un formulario de participación preparado para guardar solicitudes en Supabase PostgreSQL.
 
-La explicación para el evaluador está en **[/proyecto](http://localhost:3000/proyecto)**, enlazada desde el footer como **Sobre la prueba**. **[/arquitectura](http://localhost:3000/arquitectura)** documenta los recorridos de Experiencias y del formulario con texto y un diagrama interactivo de Archify. Su fuente y las instrucciones para regenerarlo están en [docs/arquitectura](docs/arquitectura/README.md).
+**Demo desplegada:** [rock-experience-ten.vercel.app](https://rock-experience-ten.vercel.app/).
+
+La explicación para el evaluador está en [**Sobre la prueba**](https://rock-experience-ten.vercel.app/proyecto), enlazada desde el footer. [**Arquitectura**](https://rock-experience-ten.vercel.app/arquitectura) documenta los recorridos de Experiencias y del formulario con texto y un diagrama interactivo de Archify. Su fuente y las instrucciones para regenerarlo están en [docs/arquitectura](docs/arquitectura/README.md).
 
 ## 1. Cómo ejecutar el proyecto
 
@@ -17,7 +19,7 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Abre [localhost:3000](http://localhost:3000/). La landing, el catálogo y las páginas de documentación pueden consultarse sin configurar la base de datos. Guardar una solicitud sí requiere la configuración siguiente.
+La versión desplegada está disponible en [rock-experience-ten.vercel.app](https://rock-experience-ten.vercel.app/). Para probar la instancia local, abre `http://localhost:3000/`. La landing, el catálogo y las páginas de documentación pueden consultarse sin configurar la base de datos. Guardar una solicitud sí requiere la configuración siguiente.
 
 ### Formulario y persistencia
 
@@ -95,7 +97,7 @@ Prioricé que otra persona pudiera entender el código y ampliarlo. Estos criter
 | Contenido y credenciales en el servidor | El contenido estático no necesita estado del navegador y las operaciones privilegiadas deben permanecer en el servidor. Los componentes cliente se reservan para la interacción; Supabase utiliza `server-only` y variables sin prefijo público. |
 | Catálogo JSON detrás de una API | Permite evaluar la carga asíncrona y sus estados con datos reproducibles. La cuadrícula recorre la respuesta y admite más registros sin parejas de IDs fijas. |
 
-El detalle del refactor y sus verificaciones está en [docs/experiences-refactor.md](docs/experiences-refactor.md). El [mapa de arquitectura](http://localhost:3000/arquitectura) enlaza al código de una revisión fijada para contrastar los flujos documentados.
+El detalle del refactor y sus verificaciones está en [docs/experiences-refactor.md](docs/experiences-refactor.md). El [mapa de arquitectura](https://rock-experience-ten.vercel.app/arquitectura) enlaza al código de una revisión fijada para contrastar los flujos documentados.
 
 ## 5. Qué mejoraría con más tiempo
 
