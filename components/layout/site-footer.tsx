@@ -49,6 +49,14 @@ export function SiteFooter() {
                   Cómo funciona
                 </Link>
               </li>
+              <li>
+                <Link
+                  className="inline-flex min-h-10 items-center transition-colors duration-200 hover:text-[#FF2442] focus-visible:text-[#FF2442] motion-reduce:transition-none"
+                  href="/proyecto"
+                >
+                  Sobre la prueba
+                </Link>
+              </li>
             </ul>
           </nav>
 

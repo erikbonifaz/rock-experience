@@ -246,14 +246,19 @@ export default function ArchitecturePage() {
             Archify
           </a>.
         </p>
-        <a
-          className={sourceLinkClassName}
-          href={repositoryUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Explorar el repositorio en GitHub
-        </a>
+        <div className="flex flex-wrap gap-x-7 gap-y-2">
+          <Link className={sourceLinkClassName} href="/proyecto">
+            Sobre esta prueba técnica
+          </Link>
+          <a
+            className={sourceLinkClassName}
+            href={repositoryUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Explorar el repositorio en GitHub
+          </a>
+        </div>
       </footer>
     </>
   );
