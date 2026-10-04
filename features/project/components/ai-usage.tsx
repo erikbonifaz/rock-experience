@@ -107,9 +107,10 @@ export function AiUsage() {
             apoyo de Codex.
           </p>
           <p className="mt-3">
-            La persistencia del formulario necesita un proyecto Supabase
-            configurado. Queda pendiente verificar un envío contra la base de
-            datos real y ampliar las pruebas automatizadas.
+            Se verificó un envío real del formulario con Supabase: la
+            información llegó a la base de datos y la página mostró la
+            confirmación. Queda pendiente automatizar esa comprobación y ampliar
+            las pruebas del formulario y de los estados del catálogo.
           </p>
         </div>
       </div>

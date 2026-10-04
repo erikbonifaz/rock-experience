@@ -101,7 +101,7 @@ El detalle del refactor y sus verificaciones está en [docs/experiences-refactor
 
 ## 5. Qué mejoraría con más tiempo
 
-1. **Verificar la persistencia de extremo a extremo.** Configurar Supabase y el entorno de despliegue, enviar una solicitud real y comprobar el registro y su confirmación. Añadir pruebas automatizadas del formulario y de los estados del catálogo.
+1. **Automatizar las pruebas del flujo.** El envío real ya se verificó de extremo a extremo con Supabase y el entorno desplegado. Como siguiente paso, automatizar esa comprobación y ampliar las pruebas del formulario y de los estados del catálogo.
 2. **Preparar el formulario para un uso público.** Añadir límites de frecuencia y protección anti-spam. Restringir el acceso a la página de registros de demostración antes de utilizar datos reales.
 3. **Medir y observar el comportamiento.** Incorporar seguimiento de errores de API sin datos personales, medir rendimiento y accesibilidad en el despliegue, y utilizar los resultados para priorizar las siguientes mejoras.
 
@@ -141,4 +141,4 @@ La lección: una configuración válida no garantiza que la interfaz haga lo esp
 
 Se ejecutaron ESLint y la compilación de producción, y se revisaron las vistas y la navegación en diferentes anchos. Experiencias también se comprobó con respuestas controladas para carga, error, reintento y lista vacía; el detalle está en su [documentación de refactor](docs/experiences-refactor.md). Estas comprobaciones se realizaron con apoyo de Codex.
 
-La persistencia del formulario necesita un proyecto Supabase configurado. Queda pendiente verificar un envío contra la base de datos real y ampliar las pruebas automatizadas.
+Se verificó un envío real del formulario con Supabase: la información llegó a la base de datos y la página mostró la confirmación. Queda pendiente automatizar esa comprobación y ampliar las pruebas del formulario y de los estados del catálogo.

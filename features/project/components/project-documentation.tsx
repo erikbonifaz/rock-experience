@@ -78,8 +78,8 @@ const directories = [
 
 const improvements = [
   {
-    title: "Verificar la persistencia de extremo a extremo",
-    detail: "Configurar Supabase y el entorno de despliegue, enviar una solicitud real y comprobar el registro y su confirmación. Añadir pruebas automatizadas del formulario y de los estados del catálogo.",
+    title: "Automatizar las pruebas del flujo",
+    detail: "El envío real ya se verificó de extremo a extremo con Supabase y el entorno desplegado. Como siguiente paso, automatizar esa comprobación y ampliar las pruebas del formulario y de los estados del catálogo.",
   },
   {
     title: "Preparar el formulario para un uso público",
