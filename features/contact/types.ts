@@ -1,9 +1,4 @@
-import type { z } from "zod";
-import type { participationSchema, submissionConfirmationSchema } from "./schema";
-
-export type ParticipationFormValues = z.infer<typeof participationSchema>;
-
-export type SubmissionConfirmation = z.infer<typeof submissionConfirmationSchema>;
+import type { SubmissionConfirmation } from "./schema";
 
 export interface FieldErrorProps {
   id: string;

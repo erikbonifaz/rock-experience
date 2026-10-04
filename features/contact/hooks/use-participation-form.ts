@@ -8,7 +8,7 @@ import {
   participationSchema,
   submissionConfirmationSchema,
 } from "../schema";
-import type { ParticipationFormValues, SubmissionConfirmation } from "../types";
+import type { ParticipationFormValues, SubmissionConfirmation } from "../schema";
 
 const submissionErrorMessage =
   "No pudimos enviar tu solicitud. Inténtalo nuevamente.";

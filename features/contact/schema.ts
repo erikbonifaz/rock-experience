@@ -1,5 +1,4 @@
 import { z } from "zod";
-import type { ParticipationFormValues } from "./types";
 
 export const participationSchema = z.object({
   name: z
@@ -34,11 +33,15 @@ export const participationSchema = z.object({
   }),
 });
 
+export type ParticipationFormValues = z.infer<typeof participationSchema>;
+
 export const submissionConfirmationSchema = z.object({
   success: z.literal(true),
   id: z.number().int().positive(),
   registrationCode: z.string().regex(/\S/),
 });
+
+export type SubmissionConfirmation = z.infer<typeof submissionConfirmationSchema>;
 
 export const participationDefaultValues: ParticipationFormValues = {
   name: "",
