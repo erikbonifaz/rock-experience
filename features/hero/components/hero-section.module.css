@@ -1,0 +1,91 @@
+/* Las tres capas del degradado se leen mejor como una única declaración. */
+.overlay {
+  background:
+    linear-gradient(180deg, rgb(16 16 16 / 32%) 0%, transparent 26%),
+    linear-gradient(90deg, rgb(16 16 16 / 24%) 0%, rgb(16 16 16 / 10%) 44%, transparent 70%),
+    linear-gradient(0deg, rgb(16 16 16 / 18%) 0%, transparent 38%);
+}
+
+/* Estas fórmulas colocan los detalles respecto al viewport y al contenedor. */
+.guide {
+  top: clamp(64px, 8svh, 80px);
+  left: max(16px, calc((100% - var(--content-width)) / 2 - 24px));
+  height: clamp(320px, 55.5svh, 520px);
+}
+
+.cross {
+  top: clamp(360px, 50svh, 480px);
+  left: max(4px, calc((100% - var(--content-width)) / 2 - 36px));
+}
+
+/* El dibujo y el movimiento de las flechas evitan variantes Tailwind anidadas. */
+.arrowLine::after {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  content: "";
+  transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .primaryArrow {
+    transition: transform 200ms var(--interaction-easing);
+  }
+
+  .primaryLink:hover .primaryArrow,
+  .primaryLink:focus-visible .primaryArrow {
+    transform: translate(3px, -3px);
+  }
+
+  .arrowLine,
+  .arrowLine::after {
+    transition: transform 180ms var(--interaction-easing);
+  }
+
+  .participationLink:hover .arrowLine,
+  .participationLink:focus-visible .arrowLine {
+    transform: scaleX(1.05);
+  }
+
+  .participationLink:hover .arrowLine::after,
+  .participationLink:focus-visible .arrowLine::after {
+    transform: translateX(6px) rotate(45deg);
+  }
+}
+
+/* El escritorio combina ancho y altura; expresarlo aquí evita cadenas de variantes. */
+@media (min-width: 1100px) {
+  .content {
+    padding-top: calc(var(--header-height) + clamp(24px, 7svh, 64px));
+    padding-bottom: clamp(48px, 7svh, 96px);
+  }
+
+  .title {
+    font-size: clamp(128px, min(15vw, 25svh), 250px);
+  }
+
+  .bottom {
+    margin-top: clamp(12px, 1.8svh, 24px);
+    padding-top: clamp(12px, 1.6svh, 16px);
+  }
+}
+
+@media (min-width: 1100px) and (max-height: 820px) {
+  .content {
+    padding-top: calc(var(--header-height) + clamp(12px, 4svh, 32px));
+    padding-bottom: clamp(24px, 4svh, 40px);
+  }
+
+  .title {
+    font-size: clamp(128px, min(16vw, 26svh), 220px);
+  }
+
+  .bottom {
+    margin-top: clamp(8px, 1.5svh, 16px);
+    padding-top: clamp(8px, 1.2svh, 12px);
+  }
+}
