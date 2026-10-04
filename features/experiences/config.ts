@@ -1,51 +1,30 @@
 import type { ExperiencePresentation } from "./types";
 
 export const experienceCardHeightClassName =
-  "h-[clamp(23rem,105vw,27rem)] md:h-[clamp(22rem,35vw,26rem)] experiences-desktop:h-[clamp(20rem,23vw,22.5rem)]";
+  "min-h-[26rem] sm:min-h-[28rem] md:min-h-[27rem] experiences-desktop:min-h-[29rem]";
 
 export const experiencesGridClassName =
-  "grid grid-cols-1 gap-6 md:grid-cols-2 experiences-desktop:grid-cols-12";
+  "grid grid-cols-1 gap-7 md:grid-cols-2 md:gap-8 experiences-desktop:grid-cols-3";
 
-const wideCardPresentation: ExperiencePresentation = {
-  gridClassName: "experiences-desktop:col-span-7",
-  titleClassName: "text-[clamp(2rem,3vw,3rem)]",
-  imageSizes:
-    "(min-width: 1600px) 45vw, (min-width: 1200px) 55vw, (min-width: 768px) 46vw, 100vw",
-  objectPosition: "62% center",
-  tone: "monochrome",
-};
+export const experienceImageSizes =
+  "(min-width: 1632px) 480px, (min-width: 1200px) 30vw, (min-width: 768px) 44vw, 90vw";
 
-const narrowCardPresentation: ExperiencePresentation = {
-  gridClassName: "experiences-desktop:col-span-5",
-  titleClassName: "text-[clamp(1.75rem,2.5vw,2.5rem)]",
-  imageSizes:
-    "(min-width: 1600px) 33vw, (min-width: 1200px) 40vw, (min-width: 768px) 46vw, 100vw",
-  objectPosition: "62% center",
-  tone: "monochrome",
-};
-
-// Cada pareja suma doce columnas y la siguiente invierte sus proporciones.
-const presentationPattern = [
-  wideCardPresentation,
-  narrowCardPresentation,
-  narrowCardPresentation,
-  wideCardPresentation,
+// Las pequeñas inclinaciones se repiten y sólo se aplican en escritorio.
+const cardTilts = [
+  "experiences-desktop:rotate-[-0.6deg]",
+  "experiences-desktop:rotate-[0.4deg] experiences-desktop:translate-y-1",
+  "experiences-desktop:rotate-[-0.3deg]",
+  "experiences-desktop:rotate-[0.5deg]",
+  "experiences-desktop:rotate-[-0.4deg] experiences-desktop:translate-y-1",
+  "experiences-desktop:rotate-[0.6deg]",
 ];
-
-const presentationOverrides: Partial<
-  Record<number, Partial<ExperiencePresentation>>
-> = {
-  5: { tone: "red" },
-};
 
 export function getExperiencePresentation(
   index: number,
   experienceId?: number,
 ): ExperiencePresentation {
-  const patternIndex = index % presentationPattern.length;
-  const presentation = presentationPattern[patternIndex];
-  const overrides =
-    experienceId === undefined ? undefined : presentationOverrides[experienceId];
-
-  return { ...presentation, ...overrides };
+  return {
+    tiltClassName: cardTilts[index % cardTilts.length],
+    tone: experienceId === 5 ? "red" : "monochrome",
+  };
 }

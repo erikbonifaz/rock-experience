@@ -9,15 +9,22 @@ export interface Experience {
 }
 
 export interface ExperiencePresentation {
-  gridClassName: string;
-  titleClassName: string;
-  imageSizes: string;
-  objectPosition: string;
+  tiltClassName: string;
   tone: "monochrome" | "red";
 }
 
 export interface ExperienceCardProps {
   experience: Experience;
+  presentation: ExperiencePresentation;
+}
+
+export interface ExperienceImageProps {
+  src: string;
+  alt: string;
+  presentation: ExperiencePresentation;
+}
+
+export interface ExperienceSkeletonProps {
   presentation: ExperiencePresentation;
 }
 

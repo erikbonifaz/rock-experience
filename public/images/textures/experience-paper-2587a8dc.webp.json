@@ -1,0 +1,12 @@
+{
+  "prompt": "Use case: product-mockup / background-extraction.\nAsset type: ONE reusable transparent background texture for a rock-concert fanzine photographic-print card in a website, NOT a UI mockup.\nReference image shows the approved page: use ONLY the warm-ivory paper material, irregular scuffed rectangular print borders and small red ink wear of the six Experiences cards in its middle. Do not include any photographs, typography, categories, arrows, buttons, Hero, Benefits or layout.\nCreate a single flat front-facing rectangular sheet of thick warm-ivory uncoated paper, portrait aspect ratio about 4:5, nearly filling the canvas with a small fully transparent outer margin. Purely planar, no perspective, curl, folds, pins, tape or shadows.\nPaper base near #f2f0e9, visible fine fibers and modest photocopied grain, gently uneven ink coverage. Moderate black scuffing and lightly eroded corners limited to the outer 3–5% of the paper. A few tiny rough vivid red #ff2442 ink chips concentrated on the upper-right and lower-left perimeter, as in the reference. Irregular tactile edges remain a recognizable intact rectangle, no large tears.\nThe central 85% is continuous opaque LIGHT IVORY, quiet, clean enough for black text over it; keep any central paper grain very subtle and high-contrast reading safe. NO transparent central hole, NO dark central areas. Transparency only outside the sheet and tiny natural nicks along its perimeter.\nHigh quality raster cutout with real alpha transparency, preferably around1024x1280px. No text, no photos, no logos, no watermarks, no symbols, no extra objects. This is the paper substrate asset that will sit underneath live HTML photography and captions.\n",
+  "createdAt": "2026-10-04T06:36:32.288Z",
+  "tool": "image_gen.imagegen (integrada)",
+  "source": "C:/Users/ErikB/.codex/generated_images/01a1002c-53b4-7ed2-9ef1-6cdccbf69400/exec-649f507d-3195-4b59-9839-b323521d2980.png",
+  "reference": "T:/NextJs/rock-experience/.impeccable/mocks/home/02-fotografias-fanzine-hero-beneficios-aa14daf4.png",
+  "optimization": "Recorte de márgenes transparentes, ancho 768 px, WebP calidad 82 con alpha mediante Sharp incluido con Next.js.",
+  "width": 768,
+  "height": 959,
+  "bytes": 147596,
+  "hasAlpha": true
+}

@@ -1,0 +1,67 @@
+.titleOutline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--accent);
+}
+
+.passFace {
+  background-color: var(--accent);
+}
+
+.passFace::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: var(--surface-texture);
+  background-size: 384px 384px;
+  mix-blend-mode: screen;
+  opacity: 0.85;
+  pointer-events: none;
+  content: "";
+}
+
+.ribbon {
+  top: 1.5rem;
+  right: -3.25rem;
+  width: 12rem;
+  border-block: 1px solid var(--accent);
+  padding-block: 0.5rem;
+  background-color: var(--background);
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1;
+  transform: rotate(45deg);
+}
+
+@media (min-width: 640px) {
+  .ribbon {
+    top: 2.5rem;
+    right: -4.25rem;
+    width: 16rem;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ribbon {
+    top: clamp(2.5rem, 3.4vw, 3.25rem);
+    right: -5.25rem;
+    width: clamp(15rem, 20vw, 20rem);
+    padding-block: 0.625rem;
+    font-size: clamp(2rem, 3.2vw, 3rem);
+  }
+}
+
+@media (forced-colors: active) {
+  .titleOutline {
+    color: CanvasText;
+    -webkit-text-stroke: 0;
+  }
+
+  .passFace::before {
+    display: none;
+  }
+
+  .ribbon {
+    border-color: CanvasText;
+  }
+}

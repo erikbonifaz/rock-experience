@@ -3,6 +3,8 @@
 :root {
   color-scheme: dark;
   --background: #101010;
+  --surface-shade: linear-gradient(rgb(0 0 0 / 85%), rgb(0 0 0 / 85%));
+  --surface-texture: url("/images/textures/rock-surface-0c426ac5.webp");
   --foreground: #f2f0e9;
   --text-secondary: #aaa69f;
   --accent: #ff2442;
@@ -55,7 +57,10 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
-  background: var(--background);
+  background-color: var(--background);
+  background-image: var(--surface-shade), var(--surface-texture);
+  background-size: auto, 768px 768px;
+  background-repeat: repeat;
   color: var(--foreground);
   font-family: var(--font-space-grotesk), sans-serif;
   font-size: var(--body-size);

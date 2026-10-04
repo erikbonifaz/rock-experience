@@ -7,7 +7,8 @@ export function SiteFooter() {
       className="relative isolate overflow-x-clip bg-[#101010] text-[#F2F0E9]"
       style={{
         backgroundImage:
-          "radial-gradient(ellipse 80% 55% at 85% 110%, rgb(255 36 66 / 0.16), transparent 72%)",
+          "var(--surface-shade), radial-gradient(ellipse 80% 55% at 85% 110%, rgb(255 36 66 / 0.16), transparent 72%), var(--surface-texture)",
+        backgroundSize: "auto, auto, 768px 768px",
       }}
     >
       <div className="page-container relative z-10 flex min-h-[760px] flex-col pb-6 section-space-top md:min-h-[660px] lg:min-h-[720px]">

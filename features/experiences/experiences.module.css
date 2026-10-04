@@ -1,0 +1,39 @@
+.photoPrint {
+  --print-paper: url("/images/textures/experience-paper-2587a8dc.webp");
+}
+
+.photoPrint::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: var(--print-paper);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  content: "";
+}
+
+.categoryStamp {
+  background-color: color-mix(in srgb, var(--accent) 70%, var(--background));
+  mask-image: var(--print-paper);
+  mask-size: 100% 100%;
+}
+
+@media (forced-colors: active) {
+  .photoPrint {
+    border: 1px solid CanvasText;
+    background-color: Canvas;
+    color: CanvasText !important;
+  }
+
+  .photoPrint::before {
+    display: none;
+  }
+
+  .categoryStamp {
+    border: 1px solid CanvasText;
+    background-color: Canvas;
+    color: CanvasText;
+    mask-image: none;
+  }
+}

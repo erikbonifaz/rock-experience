@@ -2,13 +2,8 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import type { ExperiencePresentation } from "../types";
-
-interface ExperienceImageProps {
-  src: string;
-  alt: string;
-  presentation: ExperiencePresentation;
-}
+import { experienceImageSizes } from "../config";
+import type { ExperienceImageProps } from "../types";
 
 export function ExperienceImage({
   src,
@@ -35,8 +30,7 @@ export function ExperienceImage({
         src={src}
         alt={alt}
         fill
-        sizes={presentation.imageSizes}
-        style={{ objectPosition: presentation.objectPosition }}
+        sizes={experienceImageSizes}
         className="object-cover grayscale contrast-110 transition-transform duration-[260ms] ease-out group-hover:scale-[1.025] motion-reduce:transition-none"
         onError={() => setImageFailed(true)}
       />

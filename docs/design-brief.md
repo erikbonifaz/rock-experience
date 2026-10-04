@@ -139,16 +139,16 @@ Preparar una versión de duotono estable para que el resultado no dependa de com
 
 El texto que cruza la fotografía debe quedar sobre una zona oscura controlada; el contorno del titular queda sobre fondo negro uniforme. No usar texto dentro del archivo de imagen.
 
-Por decisión del usuario, las seis URL `image` suministradas por la prueba permanecen intactas. Los recortes y tratamientos se aplican a su presentación sin sustituir los registros originales. Las fotografías aleatorias de Picsum pueden no representar sus categorías; esto no autoriza a cambiar sus URL.
+La decisión inicial conservaba las seis URLs aleatorias suministradas por la prueba. El 4 de octubre de 2026 el usuario solicitó sustituirlas por fotografías de Picsum relacionadas con cada tarjeta. Se mantienen los IDs, nombres, categorías y descripciones de las experiencias; únicamente cambia `image` a una fotografía fija del mismo proveedor. La selección y sus fuentes están en `docs/experiencias-imagenes.md`.
 
-| ID | URL original que debe conservarse |
+| ID de experiencia | URL actual de la fotografía |
 | --- | --- |
-| 1 | `https://picsum.photos/600/400?random=1` |
-| 2 | `https://picsum.photos/600/400?random=2` |
-| 3 | `https://picsum.photos/600/400?random=3` |
-| 4 | `https://picsum.photos/600/400?random=4` |
-| 5 | `https://picsum.photos/600/400?random=5` |
-| 6 | `https://picsum.photos/600/400?random=6` |
+| 1 | `https://picsum.photos/id/96/600/400` |
+| 2 | `https://picsum.photos/id/453/600/400` |
+| 3 | `https://picsum.photos/id/454/600/400` |
+| 4 | `https://picsum.photos/id/36/600/400` |
+| 5 | `https://picsum.photos/id/452/600/400` |
+| 6 | `https://picsum.photos/id/341/600/400` |
 
 La fotografía de la portada será un recurso independiente, cuya selección está pendiente. No se reutilizan fotografías ni artistas de la referencia.
 
