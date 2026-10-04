@@ -85,17 +85,27 @@ Los componentes de una funcionalidad viven en su carpeta `components/`; los hook
 
 ## 4. Decisiones técnicas relevantes
 
-Prioricé que otra persona pudiera entender el código y ampliarlo. Estos criterios guiaron la implementación y las revisiones, incluso cuando suponían escribir más líneas.
+Para esta prueba intenté mantener una estructura que fuera fácil de entender sin añadir más capas de las necesarias para una landing de este tamaño.
 
-| Decisión | Motivo y efecto |
-| --- | --- |
-| Organización por funcionalidad | Quería encontrar cada funcionalidad en un lugar reconocible. `app/` conserva rutas y composición; las vistas y el comportamiento viven en `features/`. Los hooks quedan fuera de `components/`. |
-| Tipos compartidos y props locales | Separar contratos compartidos facilita leerlos; un archivo por interfaz añade navegación innecesaria. Experiencias utiliza `types.ts` para los contratos compartidos y mantiene las props locales junto a su consumidor. |
-| Componentes con una responsabilidad | Pedí archivos independientes cuando la vista o su comportamiento lo justifican, sin fragmentar cada bloque de JSX. La tarjeta, la imagen y las vistas de carga y error tienen archivos reconocibles; los bloques extensos de decisiones y uso de IA también. |
-| Retornos tempranos para los estados | Solicité sustituir el `switch` de Experiencias para hacer más directa la lectura. Carga, error y lista vacía tienen condiciones explícitas y el retorno final muestra el catálogo. Reintentar cancela la petición anterior. |
-| Un schema Zod compartido | La validación del navegador ofrece respuesta inmediata, pero no sustituye la del servidor. React Hook Form y el endpoint usan las mismas reglas; la API guarda solo los valores validados. |
-| Contenido y credenciales en el servidor | El contenido estático no necesita estado del navegador y las operaciones privilegiadas deben permanecer en el servidor. Los componentes cliente se reservan para la interacción; Supabase utiliza `server-only` y variables sin prefijo público. |
-| Catálogo JSON detrás de una API | Permite evaluar la carga asíncrona y sus estados con datos reproducibles. La cuadrícula recorre la respuesta y admite más registros sin parejas de IDs fijas. |
+**Organización por funcionalidad.**
+
+Separé las partes principales en `features/experiences`, `features/contact` y `features/benefits`, mientras que `app/` queda principalmente para rutas, composición y endpoints. Me pareció más sencillo de mantener que agrupar todos los componentes de la aplicación en una única carpeta, y permite que cada funcionalidad reúna su UI, tipos y lógica relacionada.
+
+**Mantener en el cliente únicamente lo que necesita interacción.**
+
+Con App Router preferí no convertir toda la página en un Client Component. Por ejemplo, en Experiencias la parte estática puede renderizarse en servidor y el estado relacionado con la petición, carga, error y reintento se concentra en el componente y hook que realmente lo necesitan. La intención fue aprovechar el modelo de Next.js sin complicar demasiado una landing pequeña.
+
+**Validación en cliente y servidor con las mismas reglas.**
+
+El formulario utiliza React Hook Form y Zod para dar feedback inmediato, pero el endpoint `POST /api/contact` vuelve a validar la información antes de guardarla. Utilicé el mismo `participationSchema` en ambos lados para evitar mantener dos juegos de reglas diferentes y porque la validación del navegador por sí sola no debería considerarse suficiente.
+
+**Supabase únicamente desde el servidor.**
+
+Aunque para la prueba no era obligatorio implementar persistencia real, decidí conectar el formulario a Supabase para que el flujo pudiera comprobarse de principio a fin. La `service_role` no se expone al navegador: el frontend envía la solicitud al Route Handler de Next.js y es ese endpoint el que escribe en la base de datos. La tabla tiene RLS habilitado y no concede acceso directo a los roles públicos.
+
+**API local para las experiencias.**
+
+Los datos parten del JSON proporcionado, pero los expuse mediante `/api/experiences` en lugar de importarlos directamente en el componente. Esto me permitió implementar de forma real los estados de carga, error y éxito que pedía la prueba, manteniendo al mismo tiempo una fuente de datos predecible y sin depender de un servicio externo. El hook también cancela una petición anterior cuando se realiza una nueva.
 
 El detalle del refactor y sus verificaciones está en [docs/experiences-refactor.md](docs/experiences-refactor.md). El [mapa de arquitectura](https://rock-experience-ten.vercel.app/arquitectura) enlaza al código de una revisión fijada para contrastar los flujos documentados.
 

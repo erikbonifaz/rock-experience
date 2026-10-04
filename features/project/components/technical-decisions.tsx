@@ -2,51 +2,37 @@ const decisions = [
   {
     title: "Organización por funcionalidad",
     reason:
-      "Quería encontrar todo lo relacionado con Experiencias, Contacto o Beneficios en un lugar reconocible.",
+      "Para esta prueba intenté mantener una estructura fácil de entender sin añadir más capas de las necesarias para una landing de este tamaño.",
     effect:
-      "app/ conserva las rutas y la composición; cada funcionalidad vive en features/. Los hooks quedan fuera de components/.",
+      "Separé las partes principales en features/experiences, features/contact y features/benefits. app/ queda principalmente para rutas, composición y endpoints; cada funcionalidad reúne su UI, tipos y lógica relacionada.",
   },
   {
-    title: "Tipos compartidos y props locales",
+    title: "Mantener en el cliente únicamente lo que necesita interacción",
     reason:
-      "Separar contratos compartidos ayuda a leerlos; crear un archivo por cada interfaz añade navegación innecesaria.",
+      "Con App Router preferí no convertir toda la página en un Client Component. La intención fue aprovechar el modelo de Next.js sin complicar demasiado una landing pequeña.",
     effect:
-      "Experiencias reúne los contratos compartidos en types.ts. Las props que solo necesita un componente permanecen junto a él.",
+      "En Experiencias la parte estática puede renderizarse en servidor; el estado de petición, carga, error y reintento se concentra en el componente y hook que realmente lo necesitan.",
   },
   {
-    title: "Componentes con una responsabilidad",
+    title: "Validación en cliente y servidor con las mismas reglas",
     reason:
-      "Pedí archivos independientes cuando la vista o su comportamiento lo justifican, sin fragmentar cada bloque de JSX.",
+      "React Hook Form y Zod dan feedback inmediato, pero la validación del navegador no es suficiente por sí sola.",
     effect:
-      "La tarjeta, la imagen y las vistas de carga y error se reconocen por sus archivos. La nueva documentación separa los bloques extensos de decisiones y uso de IA.",
+      "POST /api/contact vuelve a validar la información antes de guardarla con el mismo participationSchema utilizado en el formulario.",
   },
   {
-    title: "Estados con retornos tempranos",
+    title: "Supabase únicamente desde el servidor",
     reason:
-      "El switch de Experiencias hacía menos directa la lectura del componente. Preferí resolver cada estado de forma explícita.",
+      "Aunque no era obligatorio, conecté el formulario a Supabase para que el flujo pudiera comprobarse de principio a fin.",
     effect:
-      "Carga, error y lista vacía tienen condiciones claras; el retorno final muestra el catálogo. Reintentar cancela la petición anterior.",
+      "La service_role no se expone al navegador. El frontend envía la solicitud al Route Handler de Next.js, que escribe en la base de datos; la tabla tiene RLS habilitado y no concede acceso directo a los roles públicos.",
   },
   {
-    title: "Validación compartida con Zod",
+    title: "API local para las experiencias",
     reason:
-      "La respuesta inmediata del formulario no sustituye la validación del servidor. Ambas deben aplicar las mismas reglas.",
+      "Exponer el JSON proporcionado mediante una API permite implementar los estados de carga, error y éxito sin depender de un servicio externo.",
     effect:
-      "React Hook Form y POST /api/contact utilizan participationSchema. El endpoint guarda únicamente los valores validados.",
-  },
-  {
-    title: "Servidor para contenido y credenciales",
-    reason:
-      "El contenido estático no necesita estado del navegador y las operaciones privilegiadas deben permanecer en el servidor.",
-    effect:
-      "La interacción queda en los componentes cliente que la necesitan. El cliente de Supabase usa server-only y una clave sin prefijo NEXT_PUBLIC_.",
-  },
-  {
-    title: "Un catálogo local detrás de una API",
-    reason:
-      "El JSON permite evaluar la carga asíncrona y sus estados con datos reproducibles, sin depender de otro servicio para mostrar Experiencias.",
-    effect:
-      "GET /api/experiences devuelve data/experiences.json. La cuadrícula recorre la respuesta y admite más registros sin parejas de IDs fijas.",
+      "Los datos parten del JSON y /api/experiences los entrega al componente. El hook cancela una petición anterior cuando se inicia una nueva.",
   },
 ];
 
@@ -64,9 +50,9 @@ export function TechnicalDecisions() {
         4. Decisiones técnicas
       </h2>
       <p className="mt-5 max-w-[72ch] text-base leading-relaxed text-secondary md:text-lg">
-        Prioricé que otra persona pudiera entender el código y ampliarlo. Estos
-        criterios guiaron la implementación y las revisiones, incluso cuando
-        suponían escribir más líneas.
+        Para esta prueba intenté mantener una estructura que fuera fácil de
+        entender sin añadir más capas de las necesarias para una landing de
+        este tamaño.
       </p>
 
       <table className="mt-8 w-full table-fixed border-collapse text-left text-sm leading-relaxed md:text-base">
