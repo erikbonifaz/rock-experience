@@ -1,11 +1,7 @@
+import Link from "next/link";
 import { ExperienceImage } from "./experience-image";
 import { experienceCardHeightClassName } from "../config";
-import type { Experience, ExperiencePresentation } from "../types";
-
-interface ExperienceCardProps {
-  experience: Experience;
-  presentation: ExperiencePresentation;
-}
+import type { ExperienceCardProps } from "../types";
 
 export function ExperienceCard({
   experience,
@@ -14,8 +10,10 @@ export function ExperienceCard({
   const titleWords = experience.title.trim().split(/\s+/);
 
   return (
-    <article
-      className={`group relative isolate flex min-w-0 flex-col overflow-hidden bg-[#181818] text-[#F2F0E9] ring-1 ring-inset ring-[#F2F0E9]/10 ${experienceCardHeightClassName} ${presentation.gridClassName}`}
+    <Link
+      href="/experiencias"
+      aria-label={`Ver todas las experiencias: ${experience.title}`}
+      className={`group relative isolate flex min-w-0 flex-col overflow-hidden bg-[#181818] text-[#F2F0E9] ring-1 ring-inset ring-[#F2F0E9]/10 focus-visible:outline-accent focus-visible:outline-offset-[-3px] ${experienceCardHeightClassName} ${presentation.gridClassName}`}
     >
       <ExperienceImage
         key={experience.image}
@@ -61,13 +59,13 @@ export function ExperienceCard({
             </p>
           </div>
           <span
-            className="mb-1 shrink-0 font-sans text-2xl leading-none text-[#F2F0E9] transition-transform duration-[240ms] ease-out group-hover:translate-x-1.5 motion-reduce:transition-none"
+            className="mb-1 shrink-0 font-sans text-2xl leading-none text-[#F2F0E9] transition-transform duration-[240ms] ease-out group-hover:translate-x-1.5 group-focus-visible:translate-x-1.5 motion-reduce:transition-none"
             aria-hidden="true"
           >
             →
           </span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }
