@@ -3,6 +3,7 @@ import { BenefitsSection } from "@/features/benefits/components/benefits-section
 import { ParticipationSection } from "@/features/contact/participation-section";
 import { ExperiencesSection } from "@/features/experiences/components/experiences-section";
 import { HeroSection } from "@/features/hero/components/hero-section";
+import { ProjectIntroduction } from "@/features/project/components/project-introduction";
 import { SiteHeader } from "@/components/layout/site-header";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <SiteHeader />
       <main id="contenido" tabIndex={-1}>
         <HeroSection />
+        <ProjectIntroduction />
         <ExperiencesSection />
         <BenefitsSection />
         <ParticipationSection />
