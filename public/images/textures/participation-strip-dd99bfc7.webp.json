@@ -9,5 +9,13 @@
     "format": "webp",
     "bytes": 70770,
     "trimTransparentMargins": true
+  },
+  "performanceOptimization": {
+    "date": "2026-10-04",
+    "description": "Recompresión WebP sin cambiar dimensiones ni transparencia; nombre renovado para invalidar la caché.",
+    "quality": 65,
+    "effort": 6,
+    "previousBytes": 70770,
+    "bytes": 59634
   }
 }

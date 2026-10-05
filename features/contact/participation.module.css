@@ -9,7 +9,7 @@
   z-index: -1;
   inset: 0;
   border: 12px solid transparent;
-  border-image: url("/images/textures/participation-strip-b3489fbd.webp") 12% fill / 12px stretch;
+  border-image: url("/images/textures/participation-strip-dd99bfc7.webp") 12% fill / 12px stretch;
   content: "";
   pointer-events: none;
 }

@@ -42,12 +42,3 @@ export const submissionConfirmationSchema = z.object({
 });
 
 export type SubmissionConfirmation = z.infer<typeof submissionConfirmationSchema>;
-
-export const participationDefaultValues: ParticipationFormValues = {
-  name: "",
-  email: "",
-  phone: "",
-  company: "",
-  message: "",
-  privacy: false,
-};

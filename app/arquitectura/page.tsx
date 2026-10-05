@@ -6,7 +6,7 @@ import diagram from "@/docs/arquitectura/rock-experience.json";
 export const metadata: Metadata = {
   title: "Cómo funciona ROCK EXPERIENCE",
   description:
-    "Explora la arquitectura de ROCK EXPERIENCE: renderizado con Next.js, carga de Experiencias y validación y persistencia del formulario.",
+    "Explora las páginas de ROCK EXPERIENCE, el README compartido, la carga de Experiencias y la validación y persistencia del formulario.",
   openGraph: {
     ...sharedOpenGraph,
     title: "Cómo funciona ROCK EXPERIENCE",
@@ -18,24 +18,31 @@ export const metadata: Metadata = {
 
 const repository = diagram.meta.repository;
 const repositoryUrl = repository.url.replace(/\.git$/, "");
-const sourceBaseUrl = `${repositoryUrl}/blob/${repository.revision}`;
 const diagramUrl = "/diagrams/rock-experience.html";
 const sourceLinkClassName =
   "inline-flex min-h-11 items-center text-sm text-accent underline decoration-accent/50 underline-offset-4 hover:decoration-accent";
 
 const experienceSteps = [
-  "El hook useExperiences inicia la carga y solicita GET /api/experiences.",
+  "Al acercarse a la sección, useExperiences solicita GET /api/experiences y carga el schema Zod en paralelo.",
   "El endpoint devuelve el catálogo de data/experiences.json.",
-  "El hook comprueba los campos y los identificadores de cada experiencia.",
-  "La interfaz muestra las tarjetas o el mensaje de lista vacía; si la petición falla, permite reintentar.",
+  "El hook valida los campos y comprueba que los identificadores sean únicos.",
+  "Mientras carga, la interfaz muestra un estado de espera. Después aparecen las tarjetas o el mensaje de lista vacía; si la carga falla, se puede reintentar.",
+  "Cada tarjeta abre /experiencias en el ancla #experiencia-{id} de su propuesta. Esa página lee el mismo JSON directamente en el servidor.",
 ];
 
 const participationSteps = [
   "React Hook Form y Zod validan los campos antes de enviar la solicitud.",
   "POST /api/contact vuelve a validar los datos con el mismo schema Zod.",
   "El servidor inserta los valores válidos en contact_submissions mediante Supabase.",
-  "Una respuesta 201 devuelve el ID y el código RX-####, y muestra la confirmación.",
+  "Una respuesta 201 devuelve el ID y el código RX-####. El cliente valida esa respuesta antes de mostrar la confirmación.",
   "El enlace de demostración consulta ese registro en el servidor y oculta parte del correo y del teléfono.",
+];
+
+const applicationPages = [
+  { href: "/", title: "La campaña", description: "Hero, introducción de la prueba, catálogo dinámico, Beneficios y formulario de participación." },
+  { href: "/experiencias", title: "Experiencias", description: "Seis propuestas editoriales con navegación por anclas y acceso al formulario de la landing." },
+  { href: "/proyecto", title: "Sobre la prueba", description: "Lee README.md en el servidor y genera el contenido y su índice, sin mantener una copia separada." },
+  { href: "/arquitectura", title: "Cómo funciona", description: "Explica los recorridos y carga el visor HTML de Archify mediante un iframe diferido." },
 ];
 
 export default function ArchitecturePage() {
@@ -75,9 +82,9 @@ export default function ArchitecturePage() {
             <span className="block text-accent">ROCK EXPERIENCE</span>
           </h1>
           <p className="max-w-[48ch] text-base leading-relaxed text-secondary md:col-span-5 md:text-lg">
-            Del navegador al servidor: explora de dónde salen las experiencias,
-            cómo se valida una solicitud y dónde se guarda. Cada nodo del mapa
-            enlaza al código que respalda su responsabilidad.
+            Del navegador al servidor: explora las páginas, sus fuentes de
+            contenido y el recorrido de una solicitud. Cada nodo del mapa
+            incluye referencias verificadas al código que respalda su responsabilidad.
           </p>
         </section>
 
@@ -87,6 +94,9 @@ export default function ArchitecturePage() {
         >
           <a className={sourceLinkClassName} href="#mapa">
             Mapa interactivo
+          </a>
+          <a className={sourceLinkClassName} href="#paginas">
+            Páginas
           </a>
           <a className={sourceLinkClassName} href="#flujo-experiencias">
             Experiencias
@@ -119,7 +129,7 @@ export default function ArchitecturePage() {
             id="mapa-instructions"
             className="mb-6 mt-4 max-w-[72ch] text-sm leading-relaxed text-secondary"
           >
-            Selecciona un nodo para inspeccionar sus conexiones y su código.
+            Selecciona un nodo para inspeccionar sus conexiones y los archivos que lo implementan.
             Usa RUTA para seguir las conexiones entre componentes.
             Puedes acercar la vista, cambiar el tema y explorar con el teclado.
           </p>
@@ -132,9 +142,31 @@ export default function ArchitecturePage() {
             allow="clipboard-write"
           />
           <p className="mt-4 max-w-[75ch] text-sm leading-relaxed text-secondary">
-            El mapa documenta una revisión del código; el formulario requiere
-            Supabase configurado para persistir solicitudes. La explicación de
-            ambos recorridos también está disponible en texto a continuación.
+            {repository.link_mode === "local-only"
+              ? "Las referencias del mapa corresponden a una copia verificada del código local al generarlo, incluidos los cambios aún sin publicar."
+              : "Las referencias del mapa corresponden a la revisión verificada al generarlo."}
+            {" "}El formulario requiere Supabase configurado para guardar solicitudes.
+          </p>
+        </section>
+
+        <section className="mt-14 border-t border-foreground/20 pt-10 md:mt-20 md:pt-14" aria-labelledby="paginas">
+          <h2 id="paginas" className="navigation-focus-target font-display text-3xl leading-tight md:text-4xl" tabIndex={-1}>
+            Qué páginas forman la aplicación
+          </h2>
+          <ul className="mt-6 grid gap-x-12 gap-y-6 md:grid-cols-2">
+            {applicationPages.map((page) => (
+              <li key={page.href} className="border-b border-foreground/20 pb-6">
+                <Link className={sourceLinkClassName} href={page.href}>
+                  {page.title} <span className="ml-2 font-mono text-xs text-secondary">{page.href}</span>
+                </Link>
+                <p className="mt-2 max-w-[60ch] text-base leading-relaxed text-secondary">{page.description}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-sm leading-relaxed text-secondary">
+            Tras enviar el formulario, /demo/submissions/[id] consulta el registro
+            guardado en el servidor. La ruta de demostración tiene noindex y
+            oculta parte del correo y teléfono; no cuenta con autenticación.
           </p>
         </section>
 
@@ -155,18 +187,11 @@ export default function ArchitecturePage() {
               ))}
             </ol>
             <p className="mt-6 text-sm leading-relaxed text-secondary">
-              Una nueva carga cancela la petición anterior. Al salir del
-              componente se cancela la petición activa, evitando actualizar una
-              vista que ya no está montada.
+              La carga se prepara 400 px antes de que la sección entre en
+              pantalla. Si el navegador no admite IntersectionObserver,
+              comienza de inmediato. Al reintentar o desmontar la sección se
+              cancela la petición activa.
             </p>
-            <a
-              className={`${sourceLinkClassName} mt-3`}
-              href={`${sourceBaseUrl}/features/experiences/hooks/use-experiences.ts#L57-L108`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver el hook de Experiencias en GitHub
-            </a>
           </section>
 
           <section aria-labelledby="flujo-formulario">
@@ -186,17 +211,9 @@ export default function ArchitecturePage() {
             </ol>
             <p className="mt-6 text-sm leading-relaxed text-secondary">
               El servidor responde 400 ante datos inválidos y 500 si falla la
-              persistencia. El formulario conserva los campos y permite volver
-              a enviar la solicitud.
+              configuración o la persistencia. Ante un error, el formulario
+              conserva los campos y permite volver a enviar la solicitud.
             </p>
-            <a
-              className={`${sourceLinkClassName} mt-3`}
-              href={`${sourceBaseUrl}/app/api/contact/route.ts#L14-L75`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver el endpoint de Contacto en GitHub
-            </a>
           </section>
         </div>
 

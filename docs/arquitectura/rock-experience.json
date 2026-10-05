@@ -8,9 +8,9 @@
     "locale": "es",
     "repository": {
       "url": "https://github.com/erikbonifaz/rock-experience.git",
-      "revision": "a085519e92f7593b78453629fc7191125602e368",
+      "revision": "d45683e216efdd915edcf3006c88793315ec5db1",
       "provider": "github",
-      "link_mode": "web"
+      "link_mode": "local-only"
     },
     "translations": {
       "page.title": "{title} · Diagrama",
@@ -460,71 +460,117 @@
       "label": "Visitante",
       "sublabel": "Navegador · móvil o escritorio",
       "pos": [
-        40,
-        30
-      ],
-      "size": [
-        260,
-        86
-      ],
-      "sources": [
-        {
-          "path": "app/page.tsx",
-          "line": 9,
-          "end_line": 17
-        }
-      ]
-    },
-    {
-      "id": "pagina",
-      "type": "backend",
-      "label": "Página Next.js",
-      "sublabel": "App Router · HTML en servidor",
-      "pos": [
-        490,
+        30,
         30
       ],
       "size": [
         270,
-        86
+        96
+      ],
+      "sources": [
+        {
+          "path": "components/layout/site-header.tsx",
+          "line": 1,
+          "end_line": 92
+        }
+      ]
+    },
+    {
+      "id": "inicio",
+      "type": "backend",
+      "label": "Landing de la campaña",
+      "sublabel": "/ · composición en el servidor",
+      "pos": [
+        430,
+        30
+      ],
+      "size": [
+        270,
+        96
       ],
       "sources": [
         {
           "path": "app/page.tsx",
           "line": 1,
-          "end_line": 66
+          "end_line": 24
+        },
+        {
+          "path": "features/project/components/project-introduction.tsx",
+          "line": 1,
+          "end_line": 83
+        },
+        {
+          "path": "components/layout/site-footer.tsx",
+          "line": 1,
+          "end_line": 129
         }
       ]
     },
     {
-      "id": "interfaz",
-      "type": "frontend",
-      "label": "Interfaz de la campaña",
-      "sublabel": "Secciones y controles de React",
+      "id": "proyecto",
+      "type": "backend",
+      "label": "Sobre la prueba",
+      "sublabel": "/proyecto · contenido del README",
       "pos": [
-        490,
-        235
+        30,
+        285
       ],
       "size": [
         270,
-        86
+        96
       ],
       "sources": [
         {
-          "path": "app/page.tsx",
-          "line": 59,
-          "end_line": 63
+          "path": "app/proyecto/page.tsx",
+          "line": 1,
+          "end_line": 20
+        },
+        {
+          "path": "features/project/components/project-documentation.tsx",
+          "line": 1,
+          "end_line": 70
+        },
+        {
+          "path": "features/project/read-project-readme.ts",
+          "line": 1,
+          "end_line": 9
+        }
+      ]
+    },
+    {
+      "id": "readme",
+      "type": "database",
+      "label": "README del proyecto",
+      "sublabel": "Archivo Markdown · índice y enlaces",
+      "pos": [
+        30,
+        555
+      ],
+      "size": [
+        270,
+        96
+      ],
+      "sources": [
+        {
+          "path": "README.md",
+          "line": 1,
+          "end_line": 163
+        },
+        {
+          "path": "features/project/readme.ts",
+          "line": 1,
+          "end_line": 71
         }
       ]
     },
     {
       "id": "experiencias",
       "type": "frontend",
-      "label": "Experiencias",
-      "sublabel": "Carga · error · vacío · éxito",
+      "label": "Catálogo de la landing",
+      "sublabel": "Carga diferida · estados · reintento",
       "pos": [
-        40,
-        455
+        430,
+        285
       ],
       "size": [
         270,
@@ -533,34 +579,91 @@
       "sources": [
         {
           "path": "features/experiences/hooks/use-experiences.ts",
-          "line": 57,
-          "end_line": 108
+          "line": 1,
+          "end_line": 72
         },
         {
           "path": "features/experiences/components/experiences-content.tsx",
-          "line": 12,
-          "end_line": 54
+          "line": 1,
+          "end_line": 55
+        },
+        {
+          "path": "features/experiences/components/experience-card.tsx",
+          "line": 1,
+          "end_line": 67
         }
       ]
     },
     {
-      "id": "api-experiencias",
+      "id": "pagina-experiencias",
       "type": "backend",
-      "label": "API Experiencias",
-      "sublabel": "GET /api/experiences",
+      "label": "Página de Experiencias",
+      "sublabel": "/experiencias · seis propuestas",
       "pos": [
-        40,
-        700
+        30,
+        825
       ],
       "size": [
         270,
-        86
+        96
       ],
       "sources": [
         {
-          "path": "app/api/experiences/route.ts",
+          "path": "app/experiencias/page.tsx",
           "line": 1,
-          "end_line": 5
+          "end_line": 20
+        },
+        {
+          "path": "features/experiences/components/experiences-page.tsx",
+          "line": 1,
+          "end_line": 99
+        },
+        {
+          "path": "features/experiences/components/experiences-invitation.tsx",
+          "line": 1,
+          "end_line": 32
+        }
+      ]
+    },
+    {
+      "id": "arquitectura",
+      "type": "backend",
+      "label": "Cómo funciona",
+      "sublabel": "/arquitectura · explicación y mapa",
+      "pos": [
+        30,
+        1095
+      ],
+      "size": [
+        270,
+        96
+      ],
+      "sources": [
+        {
+          "path": "app/arquitectura/page.tsx",
+          "line": 1,
+          "end_line": 283
+        }
+      ]
+    },
+    {
+      "id": "visor",
+      "type": "frontend",
+      "label": "Visor de Archify",
+      "sublabel": "HTML estático · iframe diferido",
+      "pos": [
+        30,
+        1365
+      ],
+      "size": [
+        270,
+        96
+      ],
+      "sources": [
+        {
+          "path": "app/arquitectura/page.tsx",
+          "line": 1,
+          "end_line": 283
         }
       ]
     },
@@ -568,35 +671,52 @@
       "id": "catalogo",
       "type": "database",
       "label": "Catálogo local",
-      "sublabel": "data/experiences.json",
+      "sublabel": "data/experiences.json · seis registros",
       "pos": [
-        40,
-        965
+        430,
+        825
       ],
       "size": [
         270,
-        86
+        96
+      ],
+      "sources": [
+        {
+          "path": "data/experiences.json",
+          "line": 1,
+          "end_line": 50
+        }
+      ]
+    },
+    {
+      "id": "api-experiencias",
+      "type": "backend",
+      "label": "API Experiencias",
+      "sublabel": "GET /api/experiences · JSON local",
+      "pos": [
+        430,
+        555
+      ],
+      "size": [
+        270,
+        96
       ],
       "sources": [
         {
           "path": "app/api/experiences/route.ts",
           "line": 1,
           "end_line": 5
-        },
-        {
-          "path": "data/experiences.json",
-          "line": 1
         }
       ]
     },
     {
       "id": "formulario",
       "type": "frontend",
-      "label": "Formulario",
-      "sublabel": "React Hook Form + Zod",
+      "label": "Formulario de participación",
+      "sublabel": "React Hook Form · Zod al validar",
       "pos": [
-        490,
-        455
+        830,
+        285
       ],
       "size": [
         270,
@@ -605,13 +725,18 @@
       "sources": [
         {
           "path": "features/contact/participation-form.tsx",
-          "line": 44,
-          "end_line": 91
+          "line": 1,
+          "end_line": 231
+        },
+        {
+          "path": "features/contact/hooks/use-participation-form.ts",
+          "line": 1,
+          "end_line": 78
         },
         {
           "path": "features/contact/schema.ts",
-          "line": 3,
-          "end_line": 34
+          "line": 1,
+          "end_line": 44
         }
       ]
     },
@@ -619,20 +744,25 @@
       "id": "api-contacto",
       "type": "backend",
       "label": "API Contacto",
-      "sublabel": "POST /api/contact · valida con Zod",
+      "sublabel": "POST /api/contact · valida en servidor",
       "pos": [
-        490,
-        700
+        830,
+        555
       ],
       "size": [
         270,
-        86
+        96
       ],
       "sources": [
         {
           "path": "app/api/contact/route.ts",
-          "line": 14,
-          "end_line": 75
+          "line": 1,
+          "end_line": 76
+        },
+        {
+          "path": "lib/supabase/server.ts",
+          "line": 1,
+          "end_line": 23
         }
       ]
     },
@@ -640,119 +770,154 @@
       "id": "supabase",
       "type": "database",
       "label": "Supabase · PostgreSQL",
-      "sublabel": "contact_submissions",
+      "sublabel": "contact_submissions · RLS activado",
       "pos": [
-        920,
-        700
+        830,
+        825
       ],
       "size": [
         270,
-        86
+        96
       ],
       "sources": [
         {
-          "path": "app/api/contact/route.ts",
-          "line": 30,
-          "end_line": 64
-        },
-        {
-          "path": "lib/supabase/server.ts",
-          "line": 36,
-          "end_line": 52
-        },
-        {
           "path": "supabase/contact_submissions.sql",
           "line": 1,
-          "end_line": 17
+          "end_line": 20
+        },
+        {
+          "path": "lib/supabase/types.ts",
+          "line": 1,
+          "end_line": 31
         }
       ]
     },
     {
       "id": "confirmacion",
       "type": "frontend",
-      "label": "Confirmación",
-      "sublabel": "ID persistido · código RX-####",
+      "label": "Confirmación validada",
+      "sublabel": "201 · ID persistido · código RX-####",
       "pos": [
-        490,
-        965
+        830,
+        1095
       ],
       "size": [
         270,
-        86
+        96
       ],
       "sources": [
         {
-          "path": "app/api/contact/route.ts",
-          "line": 45,
-          "end_line": 64
+          "path": "features/contact/participation-confirmation.tsx",
+          "line": 1,
+          "end_line": 57
         },
         {
-          "path": "features/contact/participation-form.tsx",
-          "line": 99,
-          "end_line": 129
+          "path": "features/contact/hooks/use-participation-form.ts",
+          "line": 1,
+          "end_line": 78
+        },
+        {
+          "path": "features/contact/schema.ts",
+          "line": 1,
+          "end_line": 44
         }
       ]
     },
     {
       "id": "registro",
       "type": "backend",
-      "label": "Registro de demo",
-      "sublabel": "/demo/submissions/[id]",
+      "label": "Registro de demostración",
+      "sublabel": "/demo/submissions/[id] · noindex",
       "pos": [
-        920,
-        965
+        830,
+        1365
       ],
       "size": [
         270,
-        86
+        96
       ],
       "sources": [
         {
           "path": "app/demo/submissions/[id]/page.tsx",
-          "line": 48,
-          "end_line": 80
+          "line": 1,
+          "end_line": 172
+        },
+        {
+          "path": "app/demo/submissions/[id]/not-found.tsx",
+          "line": 1,
+          "end_line": 22
         }
       ]
     }
   ],
   "connections": [
     {
-      "id": "abrir-pagina",
+      "id": "abrir-campana",
       "from": "visitante",
-      "to": "pagina",
-      "label": "Abre la página",
+      "to": "inicio",
+      "label": "Abre /",
       "variant": "emphasis"
     },
     {
-      "id": "entregar-interfaz",
-      "from": "pagina",
-      "to": "interfaz",
-      "label": "Entrega la interfaz"
+      "id": "consultar-prueba",
+      "from": "inicio",
+      "to": "proyecto",
+      "label": "Sobre la prueba"
     },
     {
-      "id": "mostrar-experiencias",
-      "from": "interfaz",
+      "id": "leer-readme",
+      "from": "proyecto",
+      "to": "readme",
+      "label": "Lee y transforma"
+    },
+    {
+      "id": "mostrar-catalogo",
+      "from": "inicio",
       "to": "experiencias",
-      "label": "Consulta el catálogo"
+      "label": "Sección Experiencias"
     },
     {
-      "id": "solicitar-experiencias",
+      "id": "abrir-experiencia",
+      "from": "experiencias",
+      "to": "pagina-experiencias",
+      "label": "Tarjeta → #experiencia-id"
+    },
+    {
+      "id": "leer-catalogo-editorial",
+      "from": "pagina-experiencias",
+      "to": "catalogo",
+      "label": "Importa JSON en servidor"
+    },
+    {
+      "id": "pedir-catalogo",
       "from": "experiencias",
       "to": "api-experiencias",
-      "label": "Petición GET",
+      "label": "GET al acercarse",
       "variant": "emphasis"
     },
     {
-      "id": "leer-catalogo",
+      "id": "leer-catalogo-api",
       "from": "api-experiencias",
       "to": "catalogo",
-      "label": "Lee y devuelve JSON"
+      "label": "Devuelve el mismo JSON"
     },
     {
-      "id": "abrir-formulario",
-      "from": "interfaz",
+      "id": "consultar-arquitectura",
+      "from": "proyecto",
+      "to": "arquitectura",
+      "label": "Ver arquitectura"
+    },
+    {
+      "id": "cargar-visor",
+      "from": "arquitectura",
+      "to": "visor",
+      "label": "Carga HTML local"
+    },
+    {
+      "id": "participar",
+      "from": "inicio",
       "to": "formulario",
-      "label": "Completa el formulario"
+      "label": "CTA → #contacto"
     },
     {
       "id": "enviar-solicitud",
@@ -762,25 +927,25 @@
       "variant": "emphasis"
     },
     {
-      "id": "guardar-solicitud",
+      "id": "persistir-solicitud",
       "from": "api-contacto",
       "to": "supabase",
-      "label": "Inserta datos válidos"
+      "label": "Inserta tras validar"
     },
     {
       "id": "confirmar-solicitud",
       "from": "api-contacto",
       "to": "confirmacion",
-      "label": "201 · registro guardado"
-    },
-    {
-      "id": "abrir-registro",
-      "from": "confirmacion",
-      "to": "registro",
-      "label": "Abre el enlace de demo"
+      "label": "201 tras persistir"
     },
     {
       "id": "consultar-registro",
+      "from": "confirmacion",
+      "to": "registro",
+      "label": "Abre registro por ID"
+    },
+    {
+      "id": "leer-registro",
       "from": "registro",
       "to": "supabase",
       "label": "Consulta por ID"
@@ -788,30 +953,33 @@
   ],
   "cards": [
     {
-      "dot": "cyan",
-      "title": "Carga de Experiencias",
-      "items": [
-        "useExperiences valida el JSON y rechaza registros inválidos o IDs repetidos.",
-        "La interfaz presenta carga, error, lista vacía o tarjetas según la respuesta.",
-        "Reintentar inicia una nueva petición y cancela la anterior; salir cancela la petición activa."
-      ]
-    },
-    {
       "dot": "emerald",
-      "title": "Envío del formulario",
+      "title": "Páginas y navegación",
       "items": [
-        "El navegador y el servidor reutilizan el mismo schema Zod.",
-        "El endpoint responde 400 si los datos no son válidos y 500 si falla la persistencia.",
-        "Una respuesta 201 confirma el registro y devuelve su ID y el código RX-####."
+        "La landing reúne Hero, introducción de la prueba, Experiencias, Beneficios y Contacto.",
+        "Cada tarjeta enlaza a /experiencias#experiencia-id; la página editorial lee el JSON directamente en el servidor.",
+        "/proyecto lee README.md y construye su índice; /arquitectura incorpora este HTML de Archify mediante un iframe diferido.",
+        "La introducción y el footer también enlazan a las páginas de documentación. El mapa conserva las conexiones necesarias para recorrer los flujos, sin dibujar todos los enlaces de regreso."
       ]
     },
     {
-      "dot": "violet",
-      "title": "Código y configuración",
+      "dot": "cyan",
+      "title": "Carga y contratos",
       "items": [
-        "La conexión a Supabase y su clave se utilizan exclusivamente en el servidor.",
-        "El recorrido de persistencia requiere una tabla y variables de entorno configuradas.",
-        "El diagrama documenta código de una revisión fijada; no consulta registros ni supervisa la infraestructura."
+        "useExperiences prepara la petición al acercarse a la sección, importa Zod en paralelo y valida los seis registros y sus IDs únicos.",
+        "El catálogo contempla carga, error con reintento, vacío y éxito; AbortController cancela la petición al reintentar o desmontar.",
+        "React Hook Form carga la validación al utilizarla. El servidor aplica el mismo schema antes de guardar y el cliente valida el contrato de confirmación.",
+        "Las animaciones utilizan CSS y un hook de IntersectionObserver; no cambian los flujos de datos ni los contratos de validación."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Persistencia y límites",
+      "items": [
+        "Supabase se utiliza únicamente desde el servidor con una clave de servicio; el navegador llama a los endpoints de Next.js.",
+        "La API devuelve 400 ante JSON o campos inválidos, 500 ante fallo de configuración o persistencia y 201 sólo después de insertar.",
+        "El formulario conserva los campos ante un error, deshabilita el envío mientras está pendiente y lleva el foco a la confirmación.",
+        "/demo/submissions/[id] consulta en servidor, oculta parte del correo y teléfono y usa noindex. No tiene autenticación; es una demostración, no un acceso privado."
       ]
     }
   ]

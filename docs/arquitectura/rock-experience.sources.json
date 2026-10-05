@@ -1,0 +1,147 @@
+{
+  "repositoryRevision": "e90f9179e5dddc95b48ffef6a45217383f893282",
+  "sourceRevision": "d45683e216efdd915edcf3006c88793315ec5db1",
+  "sourceMode": "local-snapshot",
+  "files": [
+    {
+      "path": "components/layout/site-header.tsx",
+      "sha256": "1e6e3b8e6acbc5d7812864d7429c94b6f6410ed5822cf78fde61af893daaa58a",
+      "lines": 92
+    },
+    {
+      "path": "app/page.tsx",
+      "sha256": "06a9c1d877d651459039ddd07099377559846d46d0cd8be5a836d52256a0b0b8",
+      "lines": 24
+    },
+    {
+      "path": "features/project/components/project-introduction.tsx",
+      "sha256": "6ca685e52a33901efbb4049cfd5ab7b4d47b97df714d82a395fefa3c775fc9ba",
+      "lines": 83
+    },
+    {
+      "path": "components/layout/site-footer.tsx",
+      "sha256": "d964634ccf2dd5a9fcdf4f2e706de7196d1d72e831582fc1c3e5042b8b72eef8",
+      "lines": 129
+    },
+    {
+      "path": "app/proyecto/page.tsx",
+      "sha256": "e06416b3f6fc8bd8a461e737951da44c9a94c6717eb6fb1d28325eea81808e68",
+      "lines": 20
+    },
+    {
+      "path": "features/project/components/project-documentation.tsx",
+      "sha256": "55560a5eec7857032239524e7fc5ba345f424d90150eea8a17c0f12f0e3038f7",
+      "lines": 70
+    },
+    {
+      "path": "features/project/read-project-readme.ts",
+      "sha256": "b216a9011ddb127b4159a1f8177f7c1ec13e73a40b152eaa1635de2f09bc2588",
+      "lines": 9
+    },
+    {
+      "path": "README.md",
+      "sha256": "f145e22f8109563a28e07218de2776af6e5f4626c7ea6862c3f3b3c593cebcd3",
+      "lines": 163
+    },
+    {
+      "path": "features/project/readme.ts",
+      "sha256": "05b773570c790426413766518c974d88760f1811b70fca467b1e3dcbe92483ea",
+      "lines": 71
+    },
+    {
+      "path": "features/experiences/hooks/use-experiences.ts",
+      "sha256": "97b272b2c67aebce00f56bbd8121d31e74ef83c92be73dad14eeb3263ddab619",
+      "lines": 72
+    },
+    {
+      "path": "features/experiences/components/experiences-content.tsx",
+      "sha256": "5ba29ead93e81ddfbdc028eb53dea84b2c59fbfa44b4967694d2cf05a2fa2015",
+      "lines": 55
+    },
+    {
+      "path": "features/experiences/components/experience-card.tsx",
+      "sha256": "76ccebb01123fb9744f867a152d79104c165f50d2f6a639fca9ba96a1844c461",
+      "lines": 67
+    },
+    {
+      "path": "app/experiencias/page.tsx",
+      "sha256": "595be230b9d254ead0b0660f176604df9977f145c93878fd0abc08896a733ab3",
+      "lines": 20
+    },
+    {
+      "path": "features/experiences/components/experiences-page.tsx",
+      "sha256": "1fdc1b1d4e0a5be59d4bb749b67788b45834fe917146ade7d99ea8647ddc5dd4",
+      "lines": 99
+    },
+    {
+      "path": "features/experiences/components/experiences-invitation.tsx",
+      "sha256": "71d1d5f5ab328d7dd601af8d5b9cbfd631031f7e5baba9fa323aece4eaf69688",
+      "lines": 32
+    },
+    {
+      "path": "app/arquitectura/page.tsx",
+      "sha256": "85d66617179dcf518293386306c008f166fe6822c42a2d01f40317612d68043b",
+      "lines": 283
+    },
+    {
+      "path": "data/experiences.json",
+      "sha256": "3333fd25df8687ee165db4341c7e46fb48401491dfe4bf159e7b9efa0e6e86c9",
+      "lines": 50
+    },
+    {
+      "path": "app/api/experiences/route.ts",
+      "sha256": "215077b7dee7123e10753bc97c5d4bc78b350935d733739e6d7a27104dd79cc7",
+      "lines": 5
+    },
+    {
+      "path": "features/contact/participation-form.tsx",
+      "sha256": "780c190bd313ed84b1b4b848d83c4a1c34bc03a5f7adb67749a4b2433ae8fdd3",
+      "lines": 231
+    },
+    {
+      "path": "features/contact/hooks/use-participation-form.ts",
+      "sha256": "64ed439b672810ce3aa38909272d7644ef5079840f6ef7d7f216ac0a2df5d8cb",
+      "lines": 78
+    },
+    {
+      "path": "features/contact/schema.ts",
+      "sha256": "c73f9820af4794a6f464e512a1918cdd396c1cd6cda15ecc755e200539244339",
+      "lines": 44
+    },
+    {
+      "path": "app/api/contact/route.ts",
+      "sha256": "703cab7df73acf8f9c3ce58dc37e3a79e8dac16da271ac9e24e8e10a1a4e21bd",
+      "lines": 76
+    },
+    {
+      "path": "lib/supabase/server.ts",
+      "sha256": "504f12597a3c810aa04a15a96ee496e54b7e34e6d4f4f617d4c7b3d8c4b41e69",
+      "lines": 23
+    },
+    {
+      "path": "supabase/contact_submissions.sql",
+      "sha256": "eb90c0b37b8b1d16d85283e189f877eb9fd9f37d0c3e541bd580c0f90d5eba1c",
+      "lines": 20
+    },
+    {
+      "path": "lib/supabase/types.ts",
+      "sha256": "8c701be95e860ca82bc69b1f5cd064c41bad377545ac8b0815f31441a6443054",
+      "lines": 31
+    },
+    {
+      "path": "features/contact/participation-confirmation.tsx",
+      "sha256": "aae17602abf0460ad161efa33944ef884656909b65a5eb7f8713b4d50a2882ae",
+      "lines": 57
+    },
+    {
+      "path": "app/demo/submissions/[id]/page.tsx",
+      "sha256": "2bcfe3711b6130bf929e0bf60c96f1228ad159aaa346eca8f4861e262e4a7fc0",
+      "lines": 172
+    },
+    {
+      "path": "app/demo/submissions/[id]/not-found.tsx",
+      "sha256": "de5b447617041bfd42eeec2b5fde3124e1da815fdc8f6246d969e10a60d3327b",
+      "lines": 22
+    }
+  ]
+}

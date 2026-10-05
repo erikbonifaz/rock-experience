@@ -1,0 +1,882 @@
+{
+  "date": "2026-10-04",
+  "environment": "Producción local con Next.js 16.3.8",
+  "pages": [
+    {
+      "path": "/",
+      "decorativeImageCount": 3,
+      "descriptions": [
+        "Descubre experiencias creadas para conectar marcas, tecnología y personas."
+      ],
+      "genericLinks": [],
+      "h1Count": 1,
+      "headings": [
+        {
+          "level": 1,
+          "text": "VIVE ALGO DIFERENTE."
+        },
+        {
+          "level": 2,
+          "text": "SOBRE ESTA PRUEBA TÉCNICA"
+        },
+        {
+          "level": 2,
+          "text": "EXPERIENCIAS"
+        },
+        {
+          "level": 3,
+          "text": "Gaming Experience"
+        },
+        {
+          "level": 3,
+          "text": "Music Sessions"
+        },
+        {
+          "level": 3,
+          "text": "Creator Lab"
+        },
+        {
+          "level": 3,
+          "text": "AI Experience"
+        },
+        {
+          "level": 3,
+          "text": "Live Experience"
+        },
+        {
+          "level": 3,
+          "text": "Digital Commerce"
+        },
+        {
+          "level": 2,
+          "text": "BENEFICIOS"
+        },
+        {
+          "level": 3,
+          "text": "ENCUENTRA TU EXPERIENCIA"
+        },
+        {
+          "level": 3,
+          "text": "QUIERO PARTICIPAR"
+        },
+        {
+          "level": 2,
+          "text": "QUIERO PARTICIPAR"
+        }
+      ],
+      "images": [
+        {
+          "alt": "Guitarrista en un escenario iluminado de rojo, con la banda al fondo."
+        },
+        {
+          "alt": "Mando de videojuegos sobre una superficie."
+        },
+        {
+          "alt": "Músicos sobre un escenario durante una presentación en vivo."
+        },
+        {
+          "alt": "Persona sosteniendo una cámara."
+        },
+        {
+          "alt": "Dispositivo electrónico desarmado con sus componentes expuestos."
+        },
+        {
+          "alt": "Público frente a un escenario iluminado durante un concierto."
+        },
+        {
+          "alt": "Persona utilizando un teléfono móvil."
+        },
+        {
+          "alt": ""
+        },
+        {
+          "alt": ""
+        },
+        {
+          "alt": ""
+        }
+      ],
+      "imagesMissingAlt": 0,
+      "landmarks": {
+        "article": 2,
+        "footer": 1,
+        "header": 3,
+        "main": 1,
+        "nav": 4,
+        "section": 5
+      },
+      "lang": "es",
+      "links": [
+        {
+          "href": "#contenido",
+          "label": "Saltar al contenido"
+        },
+        {
+          "href": "#inicio",
+          "label": "ROCK EXPERIENCE, inicio"
+        },
+        {
+          "href": "#inicio",
+          "label": "INICIO"
+        },
+        {
+          "href": "#experiencias",
+          "label": "EXPERIENCIAS"
+        },
+        {
+          "href": "#beneficios",
+          "label": "BENEFICIOS"
+        },
+        {
+          "href": "#contacto",
+          "label": "CONTACTO"
+        },
+        {
+          "href": "#contacto",
+          "label": "PARTICIPAR"
+        },
+        {
+          "href": "#inicio",
+          "label": "Inicio"
+        },
+        {
+          "href": "#experiencias",
+          "label": "Experiencias"
+        },
+        {
+          "href": "#beneficios",
+          "label": "Beneficios"
+        },
+        {
+          "href": "#contacto",
+          "label": "Contacto"
+        },
+        {
+          "href": "#contacto",
+          "label": "Participar"
+        },
+        {
+          "href": "#experiencias",
+          "label": "EXPLORAR EXPERIENCIAS ↗"
+        },
+        {
+          "href": "#contacto",
+          "label": "QUIERO PARTICIPAR"
+        },
+        {
+          "href": "/arquitectura",
+          "label": "Cómo funciona Explora el flujo de la aplicación."
+        },
+        {
+          "href": "/proyecto",
+          "label": "Sobre la prueba Conoce las decisiones técnicas y el uso de IA."
+        },
+        {
+          "href": "/experiencias#experiencia-1",
+          "label": "Explorar Gaming Experience"
+        },
+        {
+          "href": "/experiencias#experiencia-2",
+          "label": "Explorar Music Sessions"
+        },
+        {
+          "href": "/experiencias#experiencia-3",
+          "label": "Explorar Creator Lab"
+        },
+        {
+          "href": "/experiencias#experiencia-4",
+          "label": "Explorar AI Experience"
+        },
+        {
+          "href": "/experiencias#experiencia-5",
+          "label": "Explorar Live Experience"
+        },
+        {
+          "href": "/experiencias#experiencia-6",
+          "label": "Explorar Digital Commerce"
+        },
+        {
+          "href": "/experiencias",
+          "label": "Explorar experiencias"
+        },
+        {
+          "href": "#contacto",
+          "label": "Completar formulario"
+        },
+        {
+          "href": "/arquitectura",
+          "label": "Cómo funciona ↗"
+        },
+        {
+          "href": "#inicio",
+          "label": "ROCK EXPERIENCE, inicio"
+        },
+        {
+          "href": "#inicio",
+          "label": "INICIO"
+        },
+        {
+          "href": "#experiencias",
+          "label": "EXPERIENCIAS"
+        },
+        {
+          "href": "#beneficios",
+          "label": "BENEFICIOS"
+        },
+        {
+          "href": "#contacto",
+          "label": "CONTACTO"
+        },
+        {
+          "href": "/arquitectura",
+          "label": "CÓMO FUNCIONA"
+        },
+        {
+          "href": "/proyecto",
+          "label": "SOBRE LA PRUEBA"
+        },
+        {
+          "href": "#inicio",
+          "label": "VOLVER ARRIBA ↗"
+        },
+        {
+          "href": "https://github.com/erikbonifaz",
+          "label": "Perfil de Erik Bonifaz en GitHub ↗"
+        }
+      ],
+      "linksMissingName": [],
+      "missingAnchors": [],
+      "openGraph": [
+        {
+          "content": "ROCK EXPERIENCE — Vive algo diferente.",
+          "property": "og:title"
+        },
+        {
+          "content": "Descubre experiencias creadas para conectar marcas, tecnología y personas.",
+          "property": "og:description"
+        },
+        {
+          "content": "https://rock-experience-ten.vercel.app",
+          "property": "og:url"
+        },
+        {
+          "content": "ROCK EXPERIENCE",
+          "property": "og:site_name"
+        },
+        {
+          "content": "es_MX",
+          "property": "og:locale"
+        },
+        {
+          "content": "https://rock-experience-ten.vercel.app/opengraph-image?a27f81b34fc1fe67",
+          "property": "og:image"
+        },
+        {
+          "content": "image/png",
+          "property": "og:image:type"
+        },
+        {
+          "content": "1200",
+          "property": "og:image:width"
+        },
+        {
+          "content": "630",
+          "property": "og:image:height"
+        },
+        {
+          "content": "ROCK EXPERIENCE. Vive algo diferente. Marcas, tecnología y personas.",
+          "property": "og:image:alt"
+        },
+        {
+          "content": "website",
+          "property": "og:type"
+        }
+      ],
+      "skippedHeadingLevels": [],
+      "title": "ROCK EXPERIENCE — Vive algo diferente.",
+      "titleCount": 1
+    },
+    {
+      "path": "/experiencias",
+      "decorativeImageCount": 0,
+      "descriptions": [
+        "Explora seis propuestas de videojuegos, música, creación de contenido, tecnología, eventos y comercio digital en ROCK EXPERIENCE."
+      ],
+      "genericLinks": [],
+      "h1Count": 1,
+      "headings": [
+        {
+          "level": 1,
+          "text": "EXPERIENCIAS QUE CONECTAN."
+        },
+        {
+          "level": 2,
+          "text": "SEIS FORMAS DE VIVIR ALGO DIFERENTE."
+        },
+        {
+          "level": 3,
+          "text": "GAMING EXPERIENCE"
+        },
+        {
+          "level": 3,
+          "text": "MUSIC SESSIONS"
+        },
+        {
+          "level": 3,
+          "text": "CREATOR LAB"
+        },
+        {
+          "level": 3,
+          "text": "AI EXPERIENCE"
+        },
+        {
+          "level": 3,
+          "text": "LIVE EXPERIENCE"
+        },
+        {
+          "level": 3,
+          "text": "DIGITAL COMMERCE"
+        },
+        {
+          "level": 2,
+          "text": "ENCUENTRA TU PRÓXIMA EXPERIENCIA."
+        }
+      ],
+      "images": [
+        {
+          "alt": "Banda sobre un escenario con haces de luz roja y público en primer plano."
+        },
+        {
+          "alt": "Control de videojuegos junto a un teclado, iluminados en rojo y azul."
+        },
+        {
+          "alt": "Consola de mezcla de audio en un estudio de grabación."
+        },
+        {
+          "alt": "Primer plano del objetivo y el parasol de una cámara de producción audiovisual."
+        },
+        {
+          "alt": "Componentes internos de una computadora bajo una luz roja."
+        },
+        {
+          "alt": "Público frente a un escenario con pantallas y luces rojas durante un concierto."
+        },
+        {
+          "alt": "Persona con una tarjeta bancaria mientras utiliza una computadora portátil."
+        }
+      ],
+      "imagesMissingAlt": 0,
+      "landmarks": {
+        "article": 6,
+        "footer": 1,
+        "header": 1,
+        "main": 1,
+        "nav": 1,
+        "section": 3
+      },
+      "lang": "es",
+      "links": [
+        {
+          "href": "#contenido-experiencias",
+          "label": "Saltar al contenido"
+        },
+        {
+          "href": "/",
+          "label": "ROCK EXPERIENCE, inicio"
+        },
+        {
+          "href": "/#experiencias",
+          "label": "Volver a la campaña"
+        },
+        {
+          "href": "#catalogo",
+          "label": "Ver las seis experiencias"
+        },
+        {
+          "href": "#experiencia-1",
+          "label": "Gaming Experience"
+        },
+        {
+          "href": "#experiencia-2",
+          "label": "Music Sessions"
+        },
+        {
+          "href": "#experiencia-3",
+          "label": "Creator Lab"
+        },
+        {
+          "href": "#experiencia-4",
+          "label": "AI Experience"
+        },
+        {
+          "href": "#experiencia-5",
+          "label": "Live Experience"
+        },
+        {
+          "href": "#experiencia-6",
+          "label": "Digital Commerce"
+        },
+        {
+          "href": "/#contacto",
+          "label": "QUIERO PARTICIPAR"
+        },
+        {
+          "href": "#inicio-experiencias",
+          "label": "Volver arriba"
+        },
+        {
+          "href": "/proyecto",
+          "label": "Sobre esta prueba técnica"
+        }
+      ],
+      "linksMissingName": [],
+      "missingAnchors": [],
+      "openGraph": [
+        {
+          "content": "Experiencias | ROCK EXPERIENCE",
+          "property": "og:title"
+        },
+        {
+          "content": "Seis formas de conectar marcas, tecnología y personas. Encuentra la experiencia que te interesa y participa.",
+          "property": "og:description"
+        },
+        {
+          "content": "https://rock-experience-ten.vercel.app/experiencias",
+          "property": "og:url"
+        },
+        {
+          "content": "ROCK EXPERIENCE",
+          "property": "og:site_name"
+        },
+        {
+          "content": "es_MX",
+          "property": "og:locale"
+        },
+        {
+          "content": "https://rock-experience-ten.vercel.app/opengraph-image",
+          "property": "og:image"
+        },
+        {
+          "content": "1200",
+          "property": "og:image:width"
+        },
+        {
+          "content": "630",
+          "property": "og:image:height"
+        },
+        {
+          "content": "ROCK EXPERIENCE. Vive algo diferente. Marcas, tecnología y personas.",
+          "property": "og:image:alt"
+        },
+        {
+          "content": "website",
+          "property": "og:type"
+        }
+      ],
+      "skippedHeadingLevels": [],
+      "title": "Experiencias | ROCK EXPERIENCE",
+      "titleCount": 1
+    },
+    {
+      "path": "/proyecto",
+      "decorativeImageCount": 0,
+      "descriptions": [
+        "Cómo ejecutar ROCK EXPERIENCE, tecnologías, estructura, decisiones técnicas, mejoras pendientes y uso de Codex durante el desarrollo."
+      ],
+      "genericLinks": [],
+      "h1Count": 1,
+      "headings": [
+        {
+          "level": 1,
+          "text": "SOBRE ESTA PRUEBA TÉCNICA"
+        },
+        {
+          "level": 2,
+          "text": "1. Cómo ejecutar el proyecto"
+        },
+        {
+          "level": 3,
+          "text": "Para guardar una solicitud"
+        },
+        {
+          "level": 3,
+          "text": "Comprobación y producción"
+        },
+        {
+          "level": 2,
+          "text": "2. Tecnologías utilizadas"
+        },
+        {
+          "level": 2,
+          "text": "3. Estructura general"
+        },
+        {
+          "level": 2,
+          "text": "4. Decisiones técnicas"
+        },
+        {
+          "level": 2,
+          "text": "5. Qué mejoraría con más tiempo"
+        },
+        {
+          "level": 3,
+          "text": "Automatizar las pruebas del flujo"
+        },
+        {
+          "level": 3,
+          "text": "Preparar el formulario para un uso público"
+        },
+        {
+          "level": 3,
+          "text": "Medir y observar el comportamiento"
+        },
+        {
+          "level": 2,
+          "text": "6. Uso de inteligencia artificial"
+        },
+        {
+          "level": 3,
+          "text": "Herramienta utilizada y propósito"
+        },
+        {
+          "level": 3,
+          "text": "Qué propuestas revisé y ajusté personalmente"
+        },
+        {
+          "level": 3,
+          "text": "Una propuesta incorrecta y cómo se corrigió"
+        },
+        {
+          "level": 3,
+          "text": "Verificaciones realizadas y alcance"
+        }
+      ],
+      "images": [],
+      "imagesMissingAlt": 0,
+      "landmarks": {
+        "article": 0,
+        "footer": 1,
+        "header": 1,
+        "main": 1,
+        "nav": 1,
+        "section": 7
+      },
+      "lang": "es",
+      "links": [
+        {
+          "href": "#contenido-proyecto",
+          "label": "Saltar al contenido"
+        },
+        {
+          "href": "/",
+          "label": "ROCK EXPERIENCE, inicio"
+        },
+        {
+          "href": "/",
+          "label": "Volver a la campaña"
+        },
+        {
+          "href": "/arquitectura",
+          "label": "Ver arquitectura ↗"
+        },
+        {
+          "href": "https://github.com/erikbonifaz/rock-experience/blob/master/README.md",
+          "label": "README en GitHub ↗ (en una pestaña nueva)"
+        },
+        {
+          "href": "#ejecucion",
+          "label": "01 Cómo ejecutar"
+        },
+        {
+          "href": "#tecnologias",
+          "label": "02 Tecnologías"
+        },
+        {
+          "href": "#estructura",
+          "label": "03 Estructura"
+        },
+        {
+          "href": "#decisiones",
+          "label": "04 Decisiones técnicas"
+        },
+        {
+          "href": "#mejoras",
+          "label": "05 Mejoras pendientes"
+        },
+        {
+          "href": "#inteligencia-artificial",
+          "label": "06 Uso de IA"
+        },
+        {
+          "href": "https://rock-experience-ten.vercel.app/",
+          "label": "rock-experience-ten.vercel.app"
+        },
+        {
+          "href": "/arquitectura",
+          "label": "Seguir el recorrido de los datos ↗"
+        },
+        {
+          "href": "/arquitectura",
+          "label": "Explorar los flujos y su código ↗"
+        },
+        {
+          "href": "https://github.com/erikbonifaz/rock-experience",
+          "label": "Explorar el repositorio ↗ (en una pestaña nueva)"
+        }
+      ],
+      "linksMissingName": [],
+      "missingAnchors": [],
+      "openGraph": [
+        {
+          "content": "Sobre esta prueba técnica | ROCK EXPERIENCE",
+          "property": "og:title"
+        },
+        {
+          "content": "Las decisiones detrás del proyecto y cómo se utilizó la inteligencia artificial durante su desarrollo.",
+          "property": "og:description"
+        },
+        {
+          "content": "https://rock-experience-ten.vercel.app/proyecto",
+          "property": "og:url"
+        },
+        {
+          "content": "ROCK EXPERIENCE",
+          "property": "og:site_name"
+        },
+        {
+          "content": "es_MX",
+          "property": "og:locale"
+        },
+        {
+          "content": "https://rock-experience-ten.vercel.app/opengraph-image",
+          "property": "og:image"
+        },
+        {
+          "content": "1200",
+          "property": "og:image:width"
+        },
+        {
+          "content": "630",
+          "property": "og:image:height"
+        },
+        {
+          "content": "ROCK EXPERIENCE. Vive algo diferente. Marcas, tecnología y personas.",
+          "property": "og:image:alt"
+        },
+        {
+          "content": "website",
+          "property": "og:type"
+        }
+      ],
+      "skippedHeadingLevels": [],
+      "title": "Sobre esta prueba técnica | ROCK EXPERIENCE",
+      "titleCount": 1
+    },
+    {
+      "path": "/arquitectura",
+      "decorativeImageCount": 0,
+      "descriptions": [
+        "Explora la arquitectura de ROCK EXPERIENCE: renderizado con Next.js, carga de Experiencias y validación y persistencia del formulario."
+      ],
+      "genericLinks": [],
+      "h1Count": 1,
+      "headings": [
+        {
+          "level": 1,
+          "text": "CÓMO FUNCIONA ROCK EXPERIENCE"
+        },
+        {
+          "level": 2,
+          "text": "El mapa de la aplicación"
+        },
+        {
+          "level": 2,
+          "text": "Cómo se cargan las experiencias"
+        },
+        {
+          "level": 2,
+          "text": "Qué ocurre al enviar el formulario"
+        },
+        {
+          "level": 2,
+          "text": "Cada responsabilidad tiene su lugar"
+        }
+      ],
+      "images": [],
+      "imagesMissingAlt": 0,
+      "landmarks": {
+        "article": 0,
+        "footer": 1,
+        "header": 1,
+        "main": 1,
+        "nav": 1,
+        "section": 5
+      },
+      "lang": "es",
+      "links": [
+        {
+          "href": "#contenido-arquitectura",
+          "label": "Saltar al contenido"
+        },
+        {
+          "href": "/",
+          "label": "ROCK EXPERIENCE, inicio"
+        },
+        {
+          "href": "/",
+          "label": "Volver a la campaña"
+        },
+        {
+          "href": "#mapa",
+          "label": "Mapa interactivo"
+        },
+        {
+          "href": "#flujo-experiencias",
+          "label": "Experiencias"
+        },
+        {
+          "href": "#flujo-formulario",
+          "label": "Formulario"
+        },
+        {
+          "href": "/diagrams/rock-experience.html",
+          "label": "Abrir diagrama completo (en una pestaña nueva)"
+        },
+        {
+          "href": "https://github.com/erikbonifaz/rock-experience/blob/a085519e92f7593b78453629fc7191125602e368/features/experiences/hooks/use-experiences.ts#L57-L108",
+          "label": "Ver el hook de Experiencias en GitHub"
+        },
+        {
+          "href": "https://github.com/erikbonifaz/rock-experience/blob/a085519e92f7593b78453629fc7191125602e368/app/api/contact/route.ts#L14-L75",
+          "label": "Ver el endpoint de Contacto en GitHub"
+        },
+        {
+          "href": "https://tt-a1i.github.io/archify/",
+          "label": "Archify"
+        },
+        {
+          "href": "/proyecto",
+          "label": "Sobre esta prueba técnica"
+        },
+        {
+          "href": "https://github.com/erikbonifaz/rock-experience",
+          "label": "Explorar el repositorio en GitHub"
+        }
+      ],
+      "linksMissingName": [],
+      "missingAnchors": [],
+      "openGraph": [
+        {
+          "content": "Cómo funciona ROCK EXPERIENCE",
+          "property": "og:title"
+        },
+        {
+          "content": "Un mapa interactivo y una explicación del recorrido de los datos, desde el navegador hasta las APIs y Supabase.",
+          "property": "og:description"
+        },
+        {
+          "content": "https://rock-experience-ten.vercel.app/arquitectura",
+          "property": "og:url"
+        },
+        {
+          "content": "ROCK EXPERIENCE",
+          "property": "og:site_name"
+        },
+        {
+          "content": "es_MX",
+          "property": "og:locale"
+        },
+        {
+          "content": "https://rock-experience-ten.vercel.app/opengraph-image",
+          "property": "og:image"
+        },
+        {
+          "content": "1200",
+          "property": "og:image:width"
+        },
+        {
+          "content": "630",
+          "property": "og:image:height"
+        },
+        {
+          "content": "ROCK EXPERIENCE. Vive algo diferente. Marcas, tecnología y personas.",
+          "property": "og:image:alt"
+        },
+        {
+          "content": "website",
+          "property": "og:type"
+        }
+      ],
+      "skippedHeadingLevels": [],
+      "title": "Cómo funciona ROCK EXPERIENCE",
+      "titleCount": 1
+    }
+  ],
+  "experienceLinkTargets": [
+    {
+      "heading": "Gaming Experience",
+      "id": "experiencia-1"
+    },
+    {
+      "heading": "Music Sessions",
+      "id": "experiencia-2"
+    },
+    {
+      "heading": "Creator Lab",
+      "id": "experiencia-3"
+    },
+    {
+      "heading": "AI Experience",
+      "id": "experiencia-4"
+    },
+    {
+      "heading": "Live Experience",
+      "id": "experiencia-5"
+    },
+    {
+      "heading": "Digital Commerce",
+      "id": "experiencia-6"
+    }
+  ],
+  "mobile": {
+    "contentWidth": 375,
+    "footerLink": "Perfil de Erik Bonifaz en GitHub\n↗",
+    "h1Count": 1,
+    "viewportWidth": 375
+  },
+  "verification": {
+    "htmlInitial": "Metadatos en head y un h1 comprobados por HTTP en las cuatro páginas",
+    "openGraphImage": {
+      "status": 200,
+      "contentType": "image/png",
+      "width": 1200,
+      "height": 630,
+      "bytes": 44330
+    },
+    "controls": [
+      {
+        "path": "/esta-ruta-no-existe",
+        "status": 404,
+        "noindex": true,
+        "h1Count": 1
+      },
+      {
+        "path": "/demo/submissions/no-existe",
+        "status": 404,
+        "noindex": true,
+        "h1Count": 1
+      }
+    ],
+    "checks": {
+      "lint": "Correcto",
+      "typecheck": "Correcto",
+      "tests": "11 de 11",
+      "build": "Correcto",
+      "siteUrlOverride": "Correcto"
+    },
+    "cardNavigation": {
+      "url": "http://127.0.0.1:3100/experiencias#experiencia-1",
+      "heading": "GAMING EXPERIENCE"
+    }
+  }
+}

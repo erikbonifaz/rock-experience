@@ -50,7 +50,6 @@ test("el README real tiene secciones navegables, checklist y rutas relativas exi
   const readme = parseProjectReadme(source);
   assert.ok(readme.sections.some(({ label }) => label === "Checklist de la prueba técnica"));
   assert.match(readme.markdown, /- \[x\]/);
-  assert.match(readme.markdown, /- \[ \] \*\*Por medir · Core Web Vitals/);
   const tree = fromMarkdown(source);
   const visit = async (node) => {
     if (node.type === "link" && !/^(?:[a-z][a-z\d+.-]*:|\/|#)/i.test(node.url)) {

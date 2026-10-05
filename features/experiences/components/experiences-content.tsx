@@ -8,14 +8,14 @@ import { useExperiences } from "../hooks/use-experiences";
 import { useExperienceCardMotion } from "../hooks/use-experience-card-motion";
 
 export function ExperiencesContent() {
-  const { state, retry } = useExperiences();
+  const { state, retry, containerRef } = useExperiences();
   const gridRef = useExperienceCardMotion(
     state.status === "success" && state.experiences.length > 0,
   );
 
   if (state.status === "loading") {
     return (
-      <div aria-busy={true}>
+      <div ref={containerRef} aria-busy={true}>
         <ExperiencesLoading />
       </div>
     );
@@ -23,7 +23,7 @@ export function ExperiencesContent() {
 
   if (state.status === "error") {
     return (
-      <div aria-busy={false}>
+      <div ref={containerRef} aria-busy={false}>
         <ExperiencesError onRetry={retry} />
       </div>
     );
@@ -31,7 +31,7 @@ export function ExperiencesContent() {
 
   if (state.experiences.length === 0) {
     return (
-      <div aria-busy={false}>
+      <div ref={containerRef} aria-busy={false}>
         <p className="border-y border-[#F2F0E9]/20 py-8 font-sans text-[#AAA69F]">
           Por ahora no hay experiencias disponibles.
         </p>
@@ -40,7 +40,7 @@ export function ExperiencesContent() {
   }
 
   return (
-    <div aria-busy={false}>
+    <div ref={containerRef} aria-busy={false}>
       <div ref={gridRef} className={experiencesGridClassName}>
         {state.experiences.map((experience, index) => (
           <ExperienceCard

@@ -8,5 +8,13 @@
   "width": 768,
   "height": 959,
   "bytes": 147596,
-  "hasAlpha": true
+  "hasAlpha": true,
+  "performanceOptimization": {
+    "date": "2026-10-04",
+    "description": "Recompresión WebP sin cambiar dimensiones ni transparencia; nombre renovado para invalidar la caché.",
+    "quality": 65,
+    "effort": 6,
+    "previousBytes": 147596,
+    "bytes": 119318
+  }
 }

@@ -17,7 +17,8 @@ export function HeroSection() {
           className="object-cover object-[70%_50%] min-[640px]:object-[68%_18%] min-[1100px]:object-[70%_50%]"
           fill
           sizes="(max-width: 639px) 160vw, 100vw"
-          preload
+          loading="eager"
+          fetchPriority="high"
         />
         <div
           className={`${styles.overlay} pointer-events-none absolute inset-0 z-1`}
