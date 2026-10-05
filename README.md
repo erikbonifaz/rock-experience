@@ -4,24 +4,6 @@ Campaña ficticia para la prueba técnica de Rock The Agency: una landing respon
 
 [Ver demo](https://rock-experience-ten.vercel.app/) · [Ver arquitectura](https://rock-experience-ten.vercel.app/arquitectura) · [Repositorio](https://github.com/erikbonifaz/rock-experience)
 
-## Rendimiento
-
-La página aprovecha las optimizaciones nativas de Next.js. La [medición de PageSpeed Insights del 4 de octubre de 2026](https://pagespeed.web.dev/analysis/https-rock-experience-ten-vercel-app/jc21rudr1q?form_factor=mobile), sobre la demo desplegada antes de los últimos ajustes, registró:
-
-| Métrica | Móvil | Escritorio |
-| --- | --- | --- |
-| Rendimiento | **94/100** | **100/100** |
-| Largest Contentful Paint (LCP) | 3,0 s | 0,7 s |
-| Cumulative Layout Shift (CLS) | 0 | 0 |
-| Accesibilidad, buenas prácticas y SEO | 100/100 en cada categoría | 100/100 en cada categoría |
-
-- **Imágenes:** `next/image` adapta tamaños y negocia AVIF/WebP; el hero tiene prioridad alta y las imágenes secundarias utilizan lazy loading.
-- **JavaScript:** el contenido estático se renderiza en el servidor; Zod se carga al validar y el catálogo al acercarse a su sección.
-- **Fuentes:** `next/font` aloja Anton y Space Grotesk en el mismo dominio, con subset latino y `display: swap`.
-- **Estabilidad visual:** las imágenes reservan su espacio mediante dimensiones o proporciones definidas; las mediciones registraron CLS de 0.
-
-Los ajustes posteriores difieren la carga de Zod y del catálogo y reducen en **38,5 KiB** el peso conjunto de las texturas de las tarjetas y la acreditación. La tabla conserva la medición anterior; se debe repetir PageSpeed tras desplegar esta revisión para obtener cifras de la versión actual.
-
 ## Checklist de la prueba técnica
 
 Resumen de la implementación solicitada en [el documento de la prueba](docs/Prueba%20Tecnica%20Candidatos%20Web%20Developer%20Rock.docx). Las casillas describen requisitos implementados; las mediciones pendientes quedan indicadas.
@@ -100,8 +82,6 @@ pnpm build
 pnpm start
 ```
 
-`pnpm start` requiere un build previo. La compilación puede necesitar internet para obtener las fuentes. Las pruebas cubren contratos de datos, validaciones del formulario, lectura del README y coherencia del mapa de Archify; no realizan envíos a Supabase. Las comprobaciones del mapa detectan páginas sin representar, cambios en sus fuentes y diferencias entre el JSON y el HTML generado.
-
 ## 2. Tecnologías utilizadas
 
 | Tecnología | Uso |
@@ -110,8 +90,6 @@ pnpm start
 | Tailwind CSS 4 y CSS Modules | Diseño responsive y estilos de las secciones. |
 | React Hook Form y Zod | Estado del formulario y validación compartida con el servidor. |
 | Supabase PostgreSQL | Persistencia de solicitudes mediante un cliente de servidor. |
-| react-markdown y remark-gfm | Renderizado del README, tablas y checklist. |
-| mdast-util-from-markdown y github-slugger | Lectura de la estructura Markdown e índice con anclas consistentes. |
 | ESLint, pnpm y runner de Node.js | Análisis estático, dependencias y pruebas. |
 | Archify 3.0.1 | Generación del visor estático; se ejecuta fuera de las dependencias de la aplicación. |
 
@@ -135,30 +113,97 @@ El [mapa de Archify](https://rock-experience-ten.vercel.app/arquitectura) repres
 
 ## 4. Decisiones técnicas relevantes
 
-- **Organización por funcionalidad.** Cada feature agrupa su UI, hooks y contratos; `app/` compone las páginas y los endpoints.
-- **Interacción en el cliente.** Navegación, catálogo de inicio y formulario usan componentes cliente; las secciones estáticas se renderizan en el servidor.
-- **Validación compartida.** `schema.ts` define las reglas y los tipos inferidos con Zod. Los valores iniciales viven en `defaults.ts` y sólo importan tipos, para cargar Zod al validar. El navegador ofrece feedback y el servidor vuelve a validar antes de guardar; el cliente también valida la confirmación.
-- **API local para el catálogo.** La landing carga la petición y su validador en paralelo, con 400 px de anticipación al llegar a la sección. Contempla carga, error con reintento, vacío y éxito; valida campos e IDs únicos y cancela la petición al reintentar o desmontar.
-- **Página editorial de Experiencias.** Cada tarjeta abre `/experiencias#experiencia-{id}`. La página lee el mismo JSON directamente en el servidor y añade contenido editorial, sin solicitar su propio endpoint.
-- **Manifiesto de campaña.** Entre Beneficios y el formulario, una fotografía ilustrativa y el mensaje «La experiencia la haces tú» conectan el recorrido con la participación. La sección se renderiza en el servidor, utiliza una imagen WebP con carga diferida y reorganiza fotografía y texto en móvil.
-- **README como fuente única.** `/proyecto` lee el archivo durante el build y genera su índice. GitHub y la página coinciden al publicar el mismo commit; editar el README requiere un nuevo despliegue para actualizar producción.
-- **Recursos optimizados.** Fotografías con `next/image` y negociación AVIF/WebP, hero con prioridad alta, fuentes Anton y Space Grotesk con `next/font`, texturas WebP comprimidas y movimiento reducido cuando el usuario lo solicita. El formulario conserva sus campos en el HTML inicial y carga Zod al validar.
-- **Animaciones sencillas.** CSS anima elementos del hero y la confirmación. Un hook con IntersectionObserver activa la entrada de las tarjetas una sola vez; los efectos respetan `prefers-reduced-motion` y se complementan con transiciones de hover y foco.
+- **Next.js frente a una SPA de React renderizada principalmente en cliente.** La prueba permitía utilizar React o Next.js. Elegí Next.js porque la mayor parte de la landing es contenido público y estático, mientras que sólo algunas partes necesitan interacción en cliente. Esto permite entregar el contenido principal ya renderizado y reservar JavaScript para elementos como la navegación interactiva, el catálogo y el formulario. También valoré su routing basado en archivos, la gestión integrada de metadata, imágenes y fuentes y la posibilidad de crear endpoints con Route Handlers dentro del mismo proyecto. En una landing de campaña consideré especialmente importantes la carga inicial, Core Web Vitals, SEO y los previews al compartir la URL.
 
-El envío real con Supabase se verificó previamente. La consulta de demostración es pública: oculta parcialmente correo y teléfono, pero muestra otros campos; debe incorporar autorización antes de utilizar datos reales.
+- **Completar el flujo del formulario con Supabase en lugar de simularlo.** La prueba permitía mostrar únicamente una confirmación después del envío, sin conectar un backend real. Decidí implementar una persistencia sencilla con Supabase para comprobar el recorrido completo: el usuario envía el formulario, el servidor valida la información y el registro queda almacenado. Esto me permitió validar que los datos realmente se envían y se reciben correctamente, además de trabajar con una separación más realista entre interfaz, endpoint y persistencia sin crear un backend independiente para una landing de este tamaño.
 
+- **React Hook Form y Zod para el formulario.** Una primera implementación manejaba valores, errores, validaciones, estado de envío y reinicio del formulario de forma manual. Era una solución válida, pero empezaba a repetir bastante lógica a medida que aumentaban los campos. React Hook Form concentra el manejo del estado y el ciclo de vida del formulario, mientras que Zod centraliza las reglas de validación y permite reutilizarlas tanto en cliente como en servidor. TypeScript ayuda durante el desarrollo, pero no valida los datos reales que llegan en runtime; por eso consideré importante comprobar nuevamente la entrada antes de guardarla.
+
+- **Mantener el catálogo proporcional a su tamaño.** Experiencias contiene sólo seis registros, por lo que no consideré necesario introducir paginación, búsqueda, caché compleja o una capa adicional de datos. El endpoint local permite representar los estados de carga, error, reintento y éxito solicitados en la prueba sin añadir infraestructura innecesaria. Si en un escenario real el catálogo proviniera de una API con cientos o miles de registros, evaluaría paginación o carga incremental, filtrado en servidor, debounce para búsquedas y cancelación de solicitudes obsoletas según el tipo de interacción.
 ## 5. Qué mejoraría con más tiempo
 
-- Automatizar recorridos de navegador: carga, reintento, validación, envío y reinicio.
-- Añadir límites de frecuencia, protección anti-spam y autorización de los registros de demostración.
-- Dar seguimiento a Core Web Vitals con datos reales de uso.
+El formulario actual cumple con el flujo esperado para la prueba, pero soy consciente de que en un entorno real todavía habría aspectos de seguridad que reforzar.
 
-## 6. Herramientas de IA utilizadas
+Implementaría **límites de frecuencia**, **protección anti-spam** y **autorización para consultar los registros de demostración**, evitando así abuso del endpoint y acceso no autorizado a la información almacenada.
 
-**Codex** apoyó implementación, refactors, documentación y comprobaciones de código y navegador. Las guías `vercel-react-best-practices` e Impeccable orientaron las revisiones. **ImageGen** se utilizó para recursos visuales; **Archify** generó el diagrama estático.
+## 6. Uso de IA y criterios de desarrollo
 
-La revisión del autor se centró en organización, ubicación de hooks y contratos y legibilidad de los flujos. Se simplificaron propuestas que añadían abstracciones innecesarias y se conservaron las validaciones de cliente y servidor por sus responsabilidades distintas.
+### Herramientas y forma de trabajo
 
-**Ejemplo de una propuesta incorrecta.** Codex propuso `meta.views` para el mapa de Archify: el esquema lo aceptaba, pero los controles no aparecían. La comprobación asistida en navegador detectó el problema; se consultó la documentación y se sustituyó por la función RUTA compatible con el visor.
+Utilicé **Codex** como apoyo durante distintas etapas del proyecto: implementación, revisión de código, refactors, documentación y comprobaciones. **ImageGen** se utilizó para explorar propuestas visuales y generar recursos de la campaña. Las guías `vercel-react-best-practices` e Impeccable sirvieron como referencias para las revisiones técnicas y visuales.
 
-Los [créditos de imágenes y herramientas](docs/recursos.md) reúnen la procedencia de los recursos. Las verificaciones con Codex complementan la revisión del autor.
+Mi intención no fue delegar las decisiones del proyecto a la herramienta. Antes de trabajar sobre una implementación procuré definir qué problema quería resolver, qué comportamiento debía conservarse y qué nivel de complejidad tenía sentido para una landing de este tamaño.
+
+Las propuestas de Codex se trataron como puntos de partida. Una solución podía funcionar y aun así no ser la más adecuada para el proyecto, por lo que revisé si cada cambio resolvía un problema real, cuánto código o conceptos añadía y si existía una alternativa más fácil de entender y mantener.
+
+### Qué revisé manualmente
+
+Mi revisión se centró principalmente en la organización del código, la responsabilidad de los componentes y hooks, la claridad de los flujos y la complejidad introducida por cada solución.
+
+Por ejemplo, la primera versión del formulario generada con apoyo de Codex manejaba de forma manual los valores de los campos, sus errores, la validación, el estado de envío y el reinicio del formulario. La implementación funcionaba, pero al crecer el formulario empezaba a repetir la misma lógica.
+
+A partir de esa revisión decidí utilizar **React Hook Form** para concentrar el manejo del formulario y **Zod** para centralizar las reglas de validación en runtime. La decisión no fue añadir librerías por comodidad, sino reducir lógica repetitiva y mantener una única definición de las reglas que pudiera utilizarse tanto en cliente como en servidor.
+
+También revisé propuestas que podían parecer más “completas” técnicamente pero no eran proporcionales al proyecto. El catálogo actual contiene sólo seis elementos, así que no tendría sentido añadir paginación, búsqueda o una capa compleja de datos únicamente para anticipar problemas que todavía no existen. Los escenarios en los que esta estrategia tendría que crecer están documentados en [Decisiones técnicas relevantes](#4-decisiones-técnicas-relevantes).
+
+El criterio general fue no escribir la menor cantidad posible de código, sino evitar que una tarea sencilla necesitara demasiados conceptos para entenderse.
+
+### Sobre propuestas incorrectas o poco adecuadas
+
+No detecté un error crítico de implementación que considere representativo del uso de Codex en este proyecto. Los principales ajustes estuvieron relacionados con **criterio, mantenibilidad y complejidad**, más que con código que simplemente no funcionara.
+
+La primera implementación manual del formulario es un ejemplo: cumplía el flujo solicitado, pero al revisarla consideré que mantener por separado valores, errores, validaciones y estados para cada campo iba a generar repetición innecesaria. La sustituí por React Hook Form y Zod después de comprobar que esas herramientas resolvían mejor el problema concreto.
+
+De forma similar, durante los refactors no acepté automáticamente cada propuesta. Si un cambio añadía abstracciones, hooks, helpers u optimizaciones sin una mejora clara para la escala actual de la landing, preferí simplificarlo o descartarlo.
+
+### Cómo utilicé Codex durante las revisiones
+
+En lugar de pedir simplemente *“refactoriza este código”*, definí qué quería evaluar en cada revisión. Entre otros puntos, busqué:
+
+- lógica más compleja de lo necesario;
+- componentes demasiado grandes o demasiado fragmentados;
+- hooks con demasiadas responsabilidades;
+- efectos o memoizaciones sin una necesidad clara;
+- abstracciones utilizadas una sola vez;
+- validaciones manuales demasiado extensas;
+- estado que pudiera reducirse;
+- código muerto o props innecesarias;
+- optimizaciones prematuras.
+
+Encontrar uno de estos puntos no significaba automáticamente modificarlo. Primero revisaba si el cambio realmente hacía la solución más clara y si el beneficio justificaba tocar código que ya funcionaba.
+
+### Cómo comprobé los resultados
+
+Después de los cambios no consideré una tarea terminada únicamente porque Codex hubiera generado una solución o porque TypeScript no mostrara errores.
+
+Con apoyo de la herramienta ejecuté y revisé:
+
+- ESLint;
+- TypeScript;
+- pruebas automatizadas;
+- build de producción;
+- comportamiento en navegador;
+- distintos tamaños de pantalla;
+- estados de carga, error y éxito.
+
+En las revisiones visuales también comprobé que los cambios no afectaran el responsive, la accesibilidad o el comportamiento esperado.
+
+La generación de código no fue el criterio de finalización. El criterio fue que pudiera explicar qué problema resolvía cada decisión, qué costo introducía y por qué esa solución tenía sentido para este proyecto.
+
+Los [créditos de imágenes y herramientas](docs/recursos.md) documentan la procedencia de los recursos visuales y las herramientas auxiliares.
+
+## Rendimiento
+
+La página aprovecha las optimizaciones nativas de Next.js. Los resultados obtenidos en PageSpeed Insights fueron:
+
+| Métrica | Móvil | Escritorio |
+| --- | --- | --- |
+| Rendimiento | **94/100** | **100/100** |
+| Largest Contentful Paint (LCP) | 3,0 s | 0,7 s |
+| Cumulative Layout Shift (CLS) | 0 | 0 |
+| Accesibilidad, buenas prácticas y SEO | 100/100 en cada categoría | 100/100 en cada categoría |
+
+- **Imágenes:** `next/image` adapta tamaños y negocia AVIF/WebP; el hero tiene prioridad alta y las imágenes secundarias utilizan lazy loading.
+- **JavaScript:** el contenido estático se renderiza en el servidor; Zod se carga al validar y el catálogo al acercarse a su sección.
+- **Fuentes:** `next/font` aloja Anton y Space Grotesk en el mismo dominio, con subset latino y `display: swap`.
+- **Estabilidad visual:** las imágenes reservan su espacio mediante dimensiones o proporciones definidas; las mediciones registraron CLS de 0.
