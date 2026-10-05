@@ -1,6 +1,6 @@
 {
-  "repositoryRevision": "193491e1b019be91e58d526587e9b3fbd80c5db0",
-  "sourceRevision": "193491e1b019be91e58d526587e9b3fbd80c5db0",
+  "repositoryRevision": "d14dc4e57a8c919a1b3563d7d2b54543c69d896d",
+  "sourceRevision": "d14dc4e57a8c919a1b3563d7d2b54543c69d896d",
   "sourceMode": "git-commit",
   "files": [
     {
@@ -10,8 +10,8 @@
     },
     {
       "path": "app/page.tsx",
-      "sha256": "06a9c1d877d651459039ddd07099377559846d46d0cd8be5a836d52256a0b0b8",
-      "lines": 24
+      "sha256": "ae78e2437b125cc83fd9c859347733100ce2466462085912eea55a0550c8075d",
+      "lines": 26
     },
     {
       "path": "features/project/components/project-introduction.tsx",
@@ -20,8 +20,8 @@
     },
     {
       "path": "components/layout/site-footer.tsx",
-      "sha256": "d964634ccf2dd5a9fcdf4f2e706de7196d1d72e831582fc1c3e5042b8b72eef8",
-      "lines": 129
+      "sha256": "282751776cfe11f128d9392576ae4dcf75e169efbcb3a8b8602947103dac7e32",
+      "lines": 123
     },
     {
       "path": "app/proyecto/page.tsx",
@@ -40,8 +40,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "f145e22f8109563a28e07218de2776af6e5f4626c7ea6862c3f3b3c593cebcd3",
-      "lines": 163
+      "sha256": "ef1602624c9fde407f57121a192b2f296526b8a2c2c7d7726e0b6f8f1c17ba78",
+      "lines": 164
     },
     {
       "path": "features/project/readme.ts",

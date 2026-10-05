@@ -8,7 +8,7 @@
     "locale": "es",
     "repository": {
       "url": "https://github.com/erikbonifaz/rock-experience.git",
-      "revision": "193491e1b019be91e58d526587e9b3fbd80c5db0",
+      "revision": "d14dc4e57a8c919a1b3563d7d2b54543c69d896d",
       "provider": "github",
       "link_mode": "web"
     },
@@ -492,7 +492,7 @@
         {
           "path": "app/page.tsx",
           "line": 1,
-          "end_line": 24
+          "end_line": 26
         },
         {
           "path": "features/project/components/project-introduction.tsx",
@@ -502,7 +502,7 @@
         {
           "path": "components/layout/site-footer.tsx",
           "line": 1,
-          "end_line": 129
+          "end_line": 123
         }
       ]
     },
@@ -554,7 +554,7 @@
         {
           "path": "README.md",
           "line": 1,
-          "end_line": 163
+          "end_line": 164
         },
         {
           "path": "features/project/readme.ts",
@@ -956,7 +956,7 @@
       "dot": "emerald",
       "title": "Páginas y navegación",
       "items": [
-        "La landing reúne Hero, introducción de la prueba, Experiencias, Beneficios y Contacto.",
+        "La landing reúne Hero, introducción de la prueba, Experiencias, Beneficios, el manifiesto de campaña y Contacto.",
         "Cada tarjeta enlaza a /experiencias#experiencia-id; la página editorial lee el JSON directamente en el servidor.",
         "/proyecto lee README.md y construye su índice; /arquitectura incorpora este HTML de Archify mediante un iframe diferido.",
         "La introducción y el footer también enlazan a las páginas de documentación. El mapa conserva las conexiones necesarias para recorrer los flujos, sin dibujar todos los enlaces de regreso."

@@ -5,16 +5,16 @@
   "status": "pass",
   "type": "architecture",
   "quality": "showcase",
-  "startedAt": "2026-10-05T05:19:01.764Z",
+  "startedAt": "2026-10-05T09:48:56.940Z",
   "specification": {
     "path": "T:\\NextJs\\rock-experience\\docs\\arquitectura\\rock-experience.json",
-    "sha256": "f32cc05492f81d78045a9f6e932fdc3373a16ef0e08a6f3935cc7cbf245439e2",
-    "bytes": 41860
+    "sha256": "ac8a8a8e752431c84ceae130224e2d0088e60a7230afe41342d831ed5dfbda74",
+    "bytes": 41887
   },
   "artifact": {
     "path": "T:\\NextJs\\rock-experience\\public\\diagrams\\rock-experience.html",
-    "sha256": "3ab6333b03bf0bfd843e0a3b8eb66d1ecd0ea1ef74ca90b711f9d084b1441d06",
-    "bytes": 789865
+    "sha256": "fa087cffe20532d1bebc4b24341ee470f382565df989814278008e2a0d6df341",
+    "bytes": 789892
   },
   "stages": {
     "validate": {
@@ -40,8 +40,8 @@
         "ok": true,
         "command": "validate",
         "specification": {
-          "sha256": "f32cc05492f81d78045a9f6e932fdc3373a16ef0e08a6f3935cc7cbf245439e2",
-          "bytes": 41860
+          "sha256": "ac8a8a8e752431c84ceae130224e2d0088e60a7230afe41342d831ed5dfbda74",
+          "bytes": 41887
         },
         "validation": {
           "checksPassed": 9,
@@ -56,7 +56,7 @@
     "deliver": {
       "status": "pass",
       "exitCode": 0,
-      "durationMs": 1254,
+      "durationMs": 1387,
       "command": [
         "C:\\Program Files\\nodejs\\node.exe",
         "C:\\Users\\ErikB\\.codex\\visualizations\\2026\\10\\03\\01a1002c-53b4-7ed2-9ef1-6cdccbf69400\\archify-tool\\archify\\bin\\archify.mjs",
@@ -72,19 +72,19 @@
       ],
       "receipt": {
         "schemaVersion": 1,
-        "receiptId": "d15f0606-bf48-402a-b8a2-7561fd412146",
+        "receiptId": "d5e21400-32ef-4e4d-be98-c673cf035d02",
         "ok": true,
         "command": "deliver",
         "type": "architecture",
         "input": "T:\\NextJs\\rock-experience\\docs\\arquitectura\\rock-experience.json",
         "output": "T:\\NextJs\\rock-experience\\public\\diagrams\\rock-experience.html",
         "specification": {
-          "sha256": "f32cc05492f81d78045a9f6e932fdc3373a16ef0e08a6f3935cc7cbf245439e2",
-          "bytes": 41860
+          "sha256": "ac8a8a8e752431c84ceae130224e2d0088e60a7230afe41342d831ed5dfbda74",
+          "bytes": 41887
         },
         "artifact": {
-          "sha256": "3ab6333b03bf0bfd843e0a3b8eb66d1ecd0ea1ef74ca90b711f9d084b1441d06",
-          "bytes": 789865
+          "sha256": "fa087cffe20532d1bebc4b24341ee470f382565df989814278008e2a0d6df341",
+          "bytes": 789892
         },
         "validation": {
           "checksPassed": 9,
@@ -97,7 +97,7 @@
         "evidence": {
           "verified": true,
           "repository": "https://github.com/erikbonifaz/rock-experience",
-          "revision": "193491e1b019be91e58d526587e9b3fbd80c5db0",
+          "revision": "d14dc4e57a8c919a1b3563d7d2b54543c69d896d",
           "references": 31
         },
         "update": {
@@ -116,7 +116,7 @@
     "check": {
       "status": "pass",
       "exitCode": 0,
-      "durationMs": 202,
+      "durationMs": 204,
       "command": [
         "C:\\Program Files\\nodejs\\node.exe",
         "C:\\Users\\ErikB\\.codex\\visualizations\\2026\\10\\03\\01a1002c-53b4-7ed2-9ef1-6cdccbf69400\\archify-tool\\archify\\bin\\archify.mjs",
@@ -128,8 +128,8 @@
         "ok": true,
         "file": "T:\\NextJs\\rock-experience\\public\\diagrams\\rock-experience.html",
         "artifact": {
-          "sha256": "3ab6333b03bf0bfd843e0a3b8eb66d1ecd0ea1ef74ca90b711f9d084b1441d06",
-          "bytes": 789865
+          "sha256": "fa087cffe20532d1bebc4b24341ee470f382565df989814278008e2a0d6df341",
+          "bytes": 789892
         },
         "checks": [
           {
@@ -325,13 +325,13 @@
           "issues": []
         },
         "provenance": "current",
-        "deliveryReceiptId": "d15f0606-bf48-402a-b8a2-7561fd412146"
+        "deliveryReceiptId": "d5e21400-32ef-4e4d-be98-c673cf035d02"
       }
     },
     "browser-check": {
       "status": "pass",
       "exitCode": 0,
-      "durationMs": 1374,
+      "durationMs": 1584,
       "command": [
         "C:\\Program Files\\nodejs\\node.exe",
         "C:\\Users\\ErikB\\.codex\\visualizations\\2026\\10\\03\\01a1002c-53b4-7ed2-9ef1-6cdccbf69400\\archify-tool\\archify\\bin\\archify.mjs",
@@ -340,7 +340,7 @@
         "--json",
         "--require-provenance",
         "--out-dir",
-        "T:\\NextJs\\rock-experience\\.impeccable\\review\\arquitectura\\d4e35f87dd99"
+        "T:\\NextJs\\rock-experience\\.impeccable\\review\\arquitectura\\036822c1e85a"
       ],
       "execution": "in-process",
       "receipt": {
@@ -351,11 +351,11 @@
         "status": "pass",
         "visualReview": "not-requested",
         "provenance": "current",
-        "deliveryReceiptId": "d15f0606-bf48-402a-b8a2-7561fd412146",
+        "deliveryReceiptId": "d5e21400-32ef-4e4d-be98-c673cf035d02",
         "artifact": {
           "path": "T:\\NextJs\\rock-experience\\public\\diagrams\\rock-experience.html",
-          "sha256": "3ab6333b03bf0bfd843e0a3b8eb66d1ecd0ea1ef74ca90b711f9d084b1441d06",
-          "bytes": 789865
+          "sha256": "fa087cffe20532d1bebc4b24341ee470f382565df989814278008e2a0d6df341",
+          "bytes": 789892
         },
         "state": {
           "detail": "read",
@@ -1060,7 +1060,7 @@
           "contactSheet": null
         },
         "sidecars": {
-          "directory": "T:\\NextJs\\rock-experience\\.impeccable\\review\\arquitectura\\d4e35f87dd99",
+          "directory": "T:\\NextJs\\rock-experience\\.impeccable\\review\\arquitectura\\036822c1e85a",
           "receipt": "rock-experience.browser-check.json",
           "files": []
         }
@@ -1069,13 +1069,13 @@
   },
   "diagnostics": [],
   "evidence": {
-    "receipt": "T:\\NextJs\\rock-experience\\.impeccable\\review\\arquitectura\\d4e35f87dd99\\finalize.json",
-    "summaryReceipt": "T:\\NextJs\\rock-experience\\.impeccable\\review\\arquitectura\\d4e35f87dd99\\finalize-summary.json",
-    "browserCheckReceipt": "T:\\NextJs\\rock-experience\\.impeccable\\review\\arquitectura\\d4e35f87dd99\\rock-experience.browser-check.json"
+    "receipt": "T:\\NextJs\\rock-experience\\.impeccable\\review\\arquitectura\\036822c1e85a\\finalize.json",
+    "summaryReceipt": "T:\\NextJs\\rock-experience\\.impeccable\\review\\arquitectura\\036822c1e85a\\finalize-summary.json",
+    "browserCheckReceipt": "T:\\NextJs\\rock-experience\\.impeccable\\review\\arquitectura\\036822c1e85a\\rock-experience.browser-check.json"
   },
   "visualReview": "not-requested",
-  "finishedAt": "2026-10-05T05:19:06.225Z",
-  "durationMs": 4461,
+  "finishedAt": "2026-10-05T09:49:01.660Z",
+  "durationMs": 4719,
   "update": {
     "status": "unavailable",
     "installedVersion": null,
