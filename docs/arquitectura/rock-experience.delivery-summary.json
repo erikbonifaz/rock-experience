@@ -7,13 +7,13 @@
   "quality": "showcase",
   "specification": {
     "path": "T:\\NextJs\\rock-experience\\docs\\arquitectura\\rock-experience.json",
-    "sha256": "582d8423c04fdb0a69e9ae992da4306298fd94d52ffae46da482819877c47578",
-    "bytes": 41867
+    "sha256": "f32cc05492f81d78045a9f6e932fdc3373a16ef0e08a6f3935cc7cbf245439e2",
+    "bytes": 41860
   },
   "artifact": {
     "path": "T:\\NextJs\\rock-experience\\public\\diagrams\\rock-experience.html",
-    "sha256": "dc05c62e329cfdd80ab28a58431723912be5d6df993a04edf05d826f4e02b6ac",
-    "bytes": 785296
+    "sha256": "3ab6333b03bf0bfd843e0a3b8eb66d1ecd0ea1ef74ca90b711f9d084b1441d06",
+    "bytes": 789865
   },
   "gates": {
     "validate": "pass",
@@ -28,9 +28,9 @@
     "truncated": false
   },
   "evidence": {
-    "receipt": "T:\\NextJs\\rock-experience\\.impeccable\\review\\arquitectura\\ede3b8f3c1e4\\finalize.json",
-    "summaryReceipt": "T:\\NextJs\\rock-experience\\.impeccable\\review\\arquitectura\\ede3b8f3c1e4\\finalize-summary.json",
-    "browserCheckReceipt": "T:\\NextJs\\rock-experience\\.impeccable\\review\\arquitectura\\ede3b8f3c1e4\\rock-experience.browser-check.json"
+    "receipt": "T:\\NextJs\\rock-experience\\.impeccable\\review\\arquitectura\\d4e35f87dd99\\finalize.json",
+    "summaryReceipt": "T:\\NextJs\\rock-experience\\.impeccable\\review\\arquitectura\\d4e35f87dd99\\finalize-summary.json",
+    "browserCheckReceipt": "T:\\NextJs\\rock-experience\\.impeccable\\review\\arquitectura\\d4e35f87dd99\\rock-experience.browser-check.json"
   },
   "update": {
     "status": "unavailable",
@@ -44,7 +44,7 @@
     "reason": "disabled"
   },
   "visualReview": "not-requested",
-  "durationMs": 4371,
+  "durationMs": 4461,
   "visualReviewRecommendation": {
     "action": "inspect-route-readability",
     "signals": {

@@ -1,7 +1,7 @@
 {
-  "repositoryRevision": "e90f9179e5dddc95b48ffef6a45217383f893282",
-  "sourceRevision": "d45683e216efdd915edcf3006c88793315ec5db1",
-  "sourceMode": "local-snapshot",
+  "repositoryRevision": "193491e1b019be91e58d526587e9b3fbd80c5db0",
+  "sourceRevision": "193491e1b019be91e58d526587e9b3fbd80c5db0",
+  "sourceMode": "git-commit",
   "files": [
     {
       "path": "components/layout/site-header.tsx",
