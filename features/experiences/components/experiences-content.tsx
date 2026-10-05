@@ -5,9 +5,13 @@ import { experiencesGridClassName, getExperiencePresentation } from "../config";
 import { ExperiencesError } from "./experiences-error";
 import { ExperiencesLoading } from "./experiences-loading";
 import { useExperiences } from "../hooks/use-experiences";
+import { useExperienceCardMotion } from "../hooks/use-experience-card-motion";
 
 export function ExperiencesContent() {
   const { state, retry } = useExperiences();
+  const gridRef = useExperienceCardMotion(
+    state.status === "success" && state.experiences.length > 0,
+  );
 
   if (state.status === "loading") {
     return (
@@ -37,7 +41,7 @@ export function ExperiencesContent() {
 
   return (
     <div aria-busy={false}>
-      <div className={experiencesGridClassName}>
+      <div ref={gridRef} className={experiencesGridClassName}>
         {state.experiences.map((experience, index) => (
           <ExperienceCard
             key={experience.id}

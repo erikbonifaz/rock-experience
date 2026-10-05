@@ -32,6 +32,30 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .guide {
+    transform-origin: top;
+    animation: guide-arrival 540ms var(--interaction-easing) backwards;
+  }
+
+  .actions {
+    animation: actions-arrival 500ms var(--interaction-easing) 80ms backwards;
+  }
+
+  .actions:focus-within {
+    animation-duration: 0s;
+    animation-delay: 0s;
+  }
+
+  @keyframes guide-arrival {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+  }
+
+  @keyframes actions-arrival {
+    from { transform: translateY(8px); }
+    to { transform: none; }
+  }
+
   .primaryArrow {
     transition: transform 200ms var(--interaction-easing);
   }

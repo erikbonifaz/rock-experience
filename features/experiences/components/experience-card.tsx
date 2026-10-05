@@ -12,15 +12,16 @@ export function ExperienceCard({
 
   return (
     <Link
-      href="/experiencias"
-      aria-label={`Ver todas las experiencias: ${experience.title}`}
-      className={`group relative isolate flex h-full min-w-0 flex-col bg-foreground bg-clip-content p-4 text-background! focus-visible:outline-accent focus-visible:outline-offset-4 sm:p-5 ${styles.photoPrint} ${experienceCardHeightClassName} ${presentation.tiltClassName}`}
+      href={`/experiencias#experiencia-${experience.id}`}
+      data-experience-card
+      aria-label={`Explorar ${experience.title}`}
+      className={`group relative isolate flex h-full min-w-0 flex-col bg-foreground bg-clip-content p-4 text-background! focus-visible:outline-accent focus-visible:outline-offset-4 motion-safe:transition-transform motion-safe:duration-[320ms] motion-safe:ease-[var(--interaction-easing)] experiences-desktop:motion-safe:hover:rotate-0 experiences-desktop:motion-safe:focus-visible:rotate-0 sm:p-5 ${styles.photoPrint} ${experienceCardHeightClassName} ${presentation.tiltClassName}`}
     >
       <div className="relative aspect-4/3 shrink-0 overflow-hidden bg-background">
         <ExperienceImage
           key={experience.image}
           src={experience.image}
-          alt={`Fotografía editorial que acompaña ${experience.title}.`}
+          alt={experience.imageAlt}
           presentation={presentation}
         />
         <span
@@ -48,7 +49,7 @@ export function ExperienceCard({
           <svg
             viewBox="0 0 32 24"
             fill="none"
-            className="mb-1 h-6 w-8 shrink-0 transition-transform duration-200 ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1 motion-reduce:transition-none"
+            className="mb-1 h-6 w-8 shrink-0 motion-safe:transition-transform motion-safe:duration-[320ms] motion-safe:ease-[var(--interaction-easing)] motion-safe:group-hover:translate-x-1 motion-safe:group-focus-visible:translate-x-1"
             aria-hidden="true"
           >
             <path

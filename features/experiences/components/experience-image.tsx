@@ -31,7 +31,7 @@ export function ExperienceImage({
         alt={alt}
         fill
         sizes={experienceImageSizes}
-        className="object-cover grayscale contrast-110 transition-transform duration-[260ms] ease-out group-hover:scale-[1.025] motion-reduce:transition-none"
+        className="object-cover grayscale contrast-110 motion-safe:transition-transform motion-safe:duration-[320ms] motion-safe:ease-[var(--interaction-easing)] motion-safe:group-hover:scale-[1.025] motion-safe:group-focus-visible:scale-[1.025]"
         onError={() => setImageFailed(true)}
       />
       {presentation.tone === "red" ? (

@@ -8,6 +8,7 @@ export const experienceSchema = z.object({
   category: requiredText,
   description: requiredText,
   image: requiredText,
+  imageAlt: requiredText,
 });
 
 export const experiencesSchema = z.array(experienceSchema).refine(

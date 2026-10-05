@@ -45,7 +45,7 @@ export function HeroSection() {
             personas.
           </p>
 
-          <div className="flex flex-col gap-3 min-[640px]:flex-row min-[640px]:items-center min-[640px]:gap-5 min-[1100px]:col-span-12 min-[1100px]:gap-[clamp(28px,2vw,40px)]">
+          <div className={`${styles.actions} flex flex-col gap-3 min-[640px]:flex-row min-[640px]:items-center min-[640px]:gap-5 min-[1100px]:col-span-12 min-[1100px]:gap-[clamp(28px,2vw,40px)]`}>
             {/* El modificador ! conserva el color frente a la regla global de los enlaces. */}
             <a
               className={`${styles.primaryLink} inline-flex min-h-[52px] w-full items-center justify-center gap-3 bg-accent px-[clamp(26px,1.7vw,32px)] py-3 text-[0.82rem] font-semibold leading-[1.4] tracking-[0.09em] text-background! uppercase whitespace-nowrap transition-colors duration-[180ms] ease-[var(--interaction-easing)] hover:bg-foreground motion-reduce:transition-none min-[640px]:w-auto`}

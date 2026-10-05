@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Anton, Space_Grotesk } from "next/font/google";
+import { sharedOpenGraph, siteMetadataBase } from "@/lib/seo";
 import "./globals.css";
 
 const anton = Anton({
@@ -17,15 +18,16 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: siteMetadataBase,
   title: "ROCK EXPERIENCE — Vive algo diferente.",
   description:
     "Descubre experiencias creadas para conectar marcas, tecnología y personas.",
   openGraph: {
+    ...sharedOpenGraph,
     title: "ROCK EXPERIENCE — Vive algo diferente.",
     description:
       "Descubre experiencias creadas para conectar marcas, tecnología y personas.",
-    locale: "es_MX",
-    type: "website",
+    url: "/",
   },
 };
 

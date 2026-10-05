@@ -111,7 +111,7 @@ export function SiteFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span>GitHub</span>
+                  <span>Perfil de Erik Bonifaz en GitHub</span>
                   <span
                     className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0"
                     aria-hidden="true"

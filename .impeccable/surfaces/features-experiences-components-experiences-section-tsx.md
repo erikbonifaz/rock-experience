@@ -19,7 +19,7 @@ Mockup aprobado: `.impeccable/mocks/home/02-fotografias-fanzine-hero-beneficios-
 - Preservar todos los registros, textos y URLs de fotografías del endpoint, carga, error, vacío, reintento y fallback de imagen. Las seis tarjetas enlazan al catálogo general existente.
 - Conservar Hero, introducción, Beneficios, Contacto y Footer. No modificar la página general de Experiencias.
 - Tailwind para estructura, tipografía y responsive; CSS Module breve para la textura, máscara de sello y colores forzados. Interfaces en types.ts; hooks en hooks/. Sin abstracciones ni dependencias nuevas.
-- Movimiento: leve énfasis existente de foto y flecha al hover/foco; sin animaciones de entrada, texto visible desde el principio y respeto a movimiento reducido.
+- Movimiento: entrada breve una sola vez por tarjeta al llegar a pantalla, autorizada por el usuario el 4 de octubre de 2026; enderezado en escritorio y leve énfasis de foto y flecha al hover/foco. Contenido visible desde el principio y respeto a movimiento reducido.
 
 ## Medidas de referencia
 
@@ -29,4 +29,4 @@ El mockup completo mide 789 × 1994 px. Experiencias ocupa aproximadamente y=728
 
 El intento de iniciar build-phase para esta composición fue rechazado porque permanece abierto el estado de Beneficios en plates, donde el decodificador automático rechaza la textura WebP existente. Se preservó el estado previo; no se usó reset ni force, ni se declara aprobada la secuencia automática. La verificación de esta extensión usa capturas reales, métricas DOM, compilación y revisión independiente. La ausencia previa de DESIGN.md y su sidecar se conserva como contexto histórico.
 
-El rediseño inicial conservó las URLs dinámicas de Picsum. En una petición posterior del 4 de octubre de 2026, el usuario autorizó seleccionar fotografías temáticas del mismo catálogo y fijar sus IDs. Se actualizaron únicamente las URLs de `data/experiences.json` y su permiso en Next.js, sin cambiar textos, registros, composición ni imágenes locales del catálogo general. La selección actual está documentada en `docs/experiencias-imagenes.md`.
+El rediseño inicial conservó las URLs dinámicas de Picsum. En una petición posterior del 4 de octubre de 2026, el usuario autorizó seleccionar fotografías temáticas del mismo catálogo y fijar sus IDs. Se actualizaron únicamente las URLs de `data/experiences.json` y su permiso en Next.js, sin cambiar textos, registros, composición ni imágenes locales del catálogo general. Los créditos actuales están en `docs/recursos.md`.

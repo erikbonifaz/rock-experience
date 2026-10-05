@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import type { ParticipationConfirmationProps } from "./types";
+import styles from "./participation.module.css";
 
 export function ParticipationConfirmation({
   submission,
@@ -23,13 +24,13 @@ export function ParticipationConfirmation({
       aria-live="polite"
       tabIndex={-1}
     >
-      <h3 className="font-display text-5xl leading-none text-foreground min-[640px]:text-6xl">
+      <h3 className={`${styles.confirmationTitle} font-display text-5xl leading-none text-foreground min-[640px]:text-6xl`}>
         GRACIAS.
       </h3>
       <p className="mt-6 max-w-[38ch] text-base leading-relaxed text-secondary min-[640px]:text-lg">
         Recibimos tus datos correctamente.
       </p>
-      <p className="mt-8 text-xs font-semibold uppercase tracking-[0.14em] text-secondary">
+      <p className={`${styles.confirmationRegistration} mt-8 text-xs font-semibold uppercase tracking-[0.14em] text-secondary`}>
         Registro
         <span className="ml-2 font-display text-2xl tracking-normal text-accent">
           #{submission.registrationCode}

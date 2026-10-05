@@ -31,7 +31,7 @@ test("el catálogo rechaza IDs inválidos sin convertir strings a números", () 
 });
 
 test("el catálogo rechaza campos ausentes, de otro tipo o solo con espacios", () => {
-  for (const field of ["title", "category", "description", "image"]) {
+  for (const field of ["title", "category", "description", "image", "imageAlt"]) {
     for (const value of [undefined, null, 42, "", " \n "]) {
       const response = [{ ...experiences[0], [field]: value }];
       assert.equal(experiencesSchema.safeParse(response).success, false);

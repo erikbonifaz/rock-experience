@@ -8,7 +8,7 @@ export function BenefitPass({ benefit }: BenefitPassProps) {
 
   return (
     <article
-      className={`${tiltClass} h-full rounded-xl border-2 border-accent bg-background p-1.5 transition-transform duration-200 hover:rotate-0 focus-within:rotate-0 motion-reduce:transition-none`}
+      className={`${tiltClass} h-full rounded-xl border-2 border-accent bg-background p-1.5 motion-safe:transition-transform motion-safe:duration-[320ms] motion-safe:ease-[var(--interaction-easing)] lg:motion-safe:hover:rotate-0 lg:motion-safe:focus-within:rotate-0`}
     >
       <div
         className={`${styles.passFace} relative isolate flex h-full flex-col overflow-hidden rounded-md p-5 text-background sm:p-7 lg:min-h-[clamp(20rem,27vw,26rem)]`}

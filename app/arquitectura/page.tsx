@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { sharedOpenGraph } from "@/lib/seo";
 import diagram from "@/docs/arquitectura/rock-experience.json";
 
 export const metadata: Metadata = {
@@ -7,11 +8,11 @@ export const metadata: Metadata = {
   description:
     "Explora la arquitectura de ROCK EXPERIENCE: renderizado con Next.js, carga de Experiencias y validación y persistencia del formulario.",
   openGraph: {
+    ...sharedOpenGraph,
     title: "Cómo funciona ROCK EXPERIENCE",
     description:
       "Un mapa interactivo y una explicación del recorrido de los datos, desde el navegador hasta las APIs y Supabase.",
-    locale: "es_MX",
-    type: "website",
+    url: "/arquitectura",
   },
 };
 
