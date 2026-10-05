@@ -8,7 +8,7 @@
     "locale": "es",
     "repository": {
       "url": "https://github.com/erikbonifaz/rock-experience.git",
-      "revision": "d14dc4e57a8c919a1b3563d7d2b54543c69d896d",
+      "revision": "cdb99861b49a4915417c5dabeffa5e1d6a68372c",
       "provider": "github",
       "link_mode": "web"
     },
@@ -554,7 +554,7 @@
         {
           "path": "README.md",
           "line": 1,
-          "end_line": 164
+          "end_line": 209
         },
         {
           "path": "features/project/readme.ts",

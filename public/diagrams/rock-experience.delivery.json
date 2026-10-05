@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "receiptId": "d5e21400-32ef-4e4d-be98-c673cf035d02",
+  "receiptId": "bf987b0c-a361-42f3-90a3-7b6276967c6c",
   "status": "current",
   "command": "deliver",
   "type": "architecture",
   "input": "T:\\NextJs\\rock-experience\\docs\\arquitectura\\rock-experience.json",
   "output": "T:\\NextJs\\rock-experience\\public\\diagrams\\rock-experience.html",
   "specification": {
-    "sha256": "ac8a8a8e752431c84ceae130224e2d0088e60a7230afe41342d831ed5dfbda74",
+    "sha256": "e49c38f963ce00eddc96ac36f9aebc7409a8a8e5fc4078ad4ca741a72d3d3cf7",
     "bytes": 41887
   },
   "artifact": {
-    "sha256": "fa087cffe20532d1bebc4b24341ee470f382565df989814278008e2a0d6df341",
+    "sha256": "5bb7caa1d720f4b6889e32f9af9ba1c347a1ba73f00201f744becfdbbc3eee03",
     "bytes": 789892
   }
 }
