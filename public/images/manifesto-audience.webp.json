@@ -1,0 +1,14 @@
+{
+  "prompt": "Generate ONE production photographic panel from the provided cropped reference, faithfully matching its spatial composition. This is the LEFT audience panel of an approved ROCK EXPERIENCE website section. Output a landscape photograph with aspect ratio approximately 1.23:1, at least 1200 pixels wide and 980 pixels high, ideally 1536x1250. Opaque background.\nKeep the photographic SUBJECT AND CROP: large raised forearm and rock hand gesture at x=25%, with fingertips near the top edge; excited adult woman in profile at x=38%, her face and upper shoulders in the LOWER middle; anonymous adult concert audience around her; raised hands receding to the right; stage haze and bright distant lights across upper half. This is a candid emotional scene of human connection, not a solo performer or machinery. Match the supplied reference's foreground scale, body angle and hand positions closely. Realistic anatomy, fingers, skin and hair.\nHigh contrast gritty black-and-white editorial photography; subtle muted crimson cast ONLY at the far left. Retain photographic texture and grain. Photograph continues naturally all the way to the right edge; do NOT reserve a large blank black area in this asset. The webpage will blend the panel into its own black background later.\nAbsolutely no text, buttons, logo, navigation, credential, tickets, paper, borders or UI. Any tiny red UI fragment at the extreme right of the reference is outside the photograph and must be removed. It is a STYLE AND COMPOSITION reference, not an image to paste in a screenshot. This generated photo is illustrative material for a fictional campaign, not documentation of a real branded event. No watermark.",
+  "tool": "image_gen.imagegen",
+  "origin": "Fotografía ilustrativa original generada para el manifiesto aprobado de una campaña ficticia.",
+  "createdAt": "2026-10-05",
+  "reference": ".impeccable/mocks/manifesto/02-manifiesto-panoramico.png",
+  "optimization": {
+    "format": "webp",
+    "quality": 82,
+    "bytes": 126426,
+    "width": 1391,
+    "height": 1131
+  }
+}

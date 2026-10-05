@@ -33,3 +33,9 @@ La revisión encontró overflow global a 320 px por el mínimo fijo del `body`; 
 ## Ajuste solicitado: retirar el equipo de concierto
 
 Se elimina la fotografía de la invitación, su máscara CSS y el archivo de imagen que dejó de utilizarse. Se conservan la credencial, el cordón, la banda crema, el espaciado y el comportamiento del formulario. La referencia original queda como antecedente; esta preferencia explícita actualiza su composición.
+
+## Ajuste solicitado: integrar la correa con el gafete
+
+`CredentialLanyard` reúne la decoración en un componente independiente. La correa queda centrada respecto al cuerpo oscuro, con un ojal metálico, una abertura oscura y sombra de contacto. La máscara oculta el extremo del aro dentro de esa abertura para representar la sujeción. Se reutiliza el WebP existente; no se agregan imágenes ni JavaScript cliente.
+
+Verificación visual en el navegador a 390, 768 y 1440 px: imagen cargada, ojal alineado, encabezado despejado y sin desbordamiento horizontal. La decoración queda fuera del árbol accesible y se oculta en colores forzados. El detector mecánico no encontró incidencias en los archivos modificados. El ajuste visual queda aprobado para entrega; el formulario conserva sus controles y contratos existentes.

@@ -1,6 +1,6 @@
 # ROCK EXPERIENCE
 
-Campaña ficticia para la prueba técnica de Rock The Agency: una landing responsive con seis experiencias, Beneficios y un formulario de participación.
+Campaña ficticia para la prueba técnica de Rock The Agency: una landing responsive con seis experiencias, Beneficios, un manifiesto visual y un formulario de participación.
 
 [Ver demo](https://rock-experience-ten.vercel.app/) · [Ver arquitectura](https://rock-experience-ten.vercel.app/arquitectura) · [Repositorio](https://github.com/erikbonifaz/rock-experience)
 
@@ -121,7 +121,7 @@ pnpm start
 | --- | --- |
 | `app/` | Rutas, layout y endpoints. |
 | `components/layout/` | Encabezado, navegación y footer. |
-| `features/` | Hero, Experiencias, Beneficios, Contacto y Proyecto. |
+| `features/` | Hero, Experiencias, Beneficios, Manifiesto, Contacto y Proyecto. |
 | `data/` y `lib/` | Catálogo, navegación, metadatos y conexión de servidor. |
 | `types/` | Contratos compartidos de navegación; los contratos de cada feature permanecen en ella. |
 | `supabase/` | SQL de la tabla y sus permisos. |
@@ -140,6 +140,7 @@ El [mapa de Archify](https://rock-experience-ten.vercel.app/arquitectura) repres
 - **Validación compartida.** `schema.ts` define las reglas y los tipos inferidos con Zod. Los valores iniciales viven en `defaults.ts` y sólo importan tipos, para cargar Zod al validar. El navegador ofrece feedback y el servidor vuelve a validar antes de guardar; el cliente también valida la confirmación.
 - **API local para el catálogo.** La landing carga la petición y su validador en paralelo, con 400 px de anticipación al llegar a la sección. Contempla carga, error con reintento, vacío y éxito; valida campos e IDs únicos y cancela la petición al reintentar o desmontar.
 - **Página editorial de Experiencias.** Cada tarjeta abre `/experiencias#experiencia-{id}`. La página lee el mismo JSON directamente en el servidor y añade contenido editorial, sin solicitar su propio endpoint.
+- **Manifiesto de campaña.** Entre Beneficios y el formulario, una fotografía ilustrativa y el mensaje «La experiencia la haces tú» conectan el recorrido con la participación. La sección se renderiza en el servidor, utiliza una imagen WebP con carga diferida y reorganiza fotografía y texto en móvil.
 - **README como fuente única.** `/proyecto` lee el archivo durante el build y genera su índice. GitHub y la página coinciden al publicar el mismo commit; editar el README requiere un nuevo despliegue para actualizar producción.
 - **Recursos optimizados.** Fotografías con `next/image` y negociación AVIF/WebP, hero con prioridad alta, fuentes Anton y Space Grotesk con `next/font`, texturas WebP comprimidas y movimiento reducido cuando el usuario lo solicita. El formulario conserva sus campos en el HTML inicial y carga Zod al validar.
 - **Animaciones sencillas.** CSS anima elementos del hero y la confirmación. Un hook con IntersectionObserver activa la entrada de las tarjetas una sola vez; los efectos respetan `prefers-reduced-motion` y se complementan con transiciones de hover y foco.

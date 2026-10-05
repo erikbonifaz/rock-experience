@@ -97,29 +97,23 @@ export function SiteFooter() {
             <div className="flex flex-col gap-4 text-xs tracking-[0.04em] md:flex-row md:items-center md:justify-between">
               <p className="text-[#AAA69F]">© 2026 ROCK EXPERIENCE</p>
 
-              <div className="flex flex-col gap-3 text-[#AAA69F] sm:flex-row sm:items-center sm:gap-6">
-                <p>
-                  Desarrollado por <span className="text-[#F2F0E9]">Erik Bonifaz</span>
-                </p>
-                <span
-                  className="hidden h-5 w-px bg-[#F2F0E9]/30 sm:block"
+              <a
+                className="inline-flex w-fit min-h-10 items-center gap-2 text-secondary! transition-colors duration-200 hover:text-foreground! focus-visible:text-foreground! focus-visible:outline-2 focus-visible:outline-foreground focus-visible:outline-offset-4 motion-reduce:transition-none"
+                href="https://github.com/erikbonifaz"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub de Erik Bonifaz (abre en una pestaña nueva)"
+              >
+                <svg
+                  className="size-4 shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
                   aria-hidden="true"
-                />
-                <a
-                  className="group inline-flex w-fit min-h-10 items-center gap-2 text-[#F2F0E9] underline decoration-[#F2F0E9]/35 underline-offset-4 transition-colors duration-200 hover:text-[#FF2442] focus-visible:text-[#FF2442] motion-reduce:transition-none"
-                  href="https://github.com/erikbonifaz"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
-                  <span>Perfil de Erik Bonifaz en GitHub</span>
-                  <span
-                    className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0"
-                    aria-hidden="true"
-                  >
-                    ↗
-                  </span>
-                </a>
-              </div>
+                  <path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.91c.58.11.79-.25.79-.56v-2.22c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.18 1.77 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.16 1.18a10.93 10.93 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.59.23 2.76.11 3.05.73.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.13v3.25c0 .31.21.67.79.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                </svg>
+                <span>GitHub</span>
+              </a>
             </div>
           </div>
         </div>

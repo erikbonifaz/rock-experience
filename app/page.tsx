@@ -3,6 +3,7 @@ import { BenefitsSection } from "@/features/benefits/components/benefits-section
 import { ParticipationSection } from "@/features/contact/participation-section";
 import { ExperiencesSection } from "@/features/experiences/components/experiences-section";
 import { HeroSection } from "@/features/hero/components/hero-section";
+import { ManifestoSection } from "@/features/manifesto/components/manifesto-section";
 import { ProjectIntroduction } from "@/features/project/components/project-introduction";
 import { SiteHeader } from "@/components/layout/site-header";
 
@@ -16,6 +17,7 @@ export default function Home() {
         <ProjectIntroduction />
         <ExperiencesSection />
         <BenefitsSection />
+        <ManifestoSection />
         <ParticipationSection />
       </main>
       <SiteFooter />

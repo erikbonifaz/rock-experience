@@ -31,6 +31,7 @@ Los JPEG locales de `public/images/experiences/` conservan su origen en los meta
 
 ## Materiales y herramientas
 
+- **Manifiesto:** `public/images/manifesto-audience.webp` es una fotografía ilustrativa generada con ImageGen a partir del mockup aprobado. Se optimizó a WebP (1391 × 1131 px, aproximadamente 124 KiB) y conserva su prompt en el JSON contiguo. No documenta un evento real.
 - **ImageGen:** textura de fondo, papel de las tarjetas y materiales de la acreditación. Cada WebP de `public/images/textures/` conserva un JSON contiguo con su prompt, herramienta y transformación.
 - **SVG locales:** el QR apunta a `/arquitectura`; el código de barras y la numeración son decorativos.
 - **Fuentes:** Anton y Space Grotesk se integran mediante `next/font/google`.
